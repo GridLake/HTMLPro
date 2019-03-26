@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+google<br>
+<img alt="" src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+<hr>
+<!-- html 이미지 -->
+<!-- 
+모든 html 요소는 속성(attribute)을 가진다
+속성은 html 요소의 추가 정보를 제공한다
+속성은 항상 시작태그 안에서만 선언한다
+시작태그 속성명="속성값" 속성이름='속성값' or 속성값
+
+		src="URL"
+		alt="CDATA" 문자열
+		
+URL(Uniform Resource Locators)
+- 웹서버의 페이지를 URL(웹 주소)을 통해 브라우저가 요청한다
+- 구성
+	schema://prefix.domain:port/path/filename
+	schema : 인터넷 서비스 유형, http, https, ftp, file...
+	prefix : 도메인 접두사, www
+	domain : 인터넷 도메인명
+	port : 호스트의 포트번호, http의 기본 포트 - 80
+	path : 서버의 경로
+	filename : 요청한 문서 또는 자원의 이름
+	예) http://www.naver.com:80
+				kr.naver.com
+				jp.naver.com
+		http://localhost/webPro/html/days02/ex01.html
+		
+	URL 인코딩
+	URL은 ASCII 문자 집합을 사용하여 인터넷을 통해서만 전송할 수 있다
+	지금처럼 비ASCII 문자 집합(한글 등)일 경우 내부에서 변환된다
+	%16진수값으로 대체된다
+	URL은 공백을 포함할 수 없다		공백은 + 또는 %20으로 대체(한 글 -> 한+글)
+ -->
+<img src="http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80.png" alt="">
+<!--
+ 파일명 잘못입력하면 -> 브라우저마다 다르지만 출력 안됨
+ alt(ernate)를 정의하여 이미지가 안나올 경우 표시되도록 하는 것을 권장
+ -->
+<img src="http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80D.png" alt="googlelogo">
+<hr> <!-- A [h]orizontal [r]ule -->
+<!-- 
+ 이미지의 크기 설정 272px 92px
+ width 속성
+ height 속성
+ 
+ html에서는 단위를 생략하면 px(기본)
+ -->
+<img width="136px" height="46px" src="http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+<!-- 
+이미지 크기 : width 속성, height 속성을 사용해도 되지만
+			  style 속성을 사용하는 것을 권장한다
+			  스타일시트가 이미지 크기를 변경하지 못하게 하기 위함
+ -->			 
+ <!-- style 형식 지정할 때 표기 주의 --> 
+<img style="width:136px;height:46px" src="http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+<hr>
+<!--
+ % 단위의 기준은 부모 요소(body)
+ 설정 안하면 비율에 비례하여 크기 증가(272 : 92 = 500 : x)
+ -->
+<img width="100%" src="http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+<hr>
+<!-- 
+절대경로 : http://localhost/webPro/html/days02/images/%EA%B5%AC%EA%B8%80.png
+상대경로
+ ex04가 있는 곳을 상대주소로 잡음
+ 상대주소기준 : http://localhost/webPro/html/days02/%EA%B5%AC%EA%B8%80.png
+ 
+ ※웹의 경로 구분자 : / (슬래쉬)
+ -->
+ <img style="width:136px;height:46px" src="%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+ <!-- http://localhost/webPro/html/days02/%EA%B5%AC%EA%B8%80.png -->
+ <img style="width:136px;height:46px" src="./%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+ 
+ <!-- 상위 경로로 이동 -->
+ <!-- http://localhost/webPro/%EA%B5%AC%EA%B8%80.png -->
+ <img style="width:136px;height:46px" src="../../%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+ <hr>
+ <img style="width:136px;height:46px" src="http://localhost/webPro/html/days01/images/%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+ <img style="width:136px;height:46px" src="../days01/images/%EA%B5%AC%EA%B8%80.png" alt="googlelogo">
+</body>
+</html>
