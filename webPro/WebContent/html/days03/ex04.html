@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 27. 오전 11:24:17</title>
+<style>
+ body {
+ 	font-size:13px;
+ }
+ td {
+ 	border:solid 1px gray;
+ 	text-align:center;		/* align/valign 속성 */
+ 	width:75px;
+ 	height:50px;
+ }
+ table, tr, td, tbody, thead {
+ 	margin:0;
+ 	padding:0;
+ }
+ table {
+ 	empty-cells:hide;
+ }
+ .team01 /* 클래스명 앞에는 .을 붙인다 */ {
+ 	background-color:pink;
+ }
+ .team02 {
+ 	background-color:red;
+ }
+ .team03 {
+ 	background-color:gray;
+ }
+ .team04 {
+ 	background-color:aqua;
+ }
+ .manager {
+ 	font-weight:bold;
+ 	color:white;
+ }
+ .teacher{
+     font-size: 15px;
+     font-weight: bold;
+     background-color: fuchsia;
+ }
+ #teamlayout {
+ 	width:600px;
+ 	margin:0 auto;
+ 	border:solid 1px gray;
+ }
+</style>
+</head>
+<body>
+<div id="teamlayout">
+
+<table style="width:100%">
+ <caption>팀 및 자리 배치도</caption>
+ <tr>
+  <td colspan="7"></td>
+ </tr>
+ <tr>
+  <td class="teacher">kenik</td>
+  <td>X</td>
+  <td colspan="5"></td>
+ </tr>
+ <tr>
+  <td>X</td>
+  <td class="team01 manager">함치영</td>
+  <td class="team01"><img style="vertical-align:middle;" width="30" height="30" src="images/common.jpeg" alt=""><a href="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EA%B8%B8%ED%99%98">김길환</a></td>
+  <td colspan="3"></td>
+  <td style="border:0">
+   <table style="">
+   	<tr>
+   	<!-- style로 width 등의 값을 주면 속성값을 줘도 적용되지 않음 -->
+   	 <td style="width:140px"></td><td style="width:10px">문</td>
+   	</tr>
+   </table>
+   </td>
+ </tr>
+ <tr>
+  <td class="team02">진동현</td>
+  <td class="team01">임재민</td>
+  <td class="team01">조영지</td>
+  <td></td>
+  <td class="team03">이민수</td>
+  <td class="team03">태성현</td>
+  <td>X</td>
+ </tr>
+ <tr>
+  <td>X</td>
+  <td class="team02">유희수</td>
+  <td class="team02">문소민</td>
+  <td></td>
+  <td class="team03 manager">서순호</td>
+  <td class="team03">신현구</td>
+  <td class="team03">성태석</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td class="team02 manager">고지용</td>
+  <td class="team02">신예나</td>
+  <td></td>
+  <td class="team04">이지은</td>
+  <td class="team04 manager">이주영</td>
+  <td class="team04">최지현</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class="team04">지승연</td>
+  <td class="team04">표나래</td>
+  <td>X</td>
+ </tr>
+ <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+</div>
+</body>
+</html>

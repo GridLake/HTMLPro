@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 27. 오후 2:00:12</title>
+<style>
+ a {
+ 	background-color:black;
+ 	color:white;
+ 	display:inline-block;
+ 	width:100px; /* a 태그는 inline mode → width 속성 적용 안됨 */
+ 	padding:10px;
+ }
+</style>
+</head>
+<body>
+
+<!-- a[href=#]*3>Lorem1 -->
+<a href="#">Lorem.</a>
+<a href="#">Iste.</a>
+<a href="#">Dololibus.</a>
+
+ <!-- 중첩 html 목록 -->
+ <ul>
+  <li>item1</li>
+  <li>item2
+  		<ol>
+  			<li>subitem1</li>
+  				<ul>
+  					<li>A</li>
+  					<li>B</li>
+  				</ul>
+  			<li>subitem2</li>
+  				<ul>
+  					<li>A</li>
+  					<li>B</li>
+  					<li>C</li>
+  				</ul>
+  			<li>subitem3</li>
+  			<li>subitem4</li>
+  		</ol>
+  </li>
+  <li>item3</li>
+ </ul>
+
+<hr>
+<!-- html 목록(list) : ul/ol    li -->
+<!-- [d]escription [l]ist -->
+<dl> <!-- A definition or description list -->
+ <dt>html 이란?</dt>
+ <dd>html은 웹 프로그래밍 기본 언어이다.</dd> 
+ <dt>html 이란?</dt>
+ <dd>html은 웹 프로그래밍 기본 언어이다.</dd> 
+ <dt>html 이란?</dt>
+ <dd>html은 웹 프로그래밍 기본 언어이다.</dd> 
+ <dt>html 이란?</dt>
+ <dd>html은 웹 프로그래밍 기본 언어이다.</dd> 
+ <dt>html 이란?</dt>
+ <dd>html은 웹 프로그래밍 기본 언어이다.</dd>
+</dl>
+</body>
+</html>

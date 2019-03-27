@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 27. 오전 9:28:38</title>
+<style>
+ button {
+ 	font-size:10px;
+ 	width:50px;
+ }
+ table {
+ 	/* 가운데 정렬 의미 */
+ 	margin:0 auto; /* 0(top) auto(right) 0(bottom) auto(left) 순서*/
+ 	border-collapse:collapse; /* 붕괴하다, */
+ }
+ th {
+ 	background-color:black;
+ 	color:white;
+ }
+ 
+ /* 짝수 tr */
+ tr:nth-child(even) {
+ 	background-color:#eee;
+ }
+ 
+ /* tbody의 후손 td에만 적용하겠다 */
+ tbody td {
+ 	border-bottom:dotted 1px gray;
+ }
+</style>
+</head>
+<body>
+<table style="width:500px" border="1">
+ <caption>DEPT INFO</caption>
+ <thead>
+ 	<tr>
+ 	 <th><input type="checkbox">deptno</th> <!-- A table header cell -->
+ 	 <th>dname</th>
+ 	 <th>loc</th>
+ 	</tr>
+ </thead>
+ 	<!-- 
+ 	<tr>
+ 	 <td align="center"><b>deptno</b></td>
+ 	 <td align="center"><b>dname</b></td>
+ 	 <td align="center"><b>loc</b></td>
+ 	</tr>
+ 	 -->
+ <tbody>
+ 	<tr>
+ 	 <td><input type="checkbox">10</td>
+ 	 <td>ACCOUNTING</td>
+ 	 <td>NEWYORK</td>
+ 	</tr>
+ 	<tr>
+ 	 <td><input type="checkbox">20</td>
+ 	 <td>RESEARCH</td>
+ 	 <td>DALLAS</td>
+ 	</tr>
+ 	<tr>
+ 	 <td><input type="checkbox">30</td>
+ 	 <td>OPERATIONS</td>
+ 	 <td>CHICAGO</td>
+ 	</tr>
+ 	<tr> 		 <!-- table row -->
+ 	 <td><input type="checkbox">40</td> <!-- table data -->
+ 	 <td>SALES</td>
+ 	 <td>BOSTON</td>
+ 	</tr>
+ </tbody>
+ <tfoot>
+ 	<tr>
+ 	 <td colspan="3" align="center" valign="middle">
+ 	 	<button>add</button>
+ 	 	<button>edit</button>
+ 	 	<button>remove</button>
+ 	 </td>
+ 	</tr>
+ </tfoot>
+</table>
+</body>
+</html>

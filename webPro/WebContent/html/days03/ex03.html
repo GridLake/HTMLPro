@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 27. 오전 10:25:54</title>
+<style>
+ body /* 사실상 기본 세팅 */{
+ 	padding:0;
+ 	margin:0;
+ }
+ /* #아이디명 */
+ div#demo {
+ 	border:solid 1px gray;
+ 	width:100%;
+ 	height:100px;
+ 	margin:0; /* 0 0 0 0; */ /* 원래 css코딩은 단위 꼭 붙여야 하지만 0은 제외 */
+ }
+</style>
+</head>
+<body>
+
+<div id="demo">안녕하세요.<br>김길환입니다.</div>
+<hr style="width:70%;border:solid 1px red;border-collapse:collapse;" />
+
+<!-- (기억) w(200) 상태에서 cp(10) 주니 w(200 + α) => width 준 의미가 없어짐 -->
+<table style="width:200px;" border="1" cellspacing="0" cellpadding="0"> <!-- 초기값 설정 기억 -->
+<!-- cellspacing="20" cellpadding="10" -->
+ <tr>
+  <td width="200px">1</td>
+  <td width="200px">2</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>4</td>
+ </tr>
+</table>
+
+<hr style="width:70%;border:solid 1px red;border-collapse:collapse;" />
+<!-- table, td width 설정 깨지는 문제? -->
+<table style="width:200px;height:200px" border="1">
+ <tr>
+ 	<td width="100px" height="100px">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</td>
+ 	<td width="100px" height="100px">abcdefghijklmnopqrstuvwxyz<!-- 0122345678901223456789 --></td>
+ </tr>
+ <tr>
+ 	<td width="100px" height="100px">3</td>
+ 	<td width="100px" height="100px">4</td>
+ </tr>
+</table>
+<table style="width:200px;height:200px" border="1">
+ <tr>
+ 	<td>a</td>
+ 	<td>abcdefghijklmnopqrstuvwxyz</td>
+ </tr>
+ <tr>
+ 	<td>c</td>
+ 	<td>d</td>
+ </tr>
+</table>
+<hr style="width:70%;border:solid 1px red;border-collapse: collapse;" />
+<!-- colspan/rowspan td(셀) 병합 -->
+<table border="1" style="width:500px;">
+ <tr>
+  <td>1</td>
+  <td>2</td>
+  <td>3</td>
+  <td>4</td>
+  <td rowspan="3">5</td>
+ </tr>
+ <tr>
+  <td>1</td>
+  <td colspan="3" rowspan="2">2~4</td>
+ </tr>
+ <tr>
+  <td>1</td>
+ </tr>
+ <tr>
+  <td colspan="5">1~5</td>
+ </tr>
+</table>
+</body>
+</html>
