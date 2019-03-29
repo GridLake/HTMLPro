@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 3. 29. 오전 10:35:49</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p.solid {border-style:solid;}
+ p.dotted {border-style:dotted;}
+ p.dashed {border-style:dashed;}
+ p.hidden {border-style:hidden;}
+ p.double {border-style:double;}
+ p.groove {border-style:groove;}
+ p.ridge {border-style:ridge;}
+ p.inset {border-style:inset;}
+ p.outset {border-style:outset;}
+ p.inherit {border-style:inherit;}
+ /* groove, ridge, inset, outset : 3D 테두리 */
+ /* none : 없다 */
+ /* hidden : 숨겼다 */
+ 
+ p#box {
+ 	padding:10px;
+ 	/* 
+ 	border-top-style:dotted;
+ 	border-right-style:solid;
+ 	border-bottom-style:dotted;
+ 	border-left-style:solid;
+ 	border-style:dotted solid; */ /* 위 4줄과 같은 코딩 */
+ 	
+ 	background-color:lightgray;
+ 	border-bottom:solid 6px red;
+ 	/* border-left:solid 6px red; */
+ }
+ p#demo {
+ 	width:500px;
+ 	height:100px;
+ 	text-align:center;
+ 	border:2px solid red;
+ 	/* border-radius:5px 15px 20px 25px; */ /* 둥근 테두리 */
+ 	/* border-radius:25px; */
+ 	/* border-radius:5px 25px; */ /* 5px 25px 5px 25px */
+ 	/* border-radius:5px 20px 25px; */ /* 1, 2 4, 3 */
+ 	border-radius:50px;
+ }
+</style>
+</head>
+<body>
+<p id="demo">Lorem ipsum dolor sit amet.</p>
+
+<!-- p#box>lorem5 -->
+<p id="box">Lorem ipsum dolor sit amet.</p>
+
+<!-- css borders(테두리) -->
+<!-- p*10>lorem5 -->
+<!-- p[class]*10>lorem5 -->
+<p class="solid">Lorem ipsum dolor sit amet.</p>
+<p class="dotted">Similique distinctio doloremque accusamus laudantium.</p>
+<p class="dashed">Magnam quasi repellat ex magni!</p>
+<p class="hidden">Nobis a quia suscipit perferendis?</p>
+<p class="double">Alias eveniet recusandae doloremque iusto!</p>
+<p class="groove">Reprehenderit at dignissimos eveniet pariatur!</p>
+<p class="ridge">At nihil praesentium suscipit soluta.</p>
+<p class="inset">Ullam quidem quo assumenda magni.</p>
+<p class="outset">Odit impedit dolores error rem!</p>
+<p class="inherit">Veritatis praesentium voluptate odit architecto!</p>
+
+<!-- 기억:border-style 속성 주지 않으면 border-width, color 등은 적용되지 않음 -->
+<!-- border-width: px, pt, cm, em 등 + thin, medium, thick -->
+</body>
+</html>

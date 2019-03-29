@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 3. 29. 오전 11:30:59</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ #demo {
+ 	border:solid 1px red;
+ 	padding:2cm;
+ }
+ #in {
+ 	/* padding과 margin은 더해진다 */
+ 	border:solid 1px blue;
+ 	padding:1cm;
+ 	margin-left:2cm;
+ }
+ div.ex1 {
+ 	background:yellow;
+ 	width:300px;
+ }
+ div.ex2 {
+ 	background-color:lightblue;
+ 	width:300px;
+ 	/* 총 너비 : width(300) + p(25 + 25) + b(20 + 20) == 390px */
+ 	padding:25px;
+ 	border:solid 20px green;
+ 	
+ 	box-sizing:border-box;
+ }
+</style>
+</head>
+<body>
+<div class="ex1">Lorem ipsum dolor sit.</div>
+<br>
+<div class="ex2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Cupiditate labore sunt nemo tempore ea mollitia consequuntur sit dolore
+earum necessitatibus.</div>
+
+<!-- css padding(안쪽 여백) -->
+<!-- #demo>lorem4 -->
+<div id="demo"><div id="in">Lorem ipsum dolor sit.</div></div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 3. 28. - 오전 7:32:42  k≡n¡k</title>
+<style>
+  table, td{
+    border: solid 1px gray;
+    border-collapse: collapse;
+  } 
+  table{
+    width: 200px;
+  }
+  input[type=text], [type=password]{
+     width:97%;
+  }
+  caption{
+      background-color: black;
+      color:white;
+      font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<!-- button 태그 사용할 때 type 속성 지정 -->
+<input type="submit"><button type="submit">서브밋 버튼</button><br>
+<input type="reset"><button type="reset">리셋 버튼</button><br>
+<input type="button" value="일반 버튼"><button type="button">일반 버튼</button><br>
+
+
+<hr>
+<!-- input type="text"   한 라인 입력 / 멀티라인 -->
+<!-- A multi-line text field : 인라인모드 -->
+<!-- rows : 텍스트 영역의 보여지는 행의 수  -->
+<textarea rows="5" cols="20">
+A multi-line text field
+</textarea>  
+<textarea style="width:200px ;height:50px">
+A multi-line text field
+</textarea>
+<hr>
+<!-- html 양식(form) -->
+<!-- get ?querystring -->
+<form action="ex01_ok.jsp" method="get" target="_blank">
+
+  <!-- table>caption+tr*3>td*2 -->
+  <table>
+  	<caption>로그인</caption>
+  	<tr>
+  		<td align="center" width="30%">id</td>
+  		<td  width="70%"><input type="text" id="uid" name="uid" 
+  autofocus="autofocus"  tabindex="1"
+  maxlength="15" size="10"  autocomplete="off"/></td>
+  	</tr>
+  	<tr>
+  		<td align="center">pass</td>
+  		<td><input type="password" size="10" 
+  maxlength="8" tabindex="2" name="password" /></td>
+  	</tr>
+  	<tr>
+  	   <td colspan="2" >
+  	      <!-- size=4  다중 선택 -->
+		  <select name="cars" size="4" multiple="multiple" 
+		  style="width:100%;text-align: center">
+		  	<option value="Volvo">Volvo</option>
+		  	<option value="Saab">Saab</option>
+		  	<option value="BMW">BMW</option>
+		  	<option value="Audi">Audi</option>
+		  </select>
+  	   </td>
+  	</tr>
+  	<tr>
+  		<td colspan="2" align="center">
+  		  <!-- focus 설정되더라 -->
+		  <input type="submit" value="logon" />
+		  <input type="reset" value="reset" />
+  		</td> 
+  	</tr>
+  </table>
+
+  <!-- input element  readonly="readonly"-->
+ 
+  
+</form>
+
+<form action="ex02_ok.jsp">
+  <fieldset>
+     <legend>개인정보</legend>
+	  성별 : 
+	  <input type="radio" value="m" name="gender" checked="checked" /> 남자
+	  <input type="radio" value="f" name="gender" /> 여자
+	  <br>
+	  팀  :
+	  <input type="radio" value="1" name="team" checked="checked"/> 1조
+	  <input type="radio" value="2" name="team" /> 2조
+	  <input type="radio" value="3" name="team" /> 3조
+	  <input type="radio" value="4" name="team" /> 4조
+	  <br>
+	  소유한 자동차 :
+	  <br>
+	  <input type="checkbox" name="cars" value="g" /> 그랜져<br>
+	  <input type="checkbox" name="cars" value="e" checked="checked" /> 에쿠스<br>
+	  <input type="checkbox" name="cars" value="s" /> 소나타<br>
+	  <input type="checkbox" name="cars" value="b" checked="checked" /> BMW<br>
+	  <input type="checkbox" name="cars" /> 기타
+	  <input type="text" style="visibility: hidden;">
+	  <br>
+	  <br>
+	  <input type="submit" value="send" />
+  </fieldset>
+</form>
+
+<!--  
+    1. form 의  method='get' 
+       ㄱ. url 요청 주소에 ? 필드 전송
+       ㄴ. url 길이 제한 ( 약 3000자 )
+       ㄷ. 중요한 데이터 X
+    
+    2. form 의  method='post'
+      ㄱ.  보안적인 측면
+      ㄴ. 길이 제한 X -> 첨부 파일 
+-->
+  <hr>
+  최종 학력 : 
+  <!-- combo box -->
+  <!--  option 태그의 value 속성값을 생략 :  text 값-->
+  <select name="final_education">
+    <option value="1">고졸</option>
+    <option value="2" selected="selected">대졸</option>
+    <option value="3">대학원졸</option>
+    <option value="4">기타</option>
+  </select>
+  <br>
+  부서 선택 : 
+  <!-- select[name=deptno]>option*4 -->
+  <select name="deptno" id="">
+  	<option value="10" selected="selected">ACCOUNTING</option>
+  	<option value="20">RESEARCH</option>
+  	<option value="30">SALES</option>
+  	<option value="40">OPERATIONS</option>
+  </select>
+  <hr>
+  
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<h3>k≡n¡k Blog</h3>
+희수 : 오후 
+순호 : 오후
+치영 : 결석
+ -->
+

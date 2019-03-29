@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 29. 오전 9:10:06</title>
+<!-- external(외부 스타일시트 적용 방식)
+     웹사이트 전체의 스타일을 적용할 것을 정의(선언) -->
+<!-- 스타일 적용 방식 1) 외부 -->
+<link rel="stylesheet" type="text/css" href="style1.css">
+<style>
+ /* 한 페이지만 스타일 적용 정의(선언) */
+ /* style 태그는 여려 개 줄 수 있음,
+  같은 selector를 여러 style태그에서 정의할 경우 나중의 태그를 처리 */
+  /* 스타일 적용 방식 2) 내부 */
+ h3 {
+ 	color:red !important;
+ }
+</style>
+<style>
+ h3 {
+ 	/* color:blue; */
+ }
+ p, div {
+	margin:0px;
+	padding:2px;
+	/* 
+	border-style:solid;
+	border-width:1px;
+	border-color:gray;
+	 */
+	/* 위 3줄과 같은 코딩 */
+	border:1px solid gray; 	
+ }
+ 
+ .first {
+ 	text-align:center;
+ 	color:red;
+ 	font-weight:bold  /* 100~900, default 500(bold) */
+ }
+ p.first {
+ 	font-size:20px; /* pixel : 상대크기 */
+ }
+ #box {
+ 	/* 아래 3줄은 같은 코딩 */
+ 	/* background-color:rgb(255,255,0); */
+ 	/* background-color: #ffff00; */ /* #16진수 */
+ 	background-color:#ff0;
+ }
+</style>
+</head>
+<body>
+<!-- h3>lorem5 -->
+ <!-- 스타일 적용 방식 3) 인라인 -->
+ <!-- 스타일 우선순위 : 인라인>내부>외부 (!important 키워드 쓰지 않았을 때, !important는 특수 경우에 사용)-->
+<h3 style="color:green">Lorem ipsum dolor sit amet.</h3>
+<!-- p*3>lorem2^div*5>lorem3 -->
+<p class="first">Lorem ipsum.</p>
+<p id="box">Tempora repellat!</p>
+<p>In perspiciatis.</p>
+<div class="first">Lorem ipsum dolor.</div>
+<div>Cumque distinctio fugit.</div>
+<div>Consequuntur rem quaerat.</div>
+<div>Eum impedit sit.</div>
+<div>Fugiat quae corporis.</div>
+</body>
+</html>

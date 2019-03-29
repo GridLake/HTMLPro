@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 3. 28. - 오후 12:02:47  k≡n¡k</title>
+<style> 
+  *{
+      box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: verdana, Arial, Helvetica, sans-serif;
+  }
+  
+  div#header{
+     background-color: #666;
+     text-align: center;
+     padding: 30px;
+     color:white;
+     font-size: 35px;
+  }
+  /* 
+  div#section {
+     overflow: hidden;
+  }
+   */
+  div#nav{
+    width:30%;
+    background-color: #ccc;
+    padding: 20px;
+    height: 300px;
+    
+    float:left;
+    /* position: fixed; */
+  }
+  
+  div#nav ul{
+     list-style-type: none;
+     padding: 0;
+  }
+  
+  div#article{
+     /* margin-left: 30%; */
+     width: 70%;
+     padding: 20px;
+     background-color: #f1f1f1;
+     height: 300px;
+     
+     float:left;
+  }
+   
+  div#footer{
+    /* float:left; */
+    clear:left;
+  
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color:white;
+  } 
+  
+  /* @media only screen   and   (max-width:600px) { */
+  @media  (max-width:600px) {
+	    div#nav, div#article{
+	    width:100%;
+	    height:auto;
+	  }
+}
+</style>
+</head>
+<body>
+
+<!-- h2+(p>lorem)*2+#header>h2>lorem3^^#section>#nav>ul>li*3>a[href=#]>lorem1 -->
+<h2>css + html5 layout</h2>
+<!-- 
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Nam ut cupiditate quam tenetur perspiciatis atque quos maiores 
+. Error!</p>
+<p>Eveniet rem in nesciunt eius culpa cupiditate sit? 
+Hic maxime at repellendus magnam eligendi nulla eaque nobis
+asperiores.</p>
+ -->
+<div id="header">
+	<h2>Lorem ipsum dolor.</h2>
+</div><!-- header -->
+<div id="section">
+	<div id="nav">
+		<ul>
+			<li><a href="#">Lorem.</a></li>
+			<li><a href="#">Dolore.</a></li>
+			<li><a href="#">Ad.</a></li>
+		</ul>
+	</div> <!-- nav -->
+	<!-- #article>h1>lorem1^(p>lorem20)*2 -->
+	<div id="article">
+		<h1>Lorem.</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia excepturi dolorem amet quidem in ipsum dicta corrupti ad illum modi.</p>
+		<p>Magni qui numquam aliquam impedit ratione voluptatum est voluptate aperiam et vitae optio harum assumenda. Eos voluptatibus magnam enim porro.</p>
+	</div><!-- article -->
+</div> <!-- section -->
+<!-- #footer>p>{ footer } -->
+<div id="footer">
+	<p> footer </p>
+</div><!-- footer -->
+
+</body>
+</html>
+
+
+
+
+<!-- 
+
+  장치에 따라 [웹페이지의 사용자가 볼 수 있는 영역]이 달라요.. 
+  뷰포트(ViewPort) : [웹페이지의 사용자가 볼 수 있는 영역]
+  -- 동적 -> 해당 장치에서  브라우저 전체 웹 페이지의 화면이 맞게 축소, 확대.
+  
+  1) 뷰포트 설정. 
+  <meta name='viewport' content='width=device-width, 
+  initial-scale=1.0'>
+    width=device-width : 페이지의 너비를 장치의 화면 너비에 따라 설정한다.. 
+    initial-scale=1.0       :       "                      처음 로딩될 때 스케일 1.0 맞추겠다.
+    
+  2) 뷰포트에 컨트츠 크기 맞추기.
+    따라야 할 규칙
+      ㄱ. 큰 [고정 폭] 요소를 사용하지 않는다.
+      ㄴ. 특정 뷰포트 너비를 사용하여 내용을 랜더링하지 않는다. 
+           픽셀 pixcel : 상대크기
+      ㄷ. [CSS 미디어 쿼리]를 사용하여 크고 작은 화면에 다른 스타일을 적용한다.
+      @media : 미디어쿼리
+        - css2 미디어쿼리 소개.
+        - 다른 미디어 유형에 따라 스타일 다르게 적용.
+        - css3 미디어쿼리 확장. 
+        -            뷰포트의 너비와 높이 확인
+        -            장치   의      "
+        -            방향( 가로/세로 모드 )
+        - 형식) 
+        @media not|only|all mediatype and ( expressions ){
+             // 적용할 스타일  (css 코딩)
+        }
+        
+        -- css3 미디어 유형
+          1) all
+          2) print
+          3) screen
+          4) speech
+          
+            
+ -->
+
+
+
+
+

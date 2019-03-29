@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>2019. 3. 28. - 오후 3:17:21  k≡n¡k</title>
+	<style>
+	/* 4.선택자  -      #아이디명 */
+	#demo { border:dotted 1px purple; }
+	
+	/* 우선순위   아이디명 > 클래스명  >  태그명 */
+	/* 3. 선택자 - .클래스명 */
+	.team{
+	    border:solid 1px aqua;
+	}
+	
+	div{
+	      border-color:  green;
+	      border-style: dotted;
+	      
+	      /* 
+	      border-color: green;
+	      border-width: 1px;
+	      border-style: dotted;
+	       */
+	       
+	       /* border:dotted 1px green; */
+	      
+	   }
+	   
+	   /* head 자식으로 style 태그 선언 */
+	   /* css 코딩 */
+	   /*1. 선택자 :        p 태그명 */
+	   p , div{
+	       border: solid 1px gray;
+	       text-align: center;
+	       margin: 0;
+	   }
+	   
+	   
+	   /*2. 선택자 :        가상클래스   :hover*/
+	   p:hover{
+	       border: solid 1px red;
+	       background-color: yellow;
+	       text-decoration: underline;
+	       cursor:pointer;
+	   }
+	   
+	   span{
+	       font-size: 30px;
+	       /* border-color:!important  red; */
+	       border-width: 5px; 
+	       border-style: solid; 
+	       
+	       display:inline-block;
+	       width:300px;  /* inline mode */
+	   }
+	   
+	   .manager{
+	       /**/ 
+	   }
+	   
+	   div.team{
+	      /*  */
+	   }
+	   
+	   div, p, span, h1, b {
+	      /*  css 주석처리   */ 
+	   }
+	</style>
+
+	<script>
+	   // javascript 코딩.
+	   // 자바스크립트 주석처리
+	</script>
+</head>
+<body>
+   <!-- html 주석처리 -->
+   
+    <span>span tag</span>
+
+    <hr>
+     <div>Lorem ipsum dolor sit amet.</div>
+     <div class="team manager">Aliquam magni odit est qui.</div>
+     <div>Obcaecati amet ratione iure aut.</div>
+     <div id="demo" class="team">Quos aspernatur fugit eligendi ea.</div>
+     <div>Veniam iusto quibusdam illo ratione.</div>
+     <!-- p*10>lorem5 -->
+     <p class="manager">Lorem ipsum dolor sit amet.</p>
+     <p>Ipsum dicta quod tempora vel!</p>
+     <p class="team">Iusto quisquam et fuga pariatur!</p>
+     <p>Beatae tempore atque rem facere.</p>
+     <p>Impedit quae error aperiam odit!</p> 
+    
+    <!-- 
+    css[cascading style sheets]
+     - 웹 문서의 전반적인 스타일을 미리 저장해 둔 스타일시트
+     - 문서 전체의 일관성을 유지할 수 있고,
+        세세한 스타일 지정의 필요를 줄어들게 하였다.
+     - html 문서의 스타일을 설명(지정) 하는 언어
+     - 외부 스타일 파일 :     ????.css
+     - css 형식
+        스타일적용할대상 {     속성:값;스타일; ...   }
+        선택자(selector)  50가지 ***
+      -->   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

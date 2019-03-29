@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* 가상클래스    :focus*/
+/*  */
+ input:focus{
+   background-color: yellow;
+ }
+ 
+ ul{
+      border: solid 1px green;
+      border-left-width: 10px;
+ }

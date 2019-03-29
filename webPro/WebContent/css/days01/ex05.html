@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2019. 3. 28. - 오후 3:09:36  k≡n¡k</title>
+</head>
+<body>
+<!-- ctrl + e -->
+<!-- 
+ div
+ <div></div>
+ -->
+ 
+ <!-- 중첩 연산자 -->
+ <!-- 자식 ( child )  :       div>ul>li -->
+ <div>
+ 	<ul>
+ 		<li></li>
+ 	</ul>
+ </div>
+ 
+ <!-- 형제 sibling :   div+p+bq  약어 -->
+ <div></div>
+ <p></p>
+ <blockquote>블럭 인용문</blockquote>
+ 
+ <!-- ^ 연산자 -->
+ <!-- html>head+body -->
+ <!-- html>head>meta+title^body -->
+ <!-- div+div>p>span+em^^^bq -->
+ <div></div>
+ <div>
+ 	<p><span></span><em></em></p>
+ </div>
+ <blockquote></blockquote>
+ <!-- 곱셈 * 연산자 -->
+ <!-- ul>li*5 -->
+ <ul>
+ 	<li></li>
+ 	<li></li>
+ 	<li></li>
+ 	<li></li>
+ 	<li></li>
+ </ul> 
+ <!-- ul>li*5>a --> 
+ <ul>
+ 	<li><a href=""></a></li>
+ 	<li><a href=""></a></li>
+ 	<li><a href=""></a></li>
+ 	<li><a href=""></a></li>
+ 	<li><a href=""></a></li>
+ </ul>
+ 
+ <!-- () 그룹화 연산자 -->
+ <!-- div>(header>ul>li*2>a)+footer>p -->
+ <div>
+ 	<header>
+ 		<ul>
+ 			<li><a href=""></a></li>
+ 			<li><a href=""></a></li>
+ 		</ul>
+ 	</header>
+ 	<footer>
+ 		<p></p>
+ 	</footer>
+ </div>
+ <!-- div>header>ul>li*2>a^^^footer>p --> 
+ 
+ <!-- (div>dl>(dt+dd)*3)+p -->
+ <div>
+ 	<dl>
+ 		<dt></dt>
+ 		<dd></dd>
+ 		<dt></dt>
+ 		<dd></dd>
+ 		<dt></dt>
+ 		<dd></dd>
+ 	</dl>
+ </div>
+ <p></p>
+ 
+ <!-- 속성 연산자 -->
+ <!-- <div id="box"></div> -->
+<!--  div[id=box] -->
+ <div id="box"></div> 
+ <!-- div[id=box class=team01] -->
+<div id="box" class="team01"></div>
+  
+<!-- <div class="team manager teacher"></div> -->  
+<!-- div[class=team manager teacher] -->
+
+<!-- #demo -->
+<div id="demo"></div>
+<!-- .team -->
+<div class="team"></div>
+
+<!-- #demo.team.manager.teacher -->
+<div id="demo" class="team manager teacher"></div>
+
+<!-- table+ -->
+<table>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+
+<!-- ul+ -->
+<ul>
+	<li></li>
+</ul>
+<!-- select+ -->
+<select name="" id="">
+	<option value=""></option>
+</select>
+
+<!-- 사용자 지정 특성(속성) -->
+<!-- 
+table 1행 3열
+         2행 3열
+         3행 3열
+         4행 1열( colspan=3)
+ -->
+<!-- table>(tr*3>td*3)+tr>td[colspan=3] -->
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+</table> 
+
+<!-- <a href="http://www.naver.com" target="_blank">naver</a> -->
+<!-- a>{naver} -->
+<a href="">naver</a> 
+<!-- a[href=http://www.naver.com target=_blank]>{naver} -->
+<a href="http://www.naver.com" target="_blank">naver</a>
+
+<!-- 항목 번호 매기기 :     *    $ 연산자 -->
+<!-- ul>li*5>{ item $ } -->
+<ul>
+	<li> item 1 </li>
+	<li> item 2 </li>
+	<li> item 3 </li>
+	<li> item 4 </li>
+	<li> item 5 </li>
+</ul>
+
+<!-- ul>li*5>{ item $$$ } -->
+<ul>
+	<li> item 001 </li>
+	<li> item 002 </li>
+	<li> item 003 </li>
+	<li> item 004 </li>
+	<li> item 005 </li>
+</ul>
+
+<!-- 번호 매기기 (역순으로 @- )         -->
+<!-- ul>li.item$@-*5 -->
+<ul>
+	<li class="item5"></li>
+	<li class="item4"></li>
+	<li class="item3"></li>
+	<li class="item2"></li>
+	<li class="item1"></li>
+</ul>
+
+
+<!-- 항목 번호를 매기기   시작값 설정   @n -->
+<!-- ul>li.item$@11*5 -->
+<ul>
+	<li class="item11"></li>
+	<li class="item12"></li>
+	<li class="item13"></li>
+	<li class="item14"></li>
+	<li class="item15"></li>
+</ul> 
+
+<!-- ul>li.item$@-11*5 -->
+<ul>
+	<li class="item15"></li>
+	<li class="item14"></li>
+	<li class="item13"></li>
+	<li class="item12"></li>
+	<li class="item11"></li>
+</ul>
+
+<!-- {}  중괄호를 사용해서 텍스트를 추가할 수 있다. -->
+<!-- a>{ naver } -->
+<a href=""> naver </a>
+<!-- a{ naver } -->
+<a href=""> naver </a>
+
+<a href=""> n<b>ave</b>r </a>
+<!-- a>{ n }+b{ave}+{r} -->
+<a href=""> n <b>ave</b>r</a>
+
+<!-- li*5>lorem4 -->
+<li>Lorem ipsum dolor sit.</li>
+<li>Perspiciatis laborum eius ex!</li>
+<li>Facere nostrum rerum voluptas!</li>
+<li>Nobis deleniti ad autem.</li>
+<li>Velit delectus quo fugit.</li>
+
+<hr>
+<!-- div.wrap>div.content -->
+<!-- .wrap>.content  위의 약어-->
+
+<!-- em>span.info -->
+<!-- em>.info   위의 약어-->
+
+<!-- ul>li.item*3 -->
+<!-- ul>.item*3  약어-->
+
+<!-- table>#row$*4> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
