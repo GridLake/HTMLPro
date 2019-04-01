@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 1. 오후 2:09:13</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ li {
+ 	display:inline;
+ }
+ span {
+ 	display:block;
+ }
+ h1.hidden {
+ 	/* 요소를 숨기는 첫번째 속성 */
+ 	/* display:none; */
+ 	
+ 	/* 요소를 숨기는 두번째 속성 */
+ 	/* 요소의 공간 차지 */
+ 	visibility:hidden;
+ }
+ .imgbox {
+ 	text-align:center;
+ 	width:120px;
+ 	border:solid 1px gray;
+ 	margin:4px;
+ 	padding:6px;
+ 	float:left;
+ }
+ .imgbox img, button {
+ 	width:100%;
+ }
+</style>
+</head>
+<body>
+<!-- css display -->
+<!-- .imgbox#imgbox1 -->
+<!-- 
+이벤트 click 발생해서 onclick 이벤트 처리에서
+1. id가 "imgbox1"인 요소를 얻어와서
+  document.getElementById("imgbox1")
+2. style 속성의 display:none 주는 코딩을 자바스크립트로 처리
+   document.getElementById("imgbox1").style.display="none";
+ --> 
+<div class="imgbox" id="imgbox1">Box1<br>
+  <img src="../images/img_5terre.jpg" alt="" />
+  <button onclick='document.getElementById("imgbox1").style.display="none";'>remove</button>
+</div>
+<div class="imgbox" id="imgbox2">Box2<br>
+  <img src="../images/img_forest.jpg" alt="" />
+  <button onclick="hideElement()">hide</button>
+</div>
+<div class="imgbox" id="imgbox3">Box3<br>
+  <img src="../images/img_lights.jpg" alt="" />
+  <button onclick="resetAll()">reset all</button>
+</div>
+<div style="clear:both"></div>
+
+<script>
+ function hideElement() {
+	 document.getElementById("imgbox2").style.visibility="hidden";
+ }
+ 
+ function resetAll() {
+	 document.getElementById("imgbox1").style.display="block";
+	 document.getElementById("imgbox2").style.visibility="visible";
+ }
+</script>
+<!-- display 속성을 사용하면 요소를 숨길 수 있다 -->
+<h1 class="hidden">Lorem ipsum dolor sit.</h1>
+<h1>Sit culpa sint nemo!</h1>
+
+<!-- display : 요소가 표시되는 지 여부를 설정하는 속성 -->
+<!-- 기본값 : block, inline -->
+<!-- 
+div 			span
+h1~h6 			a
+p 				img
+form
+li
+ -->
+ 
+<!-- span*3>{item$} -->
+<span>item1</span>
+<span>item2</span>
+<span>item3</span>
+
+<!-- ul>li*4>{item$} -->
+<ul>
+	<li>item1</li>
+	<li>item2</li>
+	<li>item3</li>
+	<li>item4</li>
+</ul>
+</body>
+</html>

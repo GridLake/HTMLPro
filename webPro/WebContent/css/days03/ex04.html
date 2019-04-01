@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 1. 오전 10:30:41</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p {
+ 	/* 글꼴명이 두 단어 이상일 때 "" 사용 */
+ 	font-family:"Bitstream Vera Sans Mono", "Times New Roman", verdana, serif, Times; /* 글꼴 */
+ 	font-style:italic; /* 텍스트 기울이기 */
+ 	/* oblique 텍스트 기울이기 */
+ 	font-size: 1em; /* 텍스트 크기 설정 */ /* 크기 : 절대크기(cm, mm, m, inch, pt(1/72in)), 상대크기 */
+ 	        /* 16px */
+ 	/* 
+ 		상대크기 : 주변 요소를 기준으로 크기 설정
+ 		em(M)
+ 		- 많은 개발자들이 픽셀 대신에 M 사용
+ 		- W3C 협회에서 권장
+ 		- 1em = 현재 글꼴 크기와 동일
+ 		- 브라우저의 기본 텍스트 크기는 16px -> 1em = 16px
+    */
+ 	
+ 	font-weight:bold;
+ 	/* 
+ 	font-size:10vw;
+ 	v : viewport(브라우저의 장치(창) 크기)
+ 	w : width
+ 	반응형 웹에서 사용하는 font-size
+ 	1 vw = 뷰포트 너비의 1%
+ 	*/
+ }
+ div.small {
+ 	/* 글꼴 변형 : 텍스트를 작은 대문자 글꼴로 표시할지 여부
+ 	   모든 소문자는 대문자로 변환, 대문자는 작은 대문자 크기로 표현 */
+ 	font-variant:small-caps;
+ }
+ div.normal {
+ 	font-variant:normal;
+ }
+ p, div {
+ 	/*   스타일 변형 두께 크기/행높이 글꼴모음 */
+ 	font:italic      bold 12px/30px   georgia, serif;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- css fonts -->
+
+<div class="small">Lorem ipsum dolor.</div>
+<div class="normal">Lorem ipsum dolor.</div>
+
+<hr>
+<p>Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

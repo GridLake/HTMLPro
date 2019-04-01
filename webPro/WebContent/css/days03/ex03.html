@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 1. 오전 9:30:55</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body {
+ 	color:blue; /* 기본 텍스트 색:blue */
+ }
+ h1 {
+ 	color:green;
+ }
+ #demo {
+    /* 문자 사이의 공백지정 */
+ 	letter-spacing:-5px;
+ 	/* 줄(라인) 사이의 간격 */
+ 	line-height:0.5;
+ }
+ .box {
+ 	text-indent:50px; /* 첫 번째 줄에 들여쓰기 지정 */
+ 	border:solid 1px gray;
+ 	padding:10px;
+ 	width:200px;
+ 	height:200px;
+ 	
+ 	/* 양쪽 맞춤, 동일한 간격(너비) 설정 */
+ 	text-align:justify;
+ }
+ a {
+ 	text-decoration:none;
+ }
+ a:hover {
+ 	text-decoration:underline overline;
+ 	text-transform: capitalize; /* uppercase; */ /* 변환 */
+ }
+ h5 {
+ 	/* 텍스트의 방향 변경 */
+ 	/* direction:rtl; */
+ 	
+ 	/* letter-spacing: 문자 간격 */
+ 	/* line-height: 줄 간격 */
+ 	word-spacing:-10px; /* 단어 간격 */
+ }
+ h2 {
+ 	color:black;
+ 	text-shadow:3px 2px gray;
+ }
+ p.a {
+ 	white-space:pre;
+ }
+ p.b {
+ 	/* white-space:nowrap; */ /* 자동 줄바꿈 되지 않는다 */
+ 	white-space:normal; /* 기본 속성값 */
+ }
+ img {
+ 	/* vertical-align:text-top; */
+ 	/* vertical-align:middle; */
+ 	/* vertical-align:text-bottom; */
+ 	/* vertical-align:baseline; */
+ 	/* vertical-align:super; */ /* <sub> <super> */
+ 	float:left;
+ 	margin:1px 3px;
+ }
+</style>
+</head>
+<body>
+<!-- css 텍스트 -->
+<p style="width:200px">
+<img src="../days02/images/paper.gif" alt="" />
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+</p>
+
+<hr>
+<p class="a">
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+</p>
+<p class="b">
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+ This is sime text.This is sime text.
+</p>
+
+<hr>
+<h2>Text-Shadow Effect</h2>
+
+<hr>
+<h5>Lorem ipsum dolor.</h5>
+
+<hr>
+<!-- a[href='http://www.naver.com']>{naver} -->
+<a href="http://www.naver.com">naver</a>
+<!-- text-align : justify -->
+<div class="box" id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Harum nihil distinctio facilis quidem vel sequi minus porro officiis 
+culpa perspiciatis tenetur esse totam. Eligendi corporis dolorem 
+voluptatum at voluptatibus voluptas!</div>
+
+<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Harum nihil distinctio facilis quidem vel sequi minus porro officiis 
+culpa perspiciatis tenetur esse totam. Eligendi corporis dolorem 
+voluptatum at voluptatibus voluptas!</div>
+
+<hr>
+<!-- text-align : 수평정렬(가로 맞춤) -->
+<h2 style="text-align:left">Lorem</h2>
+<h3 style="text-align:center">Lorem</h3>
+<h4 style="text-align:right">Lorem</h4>
+<hr>
+<h1>Lorem ipsum dolor sit.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Ea qui sed rerum molestias laborum quaerat pariatur minus cumque nam blanditiis.</p>
+</body>
+</html>
