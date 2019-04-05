@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오전 10:26:45</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ * {
+ 	box-sizing: border-box;
+ }
+ #myVideo {
+ 	position: fixed;
+ 	right: 0;
+ 	bottom: 0;
+ 	min-width: 100%;
+ 	min-height: 100%;
+ }
+ .content {
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	background-color: rgba(0, 0, 0, 0.5);
+ 	color: #f1f1f1;
+ 	width: 100%;
+ 	padding: 2px;	
+ }
+ #btnpause {
+ 	width: 200px;
+ 	font-size: 18px;
+ 	padding: 10px;
+ 	border: none;
+ 	background-color: #000;
+ 	color: #fff;
+ 	cursor: pointer;
+ 	position: fixed;
+ 	right: 0;
+ 	top: ;
+ }
+ #btnpause:hover {
+ 	background: #ddd;
+ 	color: black;
+ }
+</style>
+</head>
+<body>
+<video id="myVideo" autoplay="autoplay" loop muted src="../images/rain.mp4">
+ If your browser does not support html5 video element, then you`ll show this message.
+</video>
+<!-- .content>h1>lorem1^p>lorem15^button -->
+<div class="content">
+	<h1>Lorem.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis et nobis repellat neque repudiandae sequi!</p>
+ <button id="btnpause" onclick="video_play();">Pause</button>
+</div>
+
+<script>
+ function video_play() {
+	var videoElement = document.getElementById("myVideo");
+	var btnpauseElement = document.getElementById("btnpause");
+	
+	if (videoElement.paused) {
+		videoElement.play();
+		btnpauseElement.innerText = "Pause";
+	} else {
+		videoElement.pause();
+		btnpauseElement.innerText = "Play";
+	}
+ }
+</script>
+</body>
+</html>

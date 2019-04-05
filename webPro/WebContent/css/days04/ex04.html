@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 10:08:56</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ * {
+ 	box-sizing:border-box;
+ }
+ .header, .footer {
+ 	background: gray;
+ 	color:white;
+ 	padding:15px;
+ 	text-align:center;
+ }
+ .column {
+ 	float:left;
+ 	padding:15px;
+ }
+ .menu {
+ 	width:25%;
+ }
+ .content {
+ 	width:75%;
+ }
+ .clearfix::after {
+ 	content:"";
+ 	clear:both;
+ 	display:table;   /* 의미 */
+ }
+ .menu ul {
+ 	list-style:none;
+ 	margin:0;
+ 	padding:0;
+ }
+ .menu ul li {
+ 	padding:8px;
+ 	background:#33b5e5;
+ 	color:white;
+ }
+ .menu ul li:hover {
+ 	background:#0099cc;
+ }
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Header</h1>
+</div>
+<div class="clearfix">
+ <div class="column menu">
+  <ul>
+  	<li class="active">Lorem.</li>
+  	<li>Libero.</li>
+  	<li>Eligendi.</li>
+  	<li>Ut.</li>
+  </ul>
+ </div>
+ <div class="column content">
+  <h1>Lorem.</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium temporibus consectetur nam voluptatibus voluptate voluptatum tenetur perferendis ratione quod aliquam dolor veniam sapiente consequuntur sint ducimus minima! Asperiores porro.</p>
+  <p>Laborum dolor sequi vel odit hic iure porro aspernatur ipsum ratione nostrum praesentium at ex adipisci numquam eligendi nesciunt libero dolorum aperiam et voluptatem accusantium animi totam distinctio eos quia.</p>
+ </div>
+</div>
+<div class="footer">
+<h1>Footer</h1>
+</div>
+</body>
+</html>

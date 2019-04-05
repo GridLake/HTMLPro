@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오후 2:03:13</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ * {
+ 	box-sizing: border-box;
+ }
+ body {
+ 	font-family: Arial;
+ 	padding: 10px;
+ 	background-color: #f1f1f1;
+ }
+ .header {
+ 	padding: 30px;
+ 	text-align: center;
+ 	background-color: white;
+ }
+ .header h1 {
+ 	font-size: 50px;
+ }
+ .topnav {
+ 	overflow: hidden;
+ 	background-color: #333;
+ }
+ .topnav a {
+ 	display: block;
+ 	float: left;
+ 	color: #f2f2f2;
+ 	text-align: center;
+ 	padding: 14px 16px;
+ 	text-decoration: none;
+ }
+ .topnav a:hover {
+ 	background-color: #ddd;
+ 	color: black;
+ }
+ .leftcolumn {
+ 	float: left;
+ 	width: 66%;
+ }
+ .rightcolumn {
+ 	float: left;
+ 	width: 17%;
+ 	padding-left: 10px;
+ 	background-color: #f1f1f1;
+ }
+ .fakeimg {
+ 	background-color: #aaa;
+ 	width: 100%;
+ 	padding: 20px;
+ }
+ .card {
+ 	background-color: white;
+ 	padding: 20px;
+ 	margin-top: 20px;
+ }
+ .row::after {
+ 	content: "";
+ 	clear: both;
+ 	display: table;
+ }
+ .footer {
+ 	padding: 20px;
+ 	text-align: center;
+ 	background-color: #ddd;
+ 	margin-top: 20px;
+ }
+</style>
+<style>
+ /* 반응형 웹 코딩 */
+ @media screen and (max-width:800px) {
+ 	.leftcolumn, .rightcolumn {
+ 		width: 100%;
+ 		padding: 0;
+ 	}
+ }
+ @media screen and (max-width:400px) {
+ 	.topnav a {
+ 		float: none !important;
+ 		windows: 100%;
+ 	}
+ }
+ 
+</style>
+</head>
+<body>
+<div class="header">
+	<h1>My Website</h1>
+	<p>Lorem ipsum dolor sit amet.</p>
+</div>
+ 
+<div class="topnav">
+	<a href="#">Link</a>
+	<a href="#">Link</a>
+	<a href="#">Link</a>
+	<a href="#" style="float:right">Link</a>
+</div>
+ 
+<div class="row">
+	<div class="rightcolumn">
+	  <div class="card">
+	  	<h2>About Me</h2>
+	  	<div class="fakeimg">Image</div>
+	  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quaerat.</p>
+	  </div>
+	  <div class="card">
+	  	<h3>Popular Post</h3>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  </div>
+	  <div class="card">
+	  	<h3>Follow Me</h3>
+	  	<p>Some text..</p>
+	  </div>
+	</div><!-- rightcolumn -->
+	<div class="leftcolumn">
+	  <div class="card">
+	  	<h2>TITLE HEADING</h2>
+	  	<h5>Title description 2018.8.1</h5>
+	  	<div class="fakeimg" style="height:200px">Image</div>
+	  	<p>Some text..</p>
+	  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+	  	 elit. Sint ipsum autem natus iusto repellendus nisi
+	  	  accusantium libero nostrum voluptates molestiae 
+	  	  similique eius possimus doloremque pariatur in.</p>
+	  </div>
+	  <div class="card">
+	  	<h2>TITLE HEADING</h2>
+	  	<h5>Title description 2018.8.1</h5>
+	  	<div class="fakeimg" style="height:200px">Image</div>
+	  	<p>Some text..</p>
+	  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+	  	 elit. Sint ipsum autem natus iusto repellendus nisi
+	  	  accusantium libero nostrum voluptates molestiae 
+	  	  similique eius possimus doloremque pariatur in.</p>
+	  </div>
+	</div><!-- leftcolumn -->
+	<div class="rightcolumn">
+	  <div class="card">
+	  	<h2>광고</h2>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<div class="fakeimg"><p>Image</p></div>
+	  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	  </div>
+	</div><!-- rightcolumn -->
+</div><!-- row -->
+<div class="footer">
+	<h2>Footer</h2>
+</div>
+</body>
+</html>

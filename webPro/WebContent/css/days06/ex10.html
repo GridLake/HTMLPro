@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 2:01:36</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 100px;
+ 	height: 100px;
+ 	background-color: green;
+ 	/* position: relative; */
+ 	
+ 	/* 속기 속성 -> transition: width 2s; */
+ 	transition-property: width;
+ 	transition-duration: 2s;
+ 	transition-timing-function: linear;
+ 	transition-delay: 1s;
+	
+ }
+ div:hover {
+ 	width: 300px;
+ }
+</style>
+<!-- css animation -->
+<style>
+ p {
+ 	width: 100px;
+ 	height: 100px;
+ 	background-color: green;
+ 	position: relative;
+ 	
+ 	animation-name: example03;
+ 	animation-duration: 4s;				   /* 애니메이션 완료하는 데 걸리는 시간 */
+ 	animation-timing-function: ease;
+ 	animation-delay: 2s;				   /* 애니메이션 지연 시간 - 2초 후 시작 */
+ 	/* animation-iteration-count: 3; */	   /* 애니메이션 반복 횟수 */
+ 	animation-iteration-count: infinite;   /* 무한반복 */
+ 	animation-direction: reverse;          /* alternate 왔다갔다 */
+ 	
+ 	/* 속기 속성 */
+ 	/* animation: example03 4s ease 2s infinite reverse; */ 
+ 	
+ 	-webkit-animation-name: example03;
+ 	-webkit-animation-duration: 4s;
+ 	-webkit-animation-timing-function: ease;
+ 	-webkit-animation-delay: 2s;
+ 	/* -webkit-animation-iteration-count: 3; */
+ 	-webkit-animation-iteration-count: infinite;
+ 	-webkit-animation-direction: reverse;
+ }
+ @keyframes example {
+ 	from {
+ 		background-color: green;		/* css 추가 */
+ 	}
+ 	to {
+ 		background-color: red;			/* 추가된 css 변경 코딩 */
+ 		
+ 	}
+ }
+ @-webkit-keyframes example {
+ 	from {
+ 		background-color: green;
+ 	}
+ 	to {
+ 		background-color: red;
+ 	}
+ }
+ @keyframes example02 {
+ 	0% {background-color: green; }
+ 	25% {background-color: red;	}
+ 	50% {background-color: yellow; }
+ 	75% {background-color: blue;	}
+ 	100% {background-color: aqua; }
+ }
+ @-webkit-keyframes example02 {
+ 	0% {background-color: green; }
+ 	25% {background-color: red;	}
+ 	50% {background-color: yellow; }
+ 	75% {background-color: blue;	}
+ 	100% {background-color: aqua; }
+ }
+ @keyframes example03 {
+ 	0% {background-color: green; left: 0px; top: 0px; }
+ 	25% {background-color: red;	left: 200px; top: 0px;}
+ 	50% {background-color: yellow; left: 200px; top: 200px;}
+ 	75% {background-color: blue; left: 0px; top: 200px;}
+ 	100% {background-color: aqua; left: 0px; top: 0px;}
+ }
+</style>
+</head>
+<body>
+<!-- css animation(애니메이션) 
+	1. 요소가 A 스타일에서 B 스타일로 점진적으로 변경
+	2. 원하는 만큼의 css 속성을 변경
+	3. 
+		ㄱ. 키프레임 먼저 지정 - @keyframes 규칙
+		ㄴ. 각각의 키프레임은 특정 시간의 요소의 스타일을 유지
+	4. 
+
+ -->
+<p></p>
+<hr>
+<div></div>
+</body>
+</html>
+<!-- 
+transform 변형: 위치, 크기, 비틀기(회전)
+transition 전환(전이): A -> B 속성, 시간
+animation(키프레임 먼저 설정)
+ -->

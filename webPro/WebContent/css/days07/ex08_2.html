@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오후 12:13:29</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ a:active {
+ 	background-color: yellow;
+ }
+ a::before {
+ 	
+ }
+ a::after {
+ 	content: "~~~";
+ 	color: red;
+ }
+ a:hover {
+ 	overflow: visible;
+ }
+</style>
+<style>
+ input:checked {
+ 	height: 50px;
+ 	width: 50px;
+ }
+ /* 기본 입력 요소: 박스 그림자 효과 */
+ /* checkbox, radio, button, option */
+ input:default {
+ 	box-shadow: 0 0 2px 2px red;
+ }
+ input[type="text"]:enabled {
+ 	background: green;
+ }
+ input[type="text"]:disabled {
+ 	background: yellow;
+ }
+</style>
+<style>
+ p {
+ 	border: solid 1px gray;
+ 	width: 200px;
+ }
+ p:empty {
+ 	height: 20px;
+ 	background-color: red;
+ }
+</style>
+</head>
+<body>
+<p></p>
+<p>Repellendus.</p>
+<p>Voluptatem!</p>
+
+<hr>
+<form action="">
+f name : <input type="text" disabled="disabled"><br>
+l name : <input type="text"><br>
+email : <input type="text"><br>
+
+<hr>
+ <input type="checkbox" checked="checked"> email 수신합니다.
+ <br>
+ <input type="radio" name="gender" checked="checked">Male<br>
+ <input type="radio" name="gender">Female<br>
+</form>
+<a href="#">Lorem.</a><br>
+<a href="#">Maiores.</a><br>
+<a href="#">Delectus!</a><br>
+</body>
+</html>

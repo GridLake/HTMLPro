@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 11:30:54</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p.flip, div.panel {
+ 	font-size:16px;
+ 	padding:10px;
+ 	text-align:center;
+ 	background:#3caf50;
+ 	color:white;
+ 	border:solid 1px #a6d8a8;
+ 	width:300px;
+ }
+ p {
+ 	margin:0;
+ 	cursor:pointer;
+ }
+ div.panel {
+ 	display:none;
+ }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ function flip_click() {
+	// window.alert("경고창 확인");
+	var pnl = document.getElementById("pnl1");
+	pnl.style.display="block";
+ }
+</script>
+</head>
+<body>
+<p class="flip">Click Panel</p>
+<div id="pnl1" class="panel">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+ <p>Dicta alias sint eligendi ratione illo quo ad commodi porro</p> 
+ <p>deleniti tempora iusto voluptate quisquam assumenda minus</p> 
+ <p>explicabo repellat eaque cumque quae!</p>
+</div>
+<p class="flip">Click Panel</p>
+<div id="pnl2" class="panel">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+ <p>Dicta alias sint eligendi ratione illo quo ad commodi porro</p> 
+ <p>deleniti tempora iusto voluptate quisquam assumenda minus</p> 
+ <p>explicabo repellat eaque cumque quae!</p>
+</div>
+<p class="flip">Click Panel</p>
+<div id="pnl3" class="panel">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+ <p>Dicta alias sint eligendi ratione illo quo ad commodi porro</p> 
+ <p>deleniti tempora iusto voluptate quisquam assumenda minus</p> 
+ <p>explicabo repellat eaque cumque quae!</p>
+</div>
+<p class="flip">Click Panel</p>
+<div id="pnl4" class="panel">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+ <p>Dicta alias sint eligendi ratione illo quo ad commodi porro</p> 
+ <p>deleniti tempora iusto voluptate quisquam assumenda minus</p> 
+ <p>explicabo repellat eaque cumque quae!</p>
+</div>
+<p class="flip">Click Panel</p>
+<div id="pnl5" class="panel">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+ <p>Dicta alias sint eligendi ratione illo quo ad commodi porro</p> 
+ <p>deleniti tempora iusto voluptate quisquam assumenda minus</p> 
+ <p>explicabo repellat eaque cumque quae!</p>
+</div>
+
+<script>
+ /* $('.flip').click(flip_click); */
+ $('.flip').click(function(){
+	 // window.alert("경고");
+	 $(this).next().slideToggle(); /* this : 클릭된 p태그 */
+ });
+</script>
+</body>
+</html>

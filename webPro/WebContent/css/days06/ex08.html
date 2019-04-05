@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 12:17:12</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 100px;
+ 	height: 100px;
+ 	background-color: red;
+ 	margin: 2px;
+ 	
+ 	/* 
+ 	transition: width 2s;
+ 	-ms-transition: width 2s;
+ 	-webkit-transition: width 2s;
+ 	 */
+ 	
+ 	transition: width 2s, height 4s, 2s;
+ 	-ms-transition: width 2s, height 4s, 2s;
+ 	-webkit-transition: width 2s, height 4s, 2s;
+ 	
+ 	/* 전환될 때 속도 곡선 지정: 이지효과 */
+ 	transition-timing-function: linear;
+ 	-ms-transition-timing-function: linear;
+ 	-webkit-transition-timing-function: linear;
+ 	/* 
+ 	transition-timing-function: ease;
+ 	transition-timing-function: ease-in;
+ 	transition-timing-function: ease-out;
+ 	transition-timing-function: ease-in-out;
+ 	 */
+ 	display: inline-block;
+ }
+ div:hover {
+ 	/* width: 100%; */
+ 	width: 150px;
+ 	height: 150px;
+ 	transform: rotate(360deg);
+ }
+</style>
+</head>
+<body>
+ <!-- transform 변형 -->
+ <!-- transition 전환(전이) -->
+ <!-- 요소의 속성값을 변경할 때 일정 기간동안 속성값을 부드럽게 변경하는 속성 -->
+ <!-- 
+ 1. 속성
+ 2. 효과 지속 시간
+  -->
+ <div></div>
+  
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div> 
+ 
+</body>
+</html>

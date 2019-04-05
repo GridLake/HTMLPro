@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오후 4:40:28</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+	 
+	 /* 
+	 웹 페이지 요청한 브라우저에게 응답을 할 때
+	 javascript 사용해서 현재 시스템의 날짜 정보를 얻어와서 출력
+	  */
+	 // javascript 내장객체 : Date
+	 var d = new Date();
+	 var year = d.getFullYear();
+	 var month = d.getMonth() + 1; // 1월 == 0
+	 var date = d.getDate();
+	 $(".card>.header>h1").text(date);
+	 $(".card>.container>p").text(year + "년 " + month + "월") ;
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div.card {
+	width: 250px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+ }
+ div.header {
+	background-color: #4caf50;
+	color: white;
+	padding: 10px;
+	font-size: 40px;
+ }
+ div.container {
+	padding: 10px;
+ }
+</style>
+</head>
+<body>
+<!-- (.card>.header>h1>{1})+.container>p>{4.3 2019} -->
+<div class="card">
+	<div class="header">
+		<h1> </h1>
+	</div>
+    <div class="container">
+	   <p>2019년 4월</p>
+    </div>
+</div>
+</body>
+</html>

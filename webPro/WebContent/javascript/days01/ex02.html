@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오후 3:46:20</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .spn {
+ 	border: solid 1px red;
+ 	color: red;
+ }
+</style>
+</head>
+<body>
+<script>
+ function turnon() {
+	document.getElementById("pic_bulb").src = "../images/pic_bulbon.gif"
+ }
+ function turnoff() {
+	document.getElementById("pic_bulb").src = "../images/pic_bulboff.gif"
+ }
+ 
+ var sw = false;
+ function powerOnOff() {
+	
+	var bulb = document.getElementById("pic_bulb");
+	var powerbtn = document.getElementById("powerbutton");
+	/* 
+	if(!sw) {
+		bulb.src = "../images/pic_bulbon.gif"
+	}
+	else {
+		bulb.src = "../images/pic_bulboff.gif"
+	}
+	*/
+	bulb.src = "../images/pic_bulb" + (sw ? "off" : "on") + ".gif";
+	
+	powerbtn.innerText = sw ? "[Turn On]" : "[Turn Off]"
+	sw = !sw;
+ }
+</script>
+<button id="powerbutton" onclick="powerOnOff();">[Turn On]</button>
+<button onclick="turnon();">Turn On</button>
+																     <!-- hover 역할 -->
+<img id="pic_bulb" src="../images/pic_bulboff.gif" alt="" onmouseover="turnon();" onmouseout="turnoff();"/>
+<button onclick="turnoff();">Turn Off</button>
+<br>
+
+<hr>
+<!-- window 내장 객체 -->
+<!-- document 내장 객체 -->
+<button type="button" onclick="window.alert('경고창 띄우기');">Click Me</button>
+<button type="button" onclick="document.getElementById('demo').innerText='쉽시다.'">Click Me</button>
+
+<script>
+ function test() {
+	var message = document.getElementById('txtMsg').value;
+	message = "<span class='spn'>" + message + "</span>";
+	// document.getElementById('demo').innerText = message;
+	document.getElementById('demo').innerHTML = message;
+ }
+</script>
+<hr>
+메시지: <input type="text" id="txtMsg" autofocus="autofocus" placeholder="전송할 메시지 입력..."><br>
+<button type="button" onclick="test();">Click Me</button>
+
+<p id="demo"></p>
+</body>
+</html>

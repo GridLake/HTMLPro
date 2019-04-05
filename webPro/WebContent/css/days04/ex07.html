@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 11:15:10</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p {
+ 	border:solid 1px gray;
+ }
+ /* div 후손 p */
+ div p {
+ 	background:yellow;
+ }
+ /* ">" : div의 직계자식 p에만 적용 */
+ div > p {
+ 	font-size:20px;
+ 	color:red;
+ 	font-weight:bold;
+ 	font-variant:small-caps;
+ }
+ /* "+" : div와 인접한 바로 다음 요소 p */
+ /* 
+ div + p {
+ 	border-width:10px;
+ 	border-style:dotted;
+ 	border-color:red;
+ }
+  */
+ /* div 다음 모든 형제(같은 레벨) 요소 p */
+ div ~ p {
+ 	border-width:10px;
+ 	border-style:dotted;
+ 	border-color:red;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- css 결합자 : selector + selector -->
+<!-- 공백 >  +  ~  -->
+<!-- (div>p*2>lorem3^span>p>lorem3)+p*2>lorem3 -->
+<p>Lorem ipsum dolor.</p>
+<p>Lorem ipsum dolor.</p>
+
+<div>
+	<p>Lorem ipsum dolor.</p>
+	<p>Quod adipisci ratione.</p>
+	<span>
+		<p>Lorem ipsum dolor.</p></span>
+</div>
+<span>XXX</span>
+<p>Lorem ipsum dolor.</p>
+<span>XXX</span>
+<span>XXX</span>
+<p>Maxime eum ipsa?</p>
+</body>
+</html>

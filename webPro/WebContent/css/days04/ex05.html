@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 10:21:30</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .center {
+ 	width:60%;
+ 	border:solid 3px gray;
+ 	margin:auto;
+ 	text-align:center;
+ }
+ img { /* 이미지는 기본 인라인 모드 -> 속성 주려면 block으로 바꿔야 */
+ 	display:block;
+ 	margin:0 auto;
+ }
+ .right {
+ 	position:absolute;
+ 	right:0px;
+ 	width:300px;
+ 	border:solid 3px gray;
+ 	padding:10px;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- css layout - 수평 또는 수직 정렬 -->
+<div class="center">
+ <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<h3>Image center</h3>
+<img src="../images/paris.jpg" alt="" style="width:40%;"/>
+
+<h3>좌우로 정렬 - position</h3>
+<div class="right">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione voluptatem.</p>
+</div>
+
+<!-- display : inline/block/none/table/inline-block -->
+<!-- inline-block 모드 : inline + 너비, 높이, 패딩, 여백... 설정 가능 -->
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오전 10:14:46</title>
+<!-- 부트스트랩(Bootstrap) - CSS Framework -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+ input[type="text"] {
+ 	width: 130px;
+ 	box-sizing: border-box; /* padding, border 등을 줄 때 width 설정값은 영향 안가도록 */
+ 	border: solid 2px #ccc;
+ 	border-radius: 4px;
+ 	font-size: 16px;
+ 	/* 
+ 	background-color: white;
+ 	background-image: url("../images/searchicon.png");
+ 	background-repeat: no-repeat;
+ 	background-position: 10px 10px; /* 50% 50%; */
+ 	 */
+ 	background: white url("../images/searchicon.png") no-repeat;
+ 	padding: 10px 20px 12px 40px;
+ 	
+ 	/* CSS3 2D, 3D 효과 */
+ 	/* width 속성값이 바뀔 때 1초 전환 */
+ 	transition: width 1s;
+ 	-webkit-transition: width 1s;
+ }
+ input[type=text]:focus {
+ 	width: 100%;
+ }
+ /* 다중 라인 입력 요소 */
+ textarea {
+ 	width: 100%;
+ 	height: 150px;
+ 	box-sizing: border-box;
+ 	border-radius: 5px;
+ 	border: solid 2px #ccc;
+ 	background: #f8f8f8;
+ 	font-size: 16px;
+ 	padding: 12px 20px;
+ 	
+ 	resize: none; /* 기본값: both */
+ }
+ /* 모든 요소들 */
+ * {
+ 	box-sizing: border-box;
+ }
+ .button {
+ 	background: #4caf50;
+ 	border: none;
+ 	color: white;
+ 	padding: 16px 32px;
+ 	text-decoration: none;
+ 	margin: 4px 2px;
+ 	cursor: pointer;
+ }
+ .circlebutton {
+ 	border-radius: 15px;
+ }
+</style>
+</head>
+<body>
+<!-- 부트스트랩 테이블 -->
+<table class="table table-hover" style="width:500px; text-align:center; margin:0 auto;">
+   <thead class="thead-dark">
+	<tr>
+		<th>Lorem.</th>
+		<th>Pariatur!</th>
+		<th>Pariatur.</th>
+		<th>Laudantium.</th>
+		<th>Recusandae?</th>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Temporibus.</td>
+		<td>Dolore.</td>
+		<td>Architecto.</td>
+		<td>Est.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Voluptate.</td>
+		<td>Exercitationem.</td>
+		<td>Debitis!</td>
+		<td>Quasi.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Inventore.</td>
+		<td>Facere.</td>
+		<td>Eveniet!</td>
+		<td>Quibusdam!</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Beatae.</td>
+		<td>Expedita.</td>
+		<td>Et!</td>
+		<td>Quisquam!</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Tenetur.</td>
+		<td>Aspernatur.</td>
+		<td>Aut.</td>
+		<td>Totam!</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Aspernatur.</td>
+		<td>Veniam.</td>
+		<td>Pariatur!</td>
+		<td>Earum.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Provident.</td>
+		<td>Recusandae?</td>
+		<td>Sed.</td>
+		<td>Necessitatibus.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Maiores?</td>
+		<td>Dolorem.</td>
+		<td>Veritatis.</td>
+		<td>Hic.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Ratione!</td>
+		<td>Incidunt.</td>
+		<td>Quo.</td>
+		<td>Est.</td>
+	</tr>
+   </thead>
+</table>
+
+
+<!-- css form(입력 양식) -->
+<form action="">
+ <input type="text" name="search" id="search" autocomplete="off" placeholder="Search...">
+ <br><br>
+ <textarea>Lorem ipsum dolor.</textarea> <!-- textarea 쓸 때는 개행 주의 -->
+ <br><br>
+ <input type="button" class="button circlebutton" value="Button">
+ <input type="reset" class="button" value="Reset">
+ <input type="submit" class="button" value="Submit">
+ <span class="button">button</span>
+ <a href="#" class="button">button</a>
+ <button type="button" class="button">button</button>
+ 
+ <br><br>
+ <input type="button" class="btn-info active" value="Button">
+ <input type="reset" class="btn-info disabled" value="Reset">
+ <input type="submit" class="btn-info" value="Submit">
+ <span class="btn-info">button</span>
+ <a href="#" class="btn-info">button</a>
+ <button type="button" class="btn-info">button</button>
+ 
+</form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오전 10:13:11</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* 
+ * {
+ 	box-sizing: border-box;
+ }
+ .col-container {
+ 	border: solid 1px gray;
+ 	width: 100%;
+ 	overflow: auto;
+ }
+ .col {
+ 	float: left;
+ 	width: 33.33%;
+ 	border: solid 1px gray;
+ 	padding: 16px;
+ 	display: inline-block;
+ }
+  */
+ .col-container {
+ 	border: solid 1px gray;
+ 	width: 100%;
+ 	display: table;
+ }
+ .col {
+ 	border: solid 1px gray;
+ 	padding: 16px;
+ 	display: table-cell;
+ }
+</style>
+</head>
+<body>
+<!-- .col-container>.col*3>h1>{Column$} -->
+<div class="col-container">
+	<div class="col">
+	 <h1>Column1</h1>
+	  <p>Lorem.</p>
+	  <p>Placeat.</p>
+	  <p>Laudantium!</p>
+	</div>
+	<div class="col">
+	 <h1>Column2</h1>
+	  <p>Lorem.</p>
+	  <p>Est.</p>
+	  <p>Ea.</p>
+	  <p>Praesentium!</p>
+	  <p>Veniam.</p>
+	</div>
+	<div class="col">
+	 <h1>Column3</h1>
+	  <p>Lorem.</p>
+	  <p>Asperiores.</p>
+	</div>
+</div>
+</body>
+</html>

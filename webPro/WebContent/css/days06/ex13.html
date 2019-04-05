@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 3:14:04</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ #demo {
+ 	background-color: yellow;
+ 	position: relative;
+ 	height: 300px;
+ }
+ #demo > div {
+ 	border: solid 1px gray;
+ 	width: 100px;
+ 	height: 100px;
+ 	text-align: center;
+ 	
+ 	position: absolute;
+ }
+ #demo > div:first-child {
+	background-color: red;
+	z-index: 100;
+ }
+ #demo > div:nth-child(2) {
+	background-color: green;
+	left: 30px;
+	top: 30px;
+	z-index: 50;
+ }
+ #demo > div:last-child {
+	background-color: blue;
+	left: 50px;
+	top: 50px;
+	z-index: 1;	
+ }
+</style>
+</head>
+<body>
+<div id="demo">
+	<div>A</div>
+	<div>B</div>
+	<div>C</div>
+</div>
+</body>
+</html>

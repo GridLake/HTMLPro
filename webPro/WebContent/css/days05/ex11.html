@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오후 3:45:25</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* background-origin 속성 : 배경이미지의 위치 지정 */
+ div {
+ 	border: solid 15px black;
+ 	padding: 35px;
+ 	background-image: url("../images/img_flwr.gif");
+ 	background-repeat: no-repeat;
+ }
+</style>
+<style>
+ /* 기본값 : padding-box */
+ #box1 {
+ 	background-origin: padding-box; /* padding 왼쪽 상단 배경이미지 지정 */
+ }
+ #box2 {
+ 	background-origin: border-box; /* border 왼쪽 상단 배경이미지 지정 */
+ }
+ #box3 {
+ 	background-origin: content-box; /* 내용 왼쪽 상단 배경이미지 지정 */
+ }
+ span {
+ 	border:dotted 15px black;
+ 	padding: 35px;
+ 	background-color: yellow;
+ 	display: block;
+ 	margin: 10px;
+ }
+ #demo1{background-clip: border-box;}
+ #demo2{background-clip: content-box;}
+ #demo3{background-clip: padding-box;}
+</style>
+</head>
+<body>
+
+<!-- span#demo*3>h1>lorem1^lorem10 -->
+
+<span id="demo1">
+   <h1>Lorem.</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ex.
+</span>
+<span id="demo2">
+   <h1>Quas.</h1>Alias praesentium iusto architecto veritatis nostrum at voluptas corporis dolorum.
+</span>
+<span id="demo3">
+   <h1>Sit.</h1>Nulla nisi dolor fuga dolorem rem odit porro perferendis molestias?
+</span>
+
+<div id="box1"><h1>Lorem</h1> ipsum dolor sit amet, consectetur adipisicing elit. Dolor quas quos assumenda iste asperiores recusandae corporis aperiam vero pariatur dolores obcaecati ea ullam accusamus velit cupiditate impedit consequatur amet eveniet!</div><br>
+<div id="box2"><h1>Blanditiis</h1> explicabo aliquid magnam ut sit iure quam deserunt modi officia reprehenderit asperiores dicta libero provident ipsa laborum? Architecto quia quae ut veritatis debitis perspiciatis reprehenderit reiciendis sunt numquam pariatur.</div><br>
+<div id="box3"><h1>Cumque</h1> tempora pariatur odio assumenda rem voluptas cum ipsa vitae enim dignissimos sed optio id saepe ex soluta necessitatibus laudantium incidunt. Veritatis pariatur ad rerum sed cumque mollitia rem dolore.</div><br>
+</body>
+</html>

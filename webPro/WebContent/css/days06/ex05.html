@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오전 10:44:04</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 300px;
+ 	height: 100px;
+ 	border: solid 1px black;
+ 	background-color: yellow;
+ 	
+ 	/* 변환: 위치변환 */
+ 	/* 표준 문법: transform: translate(50px, 100px); */
+ 	/* 
+ 	transform: translate(50px, 100px); 
+ 	-ms-transform: translate(50px, 100px);
+ 	-webkit-transform: translate(50px, 100px);
+ 	 */
+ 	 
+ 	/* 변환: 시계방향 20도 회전 */
+ 	/* 중심을 기준으로 회전  */
+ 	 
+ 	transform: rotate(20deg);
+ 	-ms-transform: rotate(20deg);
+ 	-webkit-transform: rotate(20deg);
+ 	
+ 	/* transform-origin: 0 0; top-left 꼭지점 기준 */ 
+ 	transform-origin: 50% 50%; /* 기본값 */
+ 	 
+ 	/* 변환: 크기 늘리거나 줄이기(너비, 높이) */
+ 				   /* 2배 3배 */
+	/* 중심을 기준으로 크기 변화 */
+	/* 
+ 	transform: scale(0.5, 0.5);
+ 	-ms-transform: scale(0.5, 0.5);
+ 	-webkit-transform: scale(0.5, 0.5);
+ 	*/
+ 	 
+ 	/* 변환: X축 기울기, Y축 기울기  skewX() skewY() */
+ 	/* 
+ 	transform: skewX(20deg);
+ 	-ms-transform: skewX(20deg);
+ 	-webkit-transform: skewX(20deg);
+ 	*/
+ 	 
+ 	/* 주어진 각도만큼 Y축을 따라 요소를 기울인다 */
+ 	/* 
+ 	transform: skewY(20deg);
+ 	-ms-transform: skewY(20deg);
+ 	-webkit-transform: skewY(20deg);
+ 	*/
+ 	/*  
+ 	transform: skew(20deg); X 20도 Y 0도
+ 	-ms-transform: skew(20deg, 20deg);
+ 	-webkit-transform: skew(20deg, 20deg);
+ 	*/
+ 	 
+ 	 /* matrix(6개 인자 지정-> 회전, 크기, 이동 병합) 메소드 */
+ 	 /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+ 	 /* 
+ 	 transform: matrix(1, -0.3, 0, 1, 0, 0);
+ 	 -ms-transform: matrix(1, -0.3, 0, 1, 0, 0);
+ 	 -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0);
+ 	  */
+ }
+</style>
+</head>
+<body>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<!-- 변환: translate() 위치 이동 -->
+<div>Lorem ipsum dolor sit amet.</div>
+
+
+</body>
+</html>
+
+
+
+<!-- css 변환 (transforms) -->
+<!-- 변환: 회전, 크기 조절, 기울기 등의 요소 변환 -->
+<!-- 2D, 3D 변환 -->
+<!-- 2D 변환을 위해 브라우저가 지원하는 버전 다름 -->
+<!-- 
+IE      : -ms-
+Opera   : -webkit-
+Safari  : -webkit-
+Chrome  : -webkit-
+Firefox : -moz-
+
+translate()
+rotate()
+scale()
+skewX() skewY()
+matrix()
+ -->

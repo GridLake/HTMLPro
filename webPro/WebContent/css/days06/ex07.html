@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오전 11:47:09</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 300px;
+ 	height: 100px;
+ 	border: solid 1px black;
+ 	background-color: yellow;
+ }
+ div:last-child {
+ 	/* 3D 변형: 위치, 크기, 회전(비틀기) */
+ 	/* 
+ 	transform: rotateX(180deg);
+ 	-ms-transform: rotateX(180deg);
+ 	-webkit-transform: rotateX(180deg);
+ 	 */
+ 	/*  
+ 	transform: rotateY(90deg);
+ 	-ms-transform: rotateY(90deg);
+ 	-webkit-transform: rotateY(90deg);
+ 	 */
+ 	/* 
+ 	transform: rotateZ(90deg);
+ 	-ms-transform: rotateZ(90deg);
+ 	-webkit-transform: rotateZ(90deg);
+ 	 */
+ 	/* 먹히는 것 같진 않은듯? */
+ 	transform: rotate3d(50deg, 30deg, 90deg);
+ 	-ms-transform: rotate3d(50deg, 30deg, 90deg);
+ 	-webkit-transform: rotate3d(50deg, 30deg, 90deg);
+ }
+</style>
+</head>
+<body>
+ <!-- 2D transform 변형: 위치, 크기, 회전 -->
+ <!--  
+ 						translate   위치
+ 						scale 	    크기
+ 						rotate/skew 회전/비틀기
+ 						matrix      병합
+ -->
+ <!-- 3D transform -->
+ <!-- rotate3d(x,y,z), rotateX(), rotateY(), rotateZ() -->
+ <!-- translate3d(x,y,z) translateX(), Y(), Z() -->
+ <!-- scale3d(x,y,z), scaleX(), Y(), Z() -->
+ <!-- matrix3d() -->
+ 
+ <div>Blanditiis modi illum.</div>
+ <div>Blanditiis modi illum.</div> 
+</body>
+</html>

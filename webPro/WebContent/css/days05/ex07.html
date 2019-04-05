@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오후 2:29:37</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ h1 {
+ 	background-color: red;
+ }
+ /* 외부파일(???.css) */
+ /* 인라인 > 요소명.아이디명 > 아이디명> 요소명.클래스명 > 클래스명 > 태그(요소)명 */
+ div#box {
+ 	background-color: olive;
+ }
+ /* 아이디명> 요소명.클래스명 > 클래스명 > 태그(요소)명 */
+ #box {
+ 	background-color: maroon;
+ }
+ 
+ /* 요소명.클래스명 > 클래스명 > 태그(요소)명 */
+ div.test {
+ 	background-color: aqua;
+ }
+ /* 우선순위: 클래스명 > 태그(요소)명 */
+ .test {
+ 	background-color: green;
+ }
+ div {
+ 	background-color: red;
+ }
+ /* 동일한 규칙: 최신 규칙 적용 */
+ h1, h2, h3, h4, h5, h6 {
+ 	background-color: blue;
+ }
+</style>
+</head>
+<body>
+<!-- css 단위 -->
+<!-- width, margin, padding, font-size 등 -->
+<!-- 20px 숫자 사이에 공백X -->
+<!-- css 뒤에 단위 꼭 붙여준다   0은 예외-->
+<!-- html에서는 단위 안붙dl면 px -->
+<!-- 음수 값 사용 가능 -->
+<!-- 
+절대길이 
+	cm
+	mm
+	in(1in == 2.54cm == 96px)
+	pt(points, 1pt == 1/72 in)
+	pc(picas, 1pc == 12pt)
+상대길이
+	em   *
+	ex
+	vw   *
+	ch
+	vh
+	vmin
+	vmax
+	%    *
+	px
+ -->
+ 
+ <!-- css 특이성(== 우선 순위) -->
+ <h1>Lorem ipsum dolor sit amet.</h1>
+ 							<!-- 인라인 스타일시트 -->
+ <div id="box" class="test" style="background-color: red">Lorem ipsum dolor sit amet.</div>
+</body>
+</html>

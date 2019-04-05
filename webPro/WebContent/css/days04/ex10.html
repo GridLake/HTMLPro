@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오후 2:01:20</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p {
+ 	width:400px;
+ 	border:solid 1px #ddd;
+ 	padding: 5px;
+ 	text-align: justify;
+ }
+ 
+ /* p 텍스트의 첫번째 문자(글자)의 서식 지정 */
+ p::first-letter {
+ 	color:red;
+ 	font-size: xx-large;
+ }
+ /* 첫번째 라인 */
+ p::first-line {
+	color:blue;
+	font-size: xx-small;	
+ }
+ /* 요소의 내용 이전에 일부 내용을 삽입 */
+ h1::before {
+	content: url("../images/smiley.gif");
+ }
+ /* 요소의 내용 이후에 일부 내용을 삽입 */
+ h1::after {
+	content: "~~~";
+	color: red;
+ }
+ /* 선택 */
+ p::selection {
+ 	color: red;
+ 	background: yellow;
+ }
+ p::-moz-selection { /* firefox */
+ 	color: red;
+ 	background: yellow;
+ }
+</style>
+</head>
+<body>
+<!-- :: - 가상요소 -->
+<h1>Lorem ipsum dolor sit amet.</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ At sapiente aliquam libero laborum enim explicabo nesciunt
+  placeat architecto optio omnis commodi officia cumque 
+  repellat voluptate tempora nihil esse qui officiis.</p>
+</body>
+</html>

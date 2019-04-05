@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오후 3:21:50</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ #demo {
+ 	padding: 15px;
+ 	/* background-image: url("../images/img_flwr.gif"), url("../images/paper.gif");
+ 	background-position: right bottom, left top;
+ 	background-repeat: no-repeat, repeat; */
+ 	
+ 	background: url("../images/img_flwr.gif") right bottom no-repeat, url("../images/paper.gif") left top repeat;
+ }
+</style>
+<style>
+ p {
+ 	width: 200px;
+ 	height: 150px;
+ 	border: solid 1px #ddd;
+ 	background-image: url("../images/img_flwr.gif");
+ 	/* background-size: 100px 80px; */
+ 	background-size:; /* contain, cover */
+ 	background-repeat: no-repeat;
+ }
+ #box2 {
+ 	background-size: contain; /* 늘릴 수 있는 만큼 가로, 세로를 늘린다 */
+ }
+ #box3 {
+ 	background-size: cover; /* 영역을 완전히 배경으로 덮는다 */
+ }
+</style>
+<style>
+/* 현재 페이지의 배경이미지 전체 채우기 */
+/* html 요소 배경이미지 설정 이유 : 항상 적어도 브라우저의 창의 높이 */
+ html {
+	background: url("../images/img_man.jpg") no-repeat center fixed;
+	/* background-attachment: fixed; */
+	background-size: cover;
+ }
+ body {
+    color:white;
+ }
+</style>
+</head>
+<body>
+<!-- css background-size 속성 -->
+<p id="box1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos alias.</p>
+<p id="box2">Ratione nemo animi autem quidem vel reprehenderit facere est cupiditate?</p>
+<p id="box3">Deleniti impedit quae incidunt aliquid mollitia eius numquam dolorum sed!</p>
+<hr>
+<!-- css 다중 배경 -->
+<div id="demo">
+
+<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+ Iure doloremque non reprehenderit commodi qui suscipit praesentium atque
+ libero aperiam optio dolorem tempore possimus quam dolor nemo sit amet
+ eveniet necessitatibus.</div>
+</body>
+</html>

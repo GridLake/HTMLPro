@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 8:48:12</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	border:solid 1px gray;
+ 	width:200px;
+ 	height:100px;
+ 	
+ 	/* overflow:hidden; 넘치는 내용 숨김 */
+ 	
+ 	/* auto와 scroll의 차이점 확인 */
+ 	/* overflow:scroll; 넘침 여부 상관없이 스크롤 생성*/
+ 	/* overflow:auto; */ /* 넘치는 경우에만 스크롤 생성 */
+ 	
+ 	overflow-x:hidden;
+ 	overflow-y:scroll;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- css layout - overflow 속성 -->
+<!-- content가 너무 커서 영역에 적합하지 않는 경우 어떻게 제어하는가? -->
+<!-- visible(기본값), hidden, scroll, auto -->
+<div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Earum cupiditate voluptas dolore nisi animi nesciunt nulla 
+doloremque nam quas quam fugit aspernatur accusamus esse 
+ex ipsum voluptate illum vitae ipsam!
+</div>
+</body>
+</html>

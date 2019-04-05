@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오후 12:02:11</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* selector:pseudo-class */
+ /* 
+ a:link {
+ 	
+ }
+ a:visited {
+ 
+ }
+ a:hover {
+ 
+ }
+ a:active {
+ 
+ } 
+ */
+ a {
+ 	text-decoration:none;
+ 	text-align:center;
+ 	text-transform: uppercase;
+ 	display: inline-block;
+ 	width: 200px;
+ 	padding: 10px;
+ 	background: green;
+ 	color: white;
+ }
+ a:hover {
+ 	background: blue;
+	
+ }
+ /* 가려진 요소 마우스 갖다대면 나타나도록 하기 *** */
+ a + div#in {
+ 	width: 200px;
+ 	padding: 10px;
+ 	background: aqua;
+ 	display: none;
+ }
+ #out:hover #in {
+ 	display: block;
+ }
+ 
+ 
+ p:first-child {
+ 	background:yellow;
+ }
+ p:last-child {
+	background:red;
+ }
+ 
+ /* div:first-child i { */
+ div i:first-child, div i:last-child {
+	background: green;
+ }
+</style>
+</head>
+<body>
+<!-- 가상클래스(pseudo-class) -->
+<div>
+ Lorem ipsum <i>dolor</i> sit amet, <i>consectetur</i> adipisicing elit. <i>Qui</i> consequuntur.
+</div>
+
+<p style="width:300px; border:solid 1px gray;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos velit fugiat tempora quam neque tempore adipisci ab excepturi ipsam dignissimos deleniti unde omnis laboriosam facere dolorum ducimus voluptatem quasi et.</p>
+<p style="width:300px; border:solid 1px gray;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos velit fugiat tempora quam neque tempore adipisci ab excepturi ipsam dignissimos deleniti unde omnis laboriosam facere dolorum ducimus voluptatem quasi et.</p>
+<p style="width:300px; border:solid 1px gray;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos velit fugiat tempora quam neque tempore adipisci ab excepturi ipsam dignissimos deleniti unde omnis laboriosam facere dolorum ducimus voluptatem quasi et.</p>
+
+<!-- 형식) selector : pseudo-class -->
+<!-- 
+1. 사용자가 마우스를 올리면 요소의 스타일 지정
+2. a 방문한 적이 있는 경우, 없는 경우, 스타일 지정
+3. 요소가 포커스 가지면 스타일 지정
+ -->
+ 
+<!-- last-child가 안잡힌 이유 : 마지막 자식을 div로 인식해서 -->
+
+<div id="out">
+ <a href="#">Mouse over me</a>
+ <div id="in">
+  테스트
+ </div>
+</div>
+
+</body>
+</html>

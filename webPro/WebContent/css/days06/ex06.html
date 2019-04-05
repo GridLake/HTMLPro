@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오전 11:33:13</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body {
+ 	margin: 30px;
+ 	background: #e9e9e9;
+ }
+ div.polaroid {
+ 	width: 284px;
+ 	padding: 10px 10px 20px 10px;
+ 	border: solid 1px #bfbfbf;
+ 	box-shadow: 10px 10px 5px #aaa;
+ }
+ div.rotate_right {
+ 	float: left;
+ 	transform: rotate(7deg);
+ 	-ms-transform: rotate(7deg);
+ 	-webkit-transform: rotate(7deg);
+ 	transition: 0.5s
+ }
+ div.rotate_right:hover {
+ 	transform: rotate(-8deg);
+ 	-ms-transform: rotate(-8deg);
+ 	-webkit-transform: rotate(-8deg);
+ 	
+ }
+ div.rotate_left {
+ 	float: left;
+ 	transform: rotate(-8deg);
+ 	-ms-transform: rotate(-8deg);
+ 	-webkit-transform: rotate(-8deg);
+ 	transition: 0.5s
+ }
+ div.rotate_left:hover {
+ 	transform: rotate(7deg);
+ 	-ms-transform: rotate(7deg);
+ 	-webkit-transform: rotate(7deg);
+ }
+ 
+</style>
+</head>
+<body>
+<!-- .polaroid.rotate_right>img+p.caption>lorem4 -->
+<div class="polaroid rotate_right">
+	<img src="../images/pulpitrock.jpg" width="284" height="213" alt="" />
+	<p class="caption">Lorem ipsum dolor sit.</p>
+</div>
+<div class="polaroid rotate_left">
+	<img src="../images/cinqueterre.jpg" width="284" height="213" alt="" />
+	<p class="caption">Lorem ipsum dolor sit.</p>
+</div>
+</body>
+</html>

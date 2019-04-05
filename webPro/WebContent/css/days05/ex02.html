@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오전 9:25:59</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ input {
+ 	width: 300px;
+ 	border: solid 1px #ddd;
+ }
+ input:focus {
+ 	background-color: yellow;
+ }
+ /* 태그선택자[속성=속성값] */
+ input[type] {	/* 속성값은 중요하지 않음, type이 명시적으로 설정된 것만 적용됨 */
+ 	width: 400px;
+ }
+ input[type="text"] {
+ 	border-color: red;
+ }
+ /* title 속성값에 info 특정 [단어]를 포함한다면 css 적용 */
+ /* ~ */
+ input[title~="info"] {
+ 	border-color: green;
+ }
+ /* title 속성값에 [문자열] nf를 포함한다면 css 적용 */
+ /*  *  */
+ /* input[title*="info"] {
+ 	border-color: green;
+ } */
+ 
+ 
+ /* ^ : title 속성값이 info 문자열로 시작하는 것을 선택 */
+ input[title^="info"] {
+ 	border-color: blue;
+ }
+ /* $ : title 속성값이 info 문자열로 끝나는 것을 선택 */
+ input[title$="info"] {
+ 	border-color: red;
+ }
+</style>
+
+<style>
+ /* [class^="top"] { top 문자열로 시작 */
+ /* [class*="top"] { 위치 상관없이 top 문자열 포함 */ 
+ /* [class~="top"] { top 특정 단어 포함(공백 있으면 인식하지만, - 구분자 있으면 인식 불가) */ 
+ [class|="top"] {   /* - 구분자도 인식하여 단어 찾음 */
+ 	background-color: aqua;
+ }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- css 속성 선택자(Attribute selector) -->
+<h1 class="top-header">Lorem ipsum.</h1>
+<p class="top-text">Lorem ipsum.</p>
+<p class="top-content">Lorem ipsum.</p>
+
+<hr>
+<!-- (input[type='text']+br)*5 -->
+<!-- input 태그의 type속성 생략하면 기본은 type='text' -->
+<input autofocus="autofocus"><br>
+<input><br>
+<input type="text" title="info"><br>
+<input type="text" title="student info"><br>
+<input type="text" title=" info "><br>
+<input type="password" title="student"><br>
+
+<script>
+ $('[class|="top"]').click(function() {
+	 $(this).hide(1000);
+ });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 4:36:58</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	border: solid 1px #ddd;
+ }
+ .news {
+ 	/* 다중 열 만들기 */
+ 	column-count: 3;
+ 	/* 열 사이의 간격: gap */
+ 	column-gap: 40px;
+ 	/* 구분선 + 두께 + 색상 */
+ 	/* 
+ 	column-rule-style: solid;
+ 	column-rule-width: 1px;
+ 	column-rule-color: #ddd;
+ 	 */
+ 	/* 속기 속성 */
+ 	column-rule: solid 1px #ddd;
+ }
+ h2 {
+ 	column-span: all;
+ 	-webkit-column-span: all;
+ }
+</style>
+</head>
+<body>
+<!-- css 다중 열 만들기 -->
+
+<div class="news">
+ <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Hic voluptates eaque ut ipsa commodi earum adipisci alias 
+ consequatur! Ipsam autem sint atque quasi praesentium 
+ eveniet fugiat maxime repudiandae recusandae ducimus.
+</div>
+<div>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Hic voluptates eaque ut ipsa commodi earum adipisci alias 
+ consequatur! Ipsam autem sint atque quasi praesentium 
+ eveniet fugiat maxime repudiandae recusandae ducimus.
+</div>
+</body>
+</html>

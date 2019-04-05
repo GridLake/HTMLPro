@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오후 3:08:14</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+/* 
+ p:nth-child(3) {
+	background-color: red;
+ }
+ */
+ p:nth-of-type(3) {
+	/* background-color: red;  */
+ }
+ /* p:nth-last-child(1) { */
+ p:nth-last-of-type(1) {
+ 	/* background-color: blue; */
+ }
+</style>
+<style>
+ .box {
+ 	border: solid 2px green;
+ }
+ /* p:only-of-type { */
+ p:only-child {
+ 	background-color: aqua;
+ }
+</style>
+<style>
+ input:optional:not([type="submit"]) {
+ 	border: solid 3px aqua;
+ }
+ ::placeholder {
+ 	color: red;
+ }
+ ::-webkit-input-placeholder {
+ 	color: red;
+ }
+ ::-ms-input-placeholder {
+ 	color: red;
+ }
+ input:read-only {
+ 	background: black;
+ }
+ div::selection {
+ 	background: yellow;
+ 	color: red;
+ }
+ div::-moz-selection {  /* firefox */
+ 	background: yellow;
+ 	color: red;
+ }
+</style>
+</head>
+<body>
+<form action="">
+id: <input type="text" placeholder="id input" required="required"><br>
+pwd: <input type="password" required="required"><br>
+email: <input type="email" readonly="readonly" value="aa@aa.com"><br>
+<input type="submit">
+
+</form>
+<hr>
+<p>Lorem ipsum.</p>
+<p>Cum officia!</p>
+<div>Lorem.</div>
+<div>Atque!</div>
+<p>Sunt mollitia?</p>
+<p>Optio alias.</p>
+<p>Esse repellat?</p>
+<p>Consequatur facere.</p>
+<hr>
+<div class="box">
+	<p>Lorem.</p>
+</div>
+<div class="box">
+    <div>div - sub</div>
+	<p>Lorem.</p>
+</div>
+<div class="box">
+	<p>Lorem.</p>
+	<p>Lorem.</p>
+	<p>Lorem.</p>
+</div>
+</body>
+</html>

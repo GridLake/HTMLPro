@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 2:38:40</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .tooltip {
+ 	position: relative;
+ 	display: inline-block;
+ 	border-bottom: dotted 1px black;
+ }
+ /* 아래 삼각형 */
+ /* .tooltip .tooltiptext {
+ 	visibility: hidden;
+ 	width: 120px;
+ 	background-color: black;
+ 	color: #fff;
+ 	text-align: center;
+ 	border-radius: 6px;
+ 	padding: 5px 0;
+ 	position: absolute;
+ 	z-index: 1;
+ 	bottom: 150%;
+ 	left: 50%;
+ 	margin-left: -60px;
+ }
+ .tooltip .tooltiptext::after {
+ 	content: "";
+ 	position: absolute;
+ 	top: 100%;
+ 	left: 50%;
+ 	margin-left: -5px;
+ 	border-width: 5px;
+ 	border-style: solid;
+ 	border-color: black transparent transparent transparent;
+ } */
+ /* 위삼각형 */
+ .tooltip .tooltiptext {
+ 	visibility: hidden;
+ 	width: 120px;
+ 	background-color: black;
+ 	color: #fff;
+ 	text-align: center;
+ 	border-radius: 6px;
+ 	padding: 5px 0;
+ 	position: absolute;
+ 	z-index: 1;
+ 	bottom: -160%;
+ 	left: 50%;
+ 	margin-left: -60px;
+ }
+ .tooltip .tooltiptext::after {
+ 	content: "";
+ 	position: absolute;
+ 	top: -30%;
+ 	left: 50%;
+ 	margin-left: -5px;
+ 	border-width: 5px;
+ 	border-style: solid;
+ 	border-color: transparent transparent black transparent;
+ }
+ /* 왼쪽삼각형 */
+ /* .tooltip .tooltiptext {
+ 	visibility: hidden;
+ 	width: 120px;
+ 	background-color: black;
+ 	color: #fff;
+ 	text-align: center;
+ 	border-radius: 6px;
+ 	padding: 5px 0;
+ 	position: absolute;
+ 	z-index: 1;
+ 	bottom: -50%;
+ 	left: 165%;
+ 	margin-left: -60px;
+ }
+ .tooltip .tooltiptext::after {
+ 	content: "";
+ 	position: absolute;
+ 	top: 30%;
+ 	left: -4%;
+ 	margin-left: -5px;
+ 	border-width: 5px;
+ 	border-style: solid;
+ 	border-color: transparent black transparent transparent;
+ } */
+ .tooltip:hover .tooltiptext {
+ 	visibility: visible;
+ }
+</style>
+</head>
+<body>
+<!--
+ 툴팁(ToolTip) 구현
+ : 요소 위에 마우스 포인터를 움직이면 그 요소의 추가적인 설명 정보가
+ 보이도록 하는 것(일종의 풍선도움말)
+ -->
+ 
+ <!-- .tooltip>span.tooltiptext -->
+ <p>.</p>
+ <p>.</p>
+ <p>.</p>
+ <div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip Text</span>
+ </div>
+</body>
+</html>

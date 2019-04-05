@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오후 2:14:11</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* 어떤 요소든 상관없이 첫번째 자식 -> html도 자식으로 잡힘 */
+ /* 
+ :first-child {
+	border: solid 2px red;
+ }
+ */
+ 
+ /* 어떤 요소든 처음으로 p태그를 만나는 경우 */
+ p:first-of-type {
+	border: solid 2px red;
+ }
+ :last-child {
+	border: solid 2px blue;
+ }
+ p:last-child {
+	border: solid 2px green;
+ }
+ p:last-of-type {
+ 	border: solid 2px orange;
+ }
+ #demo {
+ 	width: 300px;
+ 	border: solid 1px gray;
+ }
+ #demo:first-letter {
+	font-size: 50px;
+	color: red;
+ }
+ #demo:first-line {
+	text-decoration: line-through;
+ }
+ input[type="text"]:focus {
+ 	background: red;
+ }
+</style>
+<style>
+ /* 입력 값이 범위 안에 있을 때 적용 */
+ input:in-range {
+ 	background: red;
+ }
+</style>
+<style>
+/* 입력 값이 형식과 일치하는 지 여부에 따라 적용 */
+ input:invalid {
+ 	border: solid 2px green;
+ }
+</style>
+<style>
+ :not(p) {
+ 	border: solid 1px pink;
+ }
+</style>
+</head>
+<body>
+<form>
+email : <input type="email">
+
+<br>
+정수:
+<input type="number" min="1" max="10" value="5">
+<input type="submit" value="send">
+</form>
+
+<hr>
+<input type="text" autofocus="autofocus">
+<div id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Veritatis delectus optio fugit perferendis enim provident ipsum nihil 
+quaerat dolorum ut hic consequuntur sequi praesentium tempore nesciunt 
+voluptates eos quas saepe.</div>
+
+<hr>
+<table border="1">
+<thead>
+ <tr>
+ 	<th>Lorem.</th>
+ 	<th>Eius.</th>
+ 	<th>Blanditiis?</th>
+ </tr>
+</thead>
+ <tr>
+ 	<td>Lorem.</td>
+ 	<td>Atque.</td>
+ 	<td>Sed.</td>
+ </tr>
+ <tr>
+ 	<td>Lorem.</td>
+ 	<td>Nobis.</td>
+ 	<td>Illo!</td>
+ </tr>
+ <tr>
+ 	<td>Lorem.</td>
+ 	<td>Natus!</td>
+ 	<td>Eveniet.</td>
+ </tr>
+ <tr>
+ 	<td>Lorem.</td>
+ 	<td>Officiis.</td>
+ 	<td>Laudantium.</td>
+ </tr>
+ <tr>
+ 	<td>Lorem.</td>
+ 	<td>Commodi.</td>
+ 	<td>Ratione!</td>
+ </tr>
+</table>
+<p>1 Lorem ipsum.</p>
+<div>
+ <div>= div box =</div>
+ <p>div 1 Lorem.</p>
+ <p>div 2 Quo.</p>
+ <p>div 3 Cum.</p>
+</div>
+<p>2 Dignissimos fugiat.</p>
+<p>3 Et alias.</p>
+</body>
+</html>

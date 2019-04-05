@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 2. 오전 9:26:47</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* 
+ div {
+ 	border:solid 3px #ddd;
+ 	padding:5px;
+ }
+ img {
+ 	float:right;
+ }
+ .clearfix { 
+ 	overflow:auto; ***
+ }
+ */
+</style>
+<style>
+ /* 
+ div {
+ 	border:3px solid green;
+ 	padding:5px;
+ }
+ img {
+ 	float:right;
+ }
+ .clearfix::after {
+ 	content:"after";
+ 	content:"";
+ 	clear:both;
+ 	display:table;
+ }
+  */
+</style>
+<style>
+ * {
+ 	box-sizing:border-box;
+ }
+ .box {
+ 	width:33.33%;
+ 	padding:50px;
+ 	float:left;
+ }
+ .clearfix::after {
+ 	content:"";
+ 	clear:both;
+ 	display:table;
+ }
+ 
+ /* Images side by side */
+ .img-container {
+ 	float:left;
+ 	width:33%;
+ 	padding:5px;
+ 	border:solid 1px #ddd;
+ 	border-radius:5px;
+ 	margin:1px;
+ }
+</style>
+</head>
+<body>
+<div class="clearfix">
+<h3>PineApple</h3>
+<img src="../images/pineapple.jpg" alt="" style="width:170px; height:170px;" />
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ Eum possimus consequatur vitae aliquid quos blanditiis 
+ culpa delectus eos explicabo fuga? Provident debitis 
+ corrupti perspiciatis impedit perferendis quidem dolor delectus veniam?
+</div>
+
+<h3>Grid of Boxes</h3>
+<div class="clearfix" style="border: solid 1px red">
+ <div class="box" style="background:#bbb">
+ 	<p>Lorem.</p>
+ </div>
+ <div class="box" style="background:#ccc">
+ 	<p>Neque!</p>
+ </div>
+ <div class="box" style="background:#ddd">
+ 	<p>Illo?</p>
+ </div>
+</div>
+
+<h3>Images side by side</h3>
+<div class="clearfix">
+ <div class="img-container">
+  <img src="../images/img_5terre.jpg" alt="" style="width:100%;"/>
+ </div>
+ <div class="img-container">
+  <img src="../images/img_forest.jpg" alt="" style="width:100%;"/>
+ </div>
+ <div class="img-container">
+  <img src="../images/img_mountains.jpg" alt="" style="width:100%;"/>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오전 10:26:31</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* 쓰기모드(writing mode) 속성 설명 */
+ p.ex1 {
+ 	writing-mode: vertical-rl;
+ }
+ p.ex2 {
+ 	writing-mode: horizontal-tb; /* 기본값 */
+ }
+ p.ex3 > span {
+ 	/* writing-mode: vertical-rl; */
+ 	writing-mode: vertical-rl;
+ }
+</style>
+</head>
+<body>
+<p class="ex1">Lorem ipsum dolor sit amet.</p>
+<p class="ex2">Sequi veniam praesentium ratione adipisci.</p>
+<p class="ex3">Impedit <span>qui</span> dolor <span>inventore</span> tempora.</p>
+</body>
+</html>

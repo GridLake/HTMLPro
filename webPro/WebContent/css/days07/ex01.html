@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 5. 오전 9:02:32</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .loader {
+ 	border: solid 16px #f3f3f3;
+ 	border-top: solid 16px #3498db;
+ 	width: 120px;
+ 	height: 120px;
+ 	
+ 	border-radius: 50%;
+ 	animation: spin 1.5s linear infinite;
+ 	-webkit-animation: spin 1.5s linear infinite;
+ }
+ @keyframes spin {
+ 	0% {transform: rotate(0deg);}
+ 	100% {transform: rotate(360deg);}
+ }
+ @-webkit-keyframes spin {
+ 	0% {transform: rotate(0deg);}
+ 	100% {transform: rotate(360deg);}
+ }
+</style>
+<style>
+ .dot {
+ 	background-color: #bbb;
+ 	display: inline-block;
+ 	width: 30px;
+ 	height: 30px;
+ 	border-radius: 50%;
+ }
+ .active {
+ 	background-color: red;
+ }
+ .checked {
+ 	color: orange;
+ }
+</style>
+<style>
+ img {
+ 	width: 150px;
+ 	border: solid 1px #ddd;
+ 	border-radius: 4px;
+ 	padding: 5px;
+ }
+ img:hover {
+ 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+ 	animation: shake 0.5s infinite;
+ }
+ @keyframes shake {
+ 	0% {transform: translate(1px, 1px) rotate(0deg)}
+ 	10% {transform: translate(-1px, -1px) rotate(-1deg)}
+ 	20% {transform: translate(3px, 0px) rotate(0deg)}
+ 	30% {transform: translate(1px, 2px) rotate(-10deg)}
+ 	40% {transform: translate(-1px, 1px) rotate(0deg)}
+ 	50% {transform: translate(2px, -2px) rotate(0deg)}
+ 	60% {transform: translate(0px, 1px) rotate(1deg)}
+ 	70% {transform: translate(1px, 1px) rotate(1deg)}
+ 	80% {transform: translate(3px, 2px) rotate(0deg)}
+ 	90% {transform: translate(-2px, -1px) rotate(-1deg)}
+ 	100% {transform: translate(1px, 0px) rotate(0deg)}
+ }
+</style>
+</head>
+<body>
+<h3>이미지(창) 흔들기</h3>
+<img src="../images/pineapple.jpg" alt="" />
+<img src="../images/pineapple.jpg" alt="" />
+<img src="../images/pineapple.jpg" alt="" />
+<img src="../images/pineapple.jpg" alt="" />
+<img src="../images/pineapple.jpg" alt="" />
+
+<h3>loading 처리 이미지</h3>
+<div class="loader"></div>
+
+<h3>평가하기</h3>
+<span class="dot active">	</span>
+<span class="dot active"></span>
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+
+<h3>별 평가하기</h3>
+<!-- span.fa.fa-star*5 -->
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</body>
+</html>

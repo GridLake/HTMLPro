@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오전 9:02:27</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ ul#navlist {
+ 	position: relative;
+ }
+ ul#navlist li {
+ 	margin: 0;
+ 	padding: 0;
+ 	list-style: none;
+ 	position: absolute;
+ 	top: 0;
+ 	width: 44px;
+ 	/* background로 쓰면 축약형 */
+ 	background-image: url("../images/img_navsprites_hover.gif");
+ }
+ ul#navlist li, ul#navlist a {
+ 	display: block;
+ 	height: 44px;
+ }
+ #home {
+ 	left: 0;
+ 	background-position: 0 0;
+ }
+ /* (롤)오버 효과 */
+ #home:hover {
+ 	left: 0;
+ 	background-position: 0 -46px;
+ }
+ #prev {
+ 	left: 100px;
+ 	background-position: -46px 0;
+ }
+ #next {
+ 	left: 200px;
+ 	background-position: -91px 0;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- 이미지 스프라이트 -->
+<!-- 단일 이미지에 들어있는 이미지 모음 -->
+<!-- ul#navlist>li[id='']*4>a[href=''] -->
+<ul id="navlist">
+	<li id="home"><a href="#"></a></li>
+	<li id="prev"><a href="#"></a></li>
+	<li id="next"><a href="#"></a></li>
+</ul>
+</body>
+</html>

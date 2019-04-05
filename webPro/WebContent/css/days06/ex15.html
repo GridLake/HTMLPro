@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 4. 오후 3:27:45</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .tooltip {
+ 	position: relative; 	/* 툴팁 위치 기준점 */
+ 	display: inline-block;  /* 자식 span태그도 감안해서 바깥에서 미리 block모드 설정 */
+ 	border: dotted 1px black;
+ }
+ .tooltip .tooltiptext {
+ 	/* visibility: hidden; */
+ 	width: 120px;
+ 	background-color: black;
+ 	color: #fff;
+ 	text-align: center;
+ 	border-radius: 6px;
+ 	padding: 5px 0;
+ 	 
+ 	bottom: 150%;
+ 	position: absolute;
+ 	z-index: 1;
+ 	left: 50%;
+ 	margin-left: -60px;
+ 	
+ }
+ .tooltip .tooltiptext::after {
+ 	content: "";
+ 	position: absolute;
+ 	top: 100%;
+ 	left: 50%;
+ 	margin-left: -5px;
+ 	border-width: 5px;
+ 	border-style: solid;
+ 	border-color: black transparent transparent transparent;
+ }
+ 
+</style>
+</head>
+<body style="text-align:center;">
+ <p>.</p>
+ <p>.</p>
+ <p>.</p>
+ <div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip Text</span>
+ </div>
+</body>
+</html>

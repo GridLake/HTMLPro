@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 3. 오전 10:49:00</title>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body {
+ 	counter-reset: section; /* int i = 0; 과 유사한 의미 */
+ }
+ div {
+ 	margin: 5px;
+ }
+ div::before {
+ 	counter-increment: section; /* i++ */
+ 	content: counter(section);
+ 	background-color: black;
+ 	color: white;
+ 	margin-right: 16px;
+ 	padding: 1px 10px;
+ 	border-radius: 50%;
+ }
+ div::after {
+ 	content: "-Tutorial";
+ 	color: red;
+ 	font-style: italic;
+ }
+</style>
+</head>
+<body>
+<!-- css 카운터 매기기 -->
+<div>Java</div>
+<div>Oracle</div>
+<div>JDBC</div>
+<div>HTML5</div>
+<div>CSS3</div>
+<div>Javascript</div>
+<div>JQuery</div>
+<div>OpenAPI</div>
+
+<!-- 
+ㄱ.css 카운터는 변수와 같은 의미이다
+ㄴ.사용횟수를 추적하여 증가될 수 있다
+ㄷ.속성
+	counter-reset 		 카운터 재설정
+	counter-increment 	 카운터값 증가
+	content 			 생성된 내용 삽입
+	counter() counters() 요소에 카운터한 값을 추가
+ -->
+</body>
+</html>
