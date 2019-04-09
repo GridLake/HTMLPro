@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오전 10:44:20</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<button id="btn">한번만 클릭할 수 있는 버튼</button>
+<p id="demo"></p>
+<p id="wdemo"></p>
+<script>
+ window.addEventListener("resize", function(){
+	 document.getElementById("demo").innerHTML = Math.random();});
+ window.addEventListener("resize", function(){
+	 document.getElementById("wdemo").innerHTML = window.innerWidth;});
+ 
+ // 
+ var btn = document.getElementById("btn");
+ 
+ /* 브라우저 호환성 */
+ if(btn.addEventListener) {
+	 btn.addEventListener("click", test);
+ }
+ else {
+	 btn.attachEvent("onclick", test);
+ }
+ 
+ function test() {
+	 alert("test");
+	 btn.innerHTML = "클릭 안됨";
+	 if(btn.addEventListener) {
+		 btn.removeEventListener("click", test);
+	 }
+	 else {
+		 btn.detachEvent("onclick", test);
+	 }
+ }
+</script>
+<!-- 
+IE 8.0 이전에는 사용 불가
+element.addEventListener()
+element.removeEventListener()
+
+IE 8.0 이전 사용 가능
+element.attachEvent()
+element.detachEvent()
+ -->
+
+</body>
+</html>

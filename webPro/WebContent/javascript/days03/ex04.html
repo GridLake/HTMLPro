@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오전 10:34:12</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+<script>
+ function window_load() {
+	 
+	 // element.addEventListener(event, function, useCapture);
+	 //			 1) 이벤트 유형 click   2) 함수   3) 이벤트 버블링 또는 캡쳐 사용 여부 boolean
+	 // addEventListener를 사용하면 여러 개의 이벤트를 추가해서 처리
+	 document.getElementById("btn3").addEventListener("click", test);
+	 document.getElementById("btn3").addEventListener("click", function(){alert("동적으로 등록된 2번째 함수")});
+	 // 등록된 이벤트 제거 removeEventListener
+	 document.getElementById("btn3").removeEventListener("click", test);
+	 
+	 
+	 // alert("window_load 이벤트 발생 - 페이지 로딩 후...")
+	 // [HTML DOM 사용한 이벤트 처리]
+	 // document.getElementById("btn2").onclick = test;
+	 document.getElementById("btn2").onclick = function() {
+		 alert("무명 메소드 등록");
+	 };
+ }
+</script>
+</head>
+<body onload="window_load();">
+<!-- js 이벤트 처리 방법 -->
+<!-- 1. <element> onXXX="js coding, js function();"</element> -->
+<button onclick="this.innerHTML='클릭!!!'">이벤트 처리1</button>
+<br>
+<!-- 2. onclick=javascript -->
+<button id="btn2">이벤트 처리2</button>
+<br>
+<script>
+ function test() {
+	 alert("동적으로 클릭 이벤트 틍록");
+ }
+</script>
+<!-- 3. HTML DOM EventListener 이벤트 처리 -->
+<button id="btn3">이벤트 처리3</button>
+</body>
+</html>

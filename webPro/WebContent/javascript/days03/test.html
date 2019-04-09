@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오전 10:15:22</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+국어 : <input type="text" id="kor" autofocus="autofocus" onkeydown="setNextElementFocus(this, 'eng');"/><br>
+영어 : <input type="text" id="eng" onkeydown="setNextElementFocus(this, 'mat');"/><br>
+수학 : <input type="text" id="mat" onkeydown="proc(this);"/><br>
+총점 : <input type="text" id="tot" disabled="disabled" /><br>
+평균 : <input type="text" id="avg" disabled="disabled" /><br>
+
+<script>
+
+ function isJumsuCheck(jumsu) {
+	 var pattern = /^(100|[1-9]?\d$)/;
+	 return pattern.test(jumsu);
+ }
+ 
+ function setNextElementFocus(txt, id) {
+	 if(event.keyCode == 13) {
+		 if(!isJumsuCheck(txt.value)) {
+			 alert("잘못 입력");
+			 txt.focus();
+			 txt.select();
+			 return;
+		 }
+	 	 var nextElement = document.getElementById(id);
+	 	 nextElement.focus();
+	 	 nextElement.select();
+	 }
+ }
+ 
+ function proc(txt) {
+	 if(event.keyCode == 13) {
+		 if(!isJumsuCheck(txt.value)) {
+			 alert("잘못 입력");
+			 txt.focus();
+			 txt.select();
+			 return;
+		 }
+		 var tot = 10+20+30;
+		 var avg = (tot/3).toFixed(2);
+	 }
+	 
+ }
+</script>
+</body>
+</html>

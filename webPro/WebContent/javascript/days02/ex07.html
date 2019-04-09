@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 8. - 오후 12:13:26  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body> 
+
+<script>
+  var n1 = "10" ;
+  var n2 = "20" ;
+  
+  // string -> number 형변환
+  // 1) Number() 전역메소드
+  // console.log( Number("10") + Number("20") );  // 30
+  // console.log( Number("     ") );  //  0
+  // console.log( Number("") );       //  0
+  // console.log( Number("99a") );      // NaN( Not a Number )
+  //console.log( Number("12 34") );        // NaN
+  
+  //console.log( n1  + n2 );  // "1020"
+  var n = "1a";  // "12 34";
+  //if(  NaN 이라면 ){
+  if(  isNaN(n)  ){
+	 //alert("입력 잘못!!!") 
+  }
+</script>
+
+<script>
+  // alert( n1 );
+  // string -> number 형변환  
+  var result = parseInt( n1 ) + parseInt( n2 );
+  //console.log( result ); // 30
+  
+  var n = "10a";  //   NaN
+  n = "11  22";     //  NaN
+  // console.log( parseInt( n ) ); // 10
+  
+  var p = "3.14";
+  // parseFloat(p)
+  
+  
+  var n1 = "11";
+  var n2 = "22";
+  
+  console.log( eval(n1) + eval(n2) );  // 33
+  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

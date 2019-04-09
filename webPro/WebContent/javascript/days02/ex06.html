@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 8. - 오후 12:10:08  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+  input{
+     text-align: center;
+  }
+</style>
+</head>
+<body>
+<input type="text" id="num1" autofocus="autofocus"
+   onkeyup="num1_keyup();" 
+/>
+ +
+<input type="text" id="num2" 
+onkeyup="num2_keyup();" />
+= 
+<input type="text" id="result" disabled="disabled" />
+
+<script>
+  var num1 = document.getElementById("num1");
+  var num2 = document.getElementById("num2");
+  var result = document.getElementById("result");
+  
+  function num1_keyup(){
+	  if( event.keyCode == 13){
+		  // js    포커스 주기 전에 유효성 검사 ..
+		  // NaN 여부 ? 
+		n1 = Number(num1.value);
+		if( isNaN( n1 )  ){
+			  alert( "입력 잘못 !!!");
+			  num1.focus();
+			  num1.select();
+			  return;
+		}
+	    num2.focus();		  
+	  }
+  }
+  function num2_keyup(){
+	  if( event.keyCode == 13){
+		    // typeof num1.value
+		   n2 = Number(num2.value);
+			if( isNaN( n2 )  ){
+				  alert( "입력 잘못 !!!");
+				  num2.focus();
+				  num2.select();
+				  return;
+			}
+			
+	    	result.value =  n1 + n2;
+		    // string - > number 형변환 ...
+		    // number -> string
+	  }
+  }
+</script> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

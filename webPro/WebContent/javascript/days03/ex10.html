@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오후 3:28:22</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var src = "hello world LLow ALlo~~";
+ // llo LLo Llo lLo
+ var pattern = /llo/ig;	// i  g  m
+ // 일치하는 첫번째 항목 + (대소문자 구분) + g(global 전체)
+ var result = src.replace(pattern, "XXX");
+ result.toUpperCase(); // 대문자
+ result.toLowerCase(); // 소문자
+</script>
+<script>
+ // concat()  문자열 연결 메소드
+ // "hello" + " " + "world~"
+ // console.log("hello".concat(" ").concat("world"));
+ console.log("hello".concat(" ", "world"));
+ 
+ var id = "  kenik   ";
+ // console.log(id.trim());  // "kenik"
+ // trim() IE 8.0 이전 버전은 지원 안함 => 정규표현식 replace
+</script>
+<script>
+ var data = "hello world~";
+ for (var i = 0; i < data.length; i++) {
+	// ECMAscript 5 추가된 기능
+	document.write(data[i] + " / ")
+	
+	document.write(data.charAt(i) + " / ");
+	document.write(data.charCodeAt(i) + "<br>");
+ }
+</script>
+</body>
+</html>

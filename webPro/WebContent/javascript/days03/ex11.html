@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오후 3:47:49</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ #demo li {
+ 	list-style-type: decimal;
+ }
+</style>
+</head>
+<body>
+<input type="text" id="data" style="width:300px;" autofocus="autofocus"/>
+<p id="demo"></p>
+
+<script>
+ document.getElementById("data").onkeyup = function () {
+	if(event.keyCode == 13) {
+		var data = document.getElementById("data").value;
+		var pattern = /\s*,\s*/;
+		var datas = data.split(pattern);
+		
+		var demo = document.getElementById("demo");
+		// demo.innerHTML = "<ol>";
+		for (var i = 0; i < datas.length; i++) {
+			demo.innerHTML += "<li>[" + datas[i] + "]</li>";
+		}
+		// demo.innerHTML += "</ol>";
+	}
+ };
+</script>
+</body>
+</html>

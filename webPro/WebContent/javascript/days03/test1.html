@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. - 오전 7:30:18  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<!-- <body id="body"> -->
+<body>
+국어 : <input type="text" id="kor" onkeydown="setNextElementFocus(this, 'eng');" autofocus="autofocus" /><br>
+영어 : <input type="text" id="eng" onkeydown="setNextElementFocus(this, 'mat');" /><br>
+수학 : <input type="text" id="mat" onkeydown="proc(this)"/><br>
+총점 : <input type="text" id="tot" disabled="disabled" /><br>
+평균 : <input type="text" id="avg" disabled="disabled" /><br>
+
+<script>
+  function isJumsuCheck(jumsu){
+	  var pattern = /^(100|[1-9]?\d$)/;		 
+	  return  pattern.test(jumsu) ;
+  }
+  
+  function proc(txt){
+	  if( event.keyCode == 13 ){
+		  if(!isJumsuCheck(txt.value)){
+			  alert("점수 입력 잘못!!!");
+			  txt.focus();
+			  txt.select();
+			  return;
+		  }
+		  //
+		  var tot = 10+20+30;
+		  var avg = (tot / 3).toFixed(2);
+		  // *100   Math.round()    /100
+		  // 출력
+		  
+	  }
+  }
+  
+  function setNextElementFocus( txt , id){
+	  if( event.keyCode == 13 ){
+		  //alert( txt.value );
+		   
+		  if(!isJumsuCheck(txt.value)){
+			  alert("점수 입력 잘못!!!");
+			  txt.focus();
+			  txt.select();
+			  return;
+		  }
+		  
+		  var nextElement = document.getElementById(id);
+		  nextElement.focus();
+		  nextElement.select();
+	  }
+  }
+</script>
+
+<!-- 
+조건)
+1. 국어,영어,수학   0<=  <=100 정규표현식으로 유효성 검사
+2. 평균 소수점 2자리
+3. 수학 입력 후 엔터치면 총점,평균 계산해서 출력.
+ --> 
+</body>
+</html>

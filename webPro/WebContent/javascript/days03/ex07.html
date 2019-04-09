@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오후 12:23:08</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	padding: 50px;
+ 	border: solid 1px gray;
+ }
+ #out {
+ 	background-color: orange;
+ }
+ #in {
+ 	background-color: yellow;
+ }
+</style>
+</head>
+<body>
+<!-- 이벤트 버블링 -->
+<div id="out">out
+	<div id="in">in</div>
+</div>
+
+<script>
+ document.getElementById("out").addEventListener(
+		 "click"
+		 , function(){alert("out div 클릭됨")}
+		 , false // 이벤트 버블링, 캡처링 boolean 설정값
+		 );
+ document.getElementById("in").addEventListener(
+		 "click"
+		 , function(){alert("in div 클릭됨")}
+		 , false
+		 );
+ // 이벤트 캡처링(true) : 부모 -> 자식 이벤트 전달
+ // 이벤트 버블링(false) : 자식 -> 부모 이벤트 전달
+ // 기본값은 버블링
+</script>
+</body>
+</html>

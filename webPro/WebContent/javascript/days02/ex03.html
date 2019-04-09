@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 8. - 오전 11:02:59  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<button onclick="btn1_click()">버튼 1</button>
+<button onclick="btn2_click()">버튼 2</button>
+<p id="demo"></p>
+
+<script>
+   //var age = 25;  // 전역 변수
+   age = 30;  // 전역 변수
+   
+   var name = "홍길동";  // 변수 선언 만 하고 초기화 X
+
+   
+   // 변수를 재 선언해도 값은 손실되지 않는다. 
+   var name ;  // 변수를 또 선언 
+   function  btn1_click(){
+	   /* 
+	   var x;
+	   var y;
+	   var z;
+	    */
+	    /* 
+	    var x, y, z;  // 변수 선언 
+	    x = 5;
+	    y = 3.14;
+	    z = "kenik";
+	    z = x + y;
+	    console.log( z );
+	     */
+	     
+	    // var msg = "hello~";  // 지역변수
+	    
+	    // var 키워드로 변수 선언 없이 할당+사용
+	    msg = "hello~";  // 전역 변수
+	    //alert( msg );
+	    //alert( age ) ;
+	    //alert( name );
+	    document.getElementById("demo").innerHTML = name;
+	    console.log( name );
+   }
+   /* 
+   ex03.html:35 Uncaught ReferenceError: msg is not defined
+   at btn2_click (ex03.html:35)
+   at HTMLButtonElement.onclick (ex03.html:14)
+    */
+   function  btn2_click(){
+	   //  alert( msg );
+	   alert( age ) ;
+   }
+   // java   명령라인    세미콜론;
+   // js       명령라인    세미콜론;  ( 권장 )
+   /* 
+   window.alert("경고창")   
+   var     name = '홍길동'   
+   document.write('test')
+    */
+</script>
+
+<script>
+   var x = 10;
+   var k = 30;
+   var y = "20";
+   // + 연산자             왼쪽->오른쪽 
+   var z = k + x + y;       // 숫자 + 문자열 => 문자열 
+   console.log( z );  // "1020"   
+   // 4020
+</script>
+</body>
+</html>

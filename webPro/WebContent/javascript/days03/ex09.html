@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오후 2:38:56</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ [type="text"] {
+ 	text-align: center;
+ }
+</style>
+</head>
+<body>
+<input type="text" onkeydown="return rrn6_keydown();" value="123456" 
+                               onkeyup="rrn6_keyup();" id="rrn6" autofocus="autofocus" maxlength="6" />
+-
+<input type="text"  onkeyup="rrn7_keyup();" value="1234567" id="rrn7" maxlength="7" />
+<p id="demo"></p>
+
+<script>
+  var rrn6 = document.getElementById("rrn6");
+  function rrn6_keydown(){
+	  console.log( event.keyCode +" /  "+ String.fromCharCode(event.keyCode));
+	  var pattern = /^\d$/;  // /^[가-힇ㄱ-ㅎ]$/
+	  console.log(pattern.test( String.fromCharCode(event.keyCode) ));	  
+	  if( !pattern.test( String.fromCharCode(event.keyCode) ) )
+     {
+		  // event.cancelable  = true;
+		  return false;
+     }
+  }
+  function rrn6_keyup(){ 
+	  if( event.srcElement.value.length == 6 ){		  
+		  document.getElementById("rrn7").focus();
+	  }
+  }
+  function rrn7_keyup(){
+	  var demo = document.getElementById("demo");
+	  if( event.srcElement.value.length == 7 ){
+		  var rrn6 = document.getElementById("rrn6").value;
+		  // alert("test")
+		  // 연도 : ??
+		  // demo.innerHTML += "<li>" + (rrn6.substring(0, 2)) + "</li>";
+		  // demo.innerHTML += "<li>" + rrn6.slice(0, 2) + "</li>";
+		  // demo.innerHTML += "<li>" + rrn6.slice(-6, -4) + "</li>";
+		  demo.innerHTML += "<li>" + rrn6.substr(0, 2) + "</li>";
+		  // 월	  : ??
+		  // demo.innerHTML += "<li>" + (rrn6.substring(2, 4)) + "</li>";
+		  // demo.innerHTML += "<li>" + rrn6.slice(2, 4) + "</li>";
+		  demo.innerHTML += "<li>" + rrn6.substr(2, 2) + "</li>";
+		  // 일	  : ??
+		  // demo.innerHTML += "<li>" + (rrn6.substring(4, 6)) + "</li>";
+		  // demo.innerHTML += "<li>" + rrn6.slice(4, 6) + "</li>";
+		  //                                 start, end
+		  //                                 (-?, -?)  => 뒤에서부터 체크
+		  demo.innerHTML += "<li>" + rrn6.substr(4, 2) + "</li>";
+		  //								 start, length
+		  
+		  // 생각) 주민번호 뒷자리 첫번째 숫자 빼고 *로 표시하기
+	  }
+  }
+</script>
+
+<!-- 
+ <input type="text" id="rrn6" autofocus="autofocus" maxlength="6" onkeydown="setNextElementFocus(this, 'rrn7');"/>
+ -
+ <input type="text" id="rrn7" maxlength="7"/>
+ 
+<script>
+
+ function isRRNCheck(rrn){
+	 var pattern = /^[0-9]{2}+[0-3])/;
+	 return  pattern.test(rrn);
+ }
+
+ function setNextElementFocus(txt, id) {
+	 if(event.keyCode == 13) {
+		 if(txt.length < 6) {
+			 alert("6자리 입력");
+			 txt.focus();
+			 txt.select();
+			 return;
+		 }
+	 	var nextElement = document.getElementById(id);
+	 	nextElement.focus();
+	 	nextElement.select();
+	 }
+ }
+</script>
+ -->
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오전 11:37:04</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .focus {
+ 	background-color: yellow;
+ }
+ .blur {
+ 	background-color: white;
+ 	border: solid 1px gray;
+ }
+</style>
+</head>
+<body>
+ <input type="text" autofocus="autofocus"/><br>
+ <input type="text" /><br>
+ <input type="text" /><br>
+ <input type="text" /><br>
+ <input type="text" /><br>
+<script>
+ var tags = document.getElementsByTagName("input");
+ 
+ // alert(tags.length);
+ for (var i = 0; i < tags.length; i++) {
+	 tags[i].addEventListener("focus", function(){
+		 // event.srcElement.style.backgroundColor="yellow";
+		 event.srcElement.className = "focus"; /* *** */
+		 });
+	 tags[i].addEventListener("blur", function(){
+		 // event.srcElement.style.border="solid 1px gray";
+		 // event.srcElement.style.backgroundColor="white";
+		 event.srcElement.className = "blur";
+		 });
+	 
+	 // mouseover + mouseout = hover 이벤트
+	 tags[i].addEventListener("mouseover", function (){
+		 event.srcElement.style.border="solid 1px red";
+		 });
+	 tags[i].addEventListener("mouseout", function (){
+		 event.srcElement.style.border="solid 1px gray";
+		 });
+ }
+ /* 
+ tags[0].style.backgroundColor="yellow";
+ tags[0].addEventListener("focus", function(){event.srcElement.style.border="solid 1px red"});
+ tags[0].addEventListener("blur", function(){event.srcElement.style.border="solid 1px gray"});
+  */
+</script>
+</body>
+</html>

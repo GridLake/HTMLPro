@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 8. - 오후 2:26:14  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+숫자 입력 : <input type="text" id="num" 
+onkeydown="num_keydown();">
+<br>
+Email : <input type="text" id="email" />
+<br>
+Password : <input type="password" id="pwd" />
+
+<p id="demo"></p>
+<script>
+  var num = document.getElementById("num").value;
+  function num_keydown(){
+	  // console.log( " > num_keydown ");
+	  if( event.keyCode == 13  ){
+		  // Number() -> isNaN()
+		  // js 정규표현식
+		  // js 형식   :              /pattern/modifies;
+		  //                            /^[0-9]+$/i
+		  //                                                g
+		  //                                                m
+		  var pattern = /^[0-9]+$/i   ;
+		  // boolean test()
+		  if( !pattern.test(num) ){
+			  alert("입력 형식 잘못!!!");
+		  }
+	  }
+  }
+</script>
+
+<script>
+  var email_pattern= 
+	  /^[a-z]+([0-9\.\-]*_?\w+)*@([0-9_\.\-a-z]+)*(\w{1,3}|[0-9]{1,3})$/i; 
+   
+  //boolean email_pattern.test(???)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

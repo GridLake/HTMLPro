@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오후 12:33:58</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+찾을 대상(source)<br>
+<textarea cols="30" rows="10" id="source"></textarea>
+<br>
+찾을 문자열(search)<br>
+<input type="text" id="search" value="name" onkeydown="search_keydown();"/>
+찾은 위치()<br>
+<p id="demo"></p>
+<!-- js 문자열 -->
+<script>
+ var x = "hello 'world'~"; // "문자열"
+ var x = 'hello "world"~'; // '문자열'
+ // document.write(x);
+ // 1. 문자열 길이
+ // document.write(x.length); // 14 number
+ // var x = "hello \"world\"~";
+ // \b \n \f \r \t 제어문자 사용 가능
+ // alert('hello\n "world"~'); // 경고창 메시지도 개행
+ 
+ // document.getElementById("demo").innerHTML = "hello" + " world";
+ 
+ 
+ var name1 = "admin";				// String
+ var name2 = new String("admin");  // Object
+ 
+ // if(name1 == name2) alert("같다");
+ 
+ // === : 두 문자열 비교 & 타입 비교
+ // if(name1 === name2) alert("같다");
+ // else alert("다르다");
+ 
+ var name3 = new String("admin");
+ // alert(name2 == name3);  // false
+ // alert(name2 === name3); // false
+ // (기억) js 두 객체를 비교하면 항상 false
+ 
+  
+ var source = "var name3 = new String(\"admin\"); // object" +
+ "// alert(name2 == name3);  // false" +
+ "// alert(name2 === name3); // false";
+ 
+ 
+ var search = "name";
+ var idx = source.indexOf(search);
+ // alert(idx); 12    -1
+ // "name" 위치값 모두 출력
+ 
+ document.getElementById("source").innerText = source;
+ 
+ function search_keydown() {
+	 
+	 /* 
+	 var from = 0;
+	  var idx = -1;
+	  while( (idx=source.indexOf("name", from)) != -1){
+		  console.log( idx );
+		  from = idx + "name".length + 1;
+		  document.getElementById("demo").innerHTML
+		           += idx +"<br>";
+	  }
+	 */
+	 for (var i = 0; i < source.length; i++) {
+		 var idx = source.indexOf("name", i);
+		 if(idx == -1) {
+			 alert("찾는 단어 없음");
+		 }
+		 else {
+			 alert(idx);
+			 i += idx + value.length;
+		 }
+	 }
+	 
+ }
+ // lastIndexOf()
+ // "name".lastIndexOf(char, from)
+ // 찾은 위치값을 반환 "name".search()
+ // indexOf() 메소드와 차이점 : 2번째 인자X
+</script>
+</body>
+</html>

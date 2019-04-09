@@ -18,7 +18,7 @@
  	min-height: 100%;
  }
  .content {
- 	position: fixed;
+ 	position: relative;
  	top: 0;
  	left: 0;
  	background-color: rgba(0, 0, 0, 0.5);
@@ -34,9 +34,10 @@
  	background-color: #000;
  	color: #fff;
  	cursor: pointer;
- 	position: fixed;
+ 	position: absolute;
  	right: 0;
- 	top: ;
+ 	bottom: 0;
+ 	
  }
  #btnpause:hover {
  	background: #ddd;
@@ -51,7 +52,7 @@
 <!-- .content>h1>lorem1^p>lorem15^button -->
 <div class="content">
 	<h1>Lorem.</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis et nobis repellat neque repudiandae sequi!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
  <button id="btnpause" onclick="video_play();">Pause</button>
 </div>
 

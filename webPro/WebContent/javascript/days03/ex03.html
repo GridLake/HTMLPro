@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 9. 오전 10:24:49</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<button onclick="btn_click();">btn1</button><br>
+<button onclick="btn_click();">btn2</button><br>
+<button onclick="btn_click();">btn3</button><br>
+<button onclick="btn_click();">btn4</button><br>
+<button onclick="btn_click();">btn5</button>
+
+<script>
+ function btn_click() {
+	// 이벤트 발생시킨 요소를 얻어올 수 있다
+	// event.keyCode
+	// event.type
+	alert(event.srcElement.innerText);
+ }
+</script>
+
+
+
+
+<!-- 
+<button onclick="btn_click(this);">btn1</button><br>
+<button onclick="btn_click(this);">btn2</button><br>
+<button onclick="btn_click(this);">btn3</button><br>
+<button onclick="btn_click(this);">btn4</button><br>
+<button onclick="btn_click(this);">btn5</button>
+
+<script>
+ function btn_click(clickedbtn) {
+	alert(clickedbtn.innerText);	 
+ }
+</script>
+ -->
+
+</body>
+</html>
