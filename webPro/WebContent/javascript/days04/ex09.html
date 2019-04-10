@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 3:20:38</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- string/array -->
+ <!-- js 날짜, 시간 -->
+ <!-- 
+ js - 브라우저의 시간대를 사용
+ Date 날짜 객체
+ 1) new Date()
+ 2) new Date(year, month, day, hours, minutes, seconds)
+ 3) new Date(milliseconds)
+ 4) new Date(날짜 문자열)
+  -->
+ <p id="demo"></p>
+<script>
+ var d = new Date();
+ var d = new Date(2018, 12-1, 21);
+ var d = new Date(2018, 12-1);
+ var d = new Date(2018);	// 연도가 아니라 ms로 인식
+ 
+ // 연도를 두자리 숫자로 주면 20세기 연도로 표시
+ // Tue Dec 21 1999 00:00:00 GMT+0900 (한국 표준시)
+ var d = new Date(99, 12-1, 21);
+ // Sun Dec 21 1919 00:00:00 GMT+0900 (한국 표준시)
+ var d = new Date(19, 12-1, 21);
+ 
+ 
+ var d = new Date("2019-04-10");
+ // Wed Apr 10 2019 15:25:15 GMT+0900 (한국 표준시)
+ document.getElementById("demo").innerHTML = d;
+ // Wed Apr 10 2019
+ document.getElementById("demo").innerHTML = d.toDateString();
+ // 09:00:00 GMT+0900 (한국 표준시)
+ document.getElementById("demo").innerHTML = d.toTimeString();
+ 
+ // 2019. 4. 10. 오전 9:00:00
+ document.getElementById("demo").innerHTML = d.toLocaleDateString() + " " + d.toLocaleTimeString();
+ // $("#demo").html(d);
+ 
+ // document.getElementById("demo").innerText = d;
+ // $("#demo").text(d);
+</script>
+</body>
+</html>

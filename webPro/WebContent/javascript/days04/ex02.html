@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오전 10:27:39</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+숫자 입력 : <input type="text" id="numbers" value="3,5,2,4,1"/><br>
+<button id="btnexec">실행</button>
+<p id="demo"></p>
+<script>
+ // HTML DOM
+ // document.getElementById("btnexec").onclick = function() {}
+ document.getElementById("btnexec").addEventListener(
+		 "click"
+		 , function() {
+			 var demo = document.getElementById("demo");
+			 // alert("클릭")
+			 // 잘라내기 + 정렬(오름차순) p li 태그 출력
+			 var temp = document.getElementById("numbers").value;
+			 var temps = temp.split(",");
+			 temps.sort();
+			 /* 
+			 var output = "<ol>";
+			 for (var i = 0; i < temps.length; i++) {
+				 output += "<li>" + temps[i] + "</li>";
+				 // document.write("<li>" + temps[i] + "</li>" + "<br>");
+			 }
+			 output += "</ol>";
+			 document.getElementById("demo").innerHTML = output;
+			  */
+			 document.getElementById("demo").innerHTML = "<li>" + temps.join("</li><li>") + "</li>";
+		});
+</script>
+
+<hr>
+<script>
+ /* js 배열 */
+ /* var 배열명 = []; */
+ // var m = [1,2,3]; var m = new Array(1,2,3);
+ var m = new Array(1,2,3); // var m = [];
+ /* 배열크기 */
+ document.write(m.length + "<br>");
+ document.write(m[0] + "<br>");
+ m[1] = 100;
+ document.write(m[1] + "<br>");
+ document.write(m[2] + "<br>");
+ // alert(typeof m); // object
+ 
+ m[3] = Date.now;
+ document.write(m[3] + "<br>");
+ 
+ m[4] = 4;
+ document.write(m[4] + "<br>");
+</script>
+
+<script>
+ document.write("-".repeat(10));
+</script>
+</body>
+</html>

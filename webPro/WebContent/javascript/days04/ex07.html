@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 2:02:14</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var output = "";
+ var hap = 0;
+ var m = [45, 3, 10, 18, 9];
+ // m 배열의 총합
+ // m.foreach(function(항목값, 항목첨자값, 배열자체){
+ // m.forEach(function(value, index, array) {
+ m.forEach(function(value) { 
+	 output += value + "+";
+	 hap += value;
+ });
+ // document.write(output);
+ // document.write("=" + hap);
+</script>
+<script>
+ var m = [45, 3, 10, 18, 9];
+ // Array.map() : 배열의 각 요소에 대해 처리하는 함수
+ //               map() 수행한 후 새 배열 반환
+ var n = m.map(function(value, index, array) {
+	 		return value * 2;
+ 		 });
+ document.write(n);
+</script>
+</body>
+</html>

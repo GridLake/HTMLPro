@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 12:18:15</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var m = [3, 5, 2, 4, 1];
+ /* 
+ m.sort();
+ m.reverse();
+  */
+ 
+ // 내림차순정렬(descending)
+ // m.sort(function(a,b){return b-a;});
+ // m.sort(function(a,b){return a-b;}) // 오름차순정렬
+ 
+ // 무작위 정렬
+ m.sort(function(a,b){return 0.5-Math.random();});
+ 
+ document.write(m);
+ 
+ // 배열에서 가장 큰 값, 작은 값
+ // this나 null이나...
+ alert(Math.max.apply(this, m)); // 가장 큰 값
+ alert(Math.min.apply(null, m)); // 가장 작은 값
+ 
+ // alert(Math.max(1,5,4,2,3));
+ // alert(Math.min(1,5,4,2,3));
+</script>
+</body>
+</html>

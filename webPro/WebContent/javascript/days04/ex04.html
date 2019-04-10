@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오전 11:33:55</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var points = [3,5,2,4,1];
+ // var points = new Array();
+ 
+ // ECMAScript5에서 추가된 Array.isArray() : 배열 여부 확인
+ // alert(Array.isArray(points));
+ // alert(typeof points); // object
+ // alert(points instanceof Array); // 배열 여부 확인
+ // points.push(100);
+ // alert(points.toString()); // 문자열 반환
+ // alert(points[points.length-1]);
+ // alert(points.pop());
+ 
+ // shift() : 첫번째(0) 요소를 제거하고 두번째 요소부터 이동
+ // 첫번째 요소 반환 메소드
+ /* 
+ points.shift();
+ alert(points.toString());
+ points.shift();
+ alert(points.toString());
+  */
+</script>
+<input type="text" id="data" value="xxx" onkeydown="data_keydown();"/>
+<script>
+ function data_keydown() {
+	 if(event.keyCode == 13) {
+		 var data = event.srcElement.value;
+		 // unshift() : 매개변수를 추가할 때 0번째 요소에 추가하고 나머지는 이동
+		 // 배열크기 반환 메소드
+		 points.unshift(data);
+		 alert(points.toString());
+	 }
+ }
+</script>
+<script>
+ /* 두번째 요소의 값을 수정 */
+ // points[1] = ??;
+ // delete points[1]; // 값만 삭제할 뿐 "undefined" 형태로 남아있음
+ // push(), delete, pop(), 배열명[??]
+ // shift(), unshift();
+</script>
+<script>
+ // alert(points)
+ // splice(위치, 제거하려는 요소 개수, 값...)
+ // points.splice(1, 2, 100, 200);
+ // points.splice(1, 0, 100, 200);
+ points.splice(1, 1); // index 1 요소 제거
+ // alert(points);
+</script>
+<script>
+ var arr1 = [1, 2, 3];
+ var arr2 = [100, 200];
+ var arr3 = [4, 2];
+ // 두 배열을 병합: concat()
+ // 합친 배열을 반환, 원래 배열은 유지
+ // var conarr = arr1.concat(arr2, arr3);
+ // alert(conarr);
+</script>
+<script>
+ /* 배열 자르기 */
+ var points = [1, 2, 3, 4, 5];
+ // var arr = points.slice(2);
+ var arr = points.slice(2, 4); // (start, end) end는 포함X
+ alert(arr);
+</script>
+</body>
+</html>

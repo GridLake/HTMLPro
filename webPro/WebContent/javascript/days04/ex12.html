@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 4:15:24</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ select {
+ 	width: 100px;
+ 	text-align: center;
+ }
+</style>
+</head>
+<body>
+ <select id="cmbyear" onchange="lastDays();"></select>
+ <select id="cmbmonth" onchange="lastDays();"></select>
+ <select id="cmbdate"></select>
+<script>
+ var d = new Date();
+ var curyear = d.getFullYear();
+ var curmonth = d.getMonth() + 1;
+ var cmbyear = document.getElementById("cmbyear");
+ var cmbmonth = document.getElementById("cmbmonth");
+ var cmbdate = document.getElementById("cmbdate");
+ 
+ // cmbyear option 1~12 동적 추가
+ for (var i = 1970; i <= 2050; i++) {
+	if (i == curyear) {
+		// optionObj=new Option([text[,value[,defaultSelected[,selected]]]])
+		cmbyear.options[i-1970] = new Option(i, i, true, true);
+	} else {
+		cmbyear.options[i-1970] = new Option(i, i);
+	}
+ }
+ 
+ for (var i = 0; i < 12; i++) {
+	 var text = (i+1); // +"월";
+	 var value = (i+1);
+	 cmbmonth.options[i] = new Option(text, value);
+	 
+	 /* 
+	  if( i == month - 1 )
+		  cmbmonth.options[i].selected = "selected";
+	 */
+ }
+ cmbmonth.selectedIndex = curmonth - 1; // 성능
+ 
+ function lastDays() {
+	 var yidx = cmbyear.selectedIndex;
+	 var midx = cmbmonth.selectedIndex;
+	 var ytext = cmbyear.options[yidx].text;
+	 var mtext = cmbmonth.options[midx].text;
+	 
+	 var lastDay = new Date(ytext, mtext, 0).getDate().toString();
+	 console.log(lastDay);
+	 for (var i = 1; i <= lastDay; i++) {
+		var text = i;
+		var value = i;
+		cmbdate.options[i] = new Option(text, value);
+	}
+ }
+  
+/* 
+ for (var i = 1; i <= lastDay; i++) {
+	var text = i;
+	var value = i;
+	cmbdate.options[i] = new Option(text, value);
+ }
+ 
+ 
+ console.log(lastDay); */
+ 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 3:35:38</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ /* 
+ ISO Date   "2015-03-05" 
+ Short Date "03/05/2015"
+ Long Date  "May 05 2015"
+ */
+ 
+ var d = new Date("2015-03-05"); // ISO Date 형식 사용
+ // 2015. 1. 1.
+ var d = new Date("2015"); // 쌍따옴표 사용해서 입력하면 연도로 인식
+ 
+ var d = new Date("03/05/2015"); // Short Date 형식 사용
+ // document.write(d.toLocaleDateString());
+ 
+ var d = new Date();
+ // 1554878518000 : 1970.1.1 0:0:0 ~ 밀리세컨드
+ document.write(Date.parse(d) + "<br>");
+ 
+ // millisecond <--> Date
+ var milli = Date.parse(d);
+ var d = new Date(milli);
+ document.write(d.toLocaleDateString());
+</script>
+<p id="demo"></p>
+<script>
+ var d = new Date();
+ // 년, 월, 일, 시, 분, 초, ms, 요일
+ var demo = document.getElementById("demo");
+ var data = "";
+ data += "년: " + d.getFullYear() + "<br>";
+ data += "월: " + (d.getMonth() + 1) + "<br>";
+ data += "일: " + d.getDate() + "<br>";
+ 
+ data += "시: " + d.getHours() + "<br>";
+ data += "분: " + (d.getMinutes() + 1) + "<br>";
+ data += "초: " + d.getSeconds() + "<br>";
+ data += "밀: " + d.getMilliseconds() + "<br>";
+
+ var dayOfWeek = "일월화수목금토";
+ data += "요일: " + dayOfWeek[d.getDay()] + "요일<br>";
+ 
+ demo.innerHTML = data;
+</script>
+<script>
+ var d = new Date();
+ // (기억) 1970.1.1 이후의 밀리초 반환
+ d.getTime();
+</script>
+</body>
+</html>

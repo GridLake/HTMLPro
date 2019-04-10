@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 12:30:24</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var m = [];
+ // 1. m 정수 10개 랜덤 저장 (0~100 정수)
+ // 2. 30 정수보다 큰 수fmf 배열n에 담아서 출력
+ 
+ for (var i = 0; i < 10; i++) {
+	m[i] = Math.ceil(Math.random() * 100);
+ }
+ document.write(m, "<br>");
+ // Array.filter()
+ var n = m.filter(function(value, index, array) {
+	 return value > 30;
+	 // return index % 2 == 0;
+ });
+ document.write(n + "<br>");
+ /* 
+ var n = [];
+ for (var i = 0; i < m.length; i++) {
+	if(m[i] > 30) n.push(m[i]);
+ }
+ alert(n);
+  */
+</script>
+</body>
+</html>

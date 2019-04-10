@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 2:14:45</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body id="bd" onchange="fc_change();">
+<script>
+ /* 
+ function sum(n, m) {
+	 return n + m;
+ }
+ */
+ 
+ // arguments 컬렉션 : 자동으로 파라미터를 담아서 넘겨줌
+ // options 컬렉션
+ function sum() {
+	 // alert(arguments.length);
+	 // arguments[0] + arguments[1] + arguments[2]
+	 var hap = 0;
+	 for (var i = 0; i < arguments.length; i++) {
+		hap += arguments[i];
+	}
+	 return hap;			// 오류 안남
+ }
+ var result = sum(10, 20, 30);
+ // document.write(result);
+</script>
+<select id="bgcolor">
+ <!-- <option value="">text</option> -->
+</select>
+
+<script>
+ var bgcolor = document.getElementById("bgcolor");
+ 
+ // 동적(코딩) Option 추가
+ // optionObj=new Option([text[,value[,defaultSelected[,selected]]]])
+ // var optionObj = new Option("빨강", "red");
+ // bgcolor.options[0] = optionObj;
+ 
+ var colors = ["white", "red", "green", "blue"];
+ for (var i = 0; i < colors.length; i++) {
+	 bgcolor.options[i] = new Option(colors[i]);
+ }
+ 
+ bgcolor.onchange = function() {
+	 var idx = bgcolor.selectedIndex;
+	 var value = bgcolor.options[idx].value;
+	 var text = bgcolor.options[idx].text;
+	 
+	 document.bgColor = value;
+	 // document.body.style.backgroundColor = value;
+	 // document.getElementById("bd").style.backgroundColor = value;
+	 // document.getElementsByTagName("body")[0].style.backgroundColor = value; // 집합 -> 하나밖에 없지만 [0] 표시
+ }
+ /* 
+ function fc_change(){
+	   var sidx = bgcolor.selectedIndex;
+	   var text = bgcolor.options[sidx].text;
+	   var value = bgcolor.options[sidx].value;
+	   
+	   var bd = document.getElementById("bd");
+	   bd.innerHTML = 
+		   "<style='color:"+ text +"'>"+  text 
+		   +",  " + value +">";
+ }
+  */
+</script>
+</body>
+</html>

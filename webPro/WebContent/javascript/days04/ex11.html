@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오후 4:07:09</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<p id="demo"></p>
+ <!-- 날짜 설정 set~~() -->
+ <script>
+  var d = new Date();
+  d.setFullYear(2000);
+  d.setMonth(5-1); // 0(1월) ~ 11(12월)
+  d.setDate(11);
+  // d.setTime(date); 1970.1.1 이후 밀리세컨드
+  document.getElementById("demo").innerHTML = d.toLocaleString();
+ </script>
+</body>
+</html>

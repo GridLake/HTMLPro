@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 10. 오전 11:10:22</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var names = []; // 배열
+ 
+</script>
+이름 입력: <input type="text" id="name" />
+<button id="add">배열 추가</button>
+<button id="print" onclick="print_click();">배열 출력</button>
+<p id="demo"></p>
+<script>
+ var txtname = document.getElementById("name");
+ var demo = document.getElementById("demo");
+ 
+ document.getElementById("add").onclick = function() {
+	 // alert("이벤트 클릭 확인");
+	 // 입력 유효성 검사
+	 var pattern = /^[가-힇a-zA-Z]+$/ig;
+	 if(txtname.value.trim().length == 0 ) {
+		 alert("입력하세요");
+		 txtname.value = "";
+		 txtname.focus();
+		 // txtname.select();
+		 return;
+	 }
+	 // 유효성 검사
+	 if(!pattern.test(txtname.value.trim())) {
+		 alert("잘못 입력하셨습니다");
+		 txtname.value = "";
+		 txtname.focus();
+		 return;
+	 }
+	 // 유효성 검사 통과 : 배열 추가
+	 // var idx = names.length;
+	 // names[idx] = txtname.value.trim();
+	 names.push(txtname.value.trim()); // push() -> index 필요 없음
+	 txtname.value = "";
+	 txtname.focus();
+ }
+ 
+ function print_click() {
+	 names.sort();
+	 var output = "<ol><li>" + names.join("</li><li>") + "</li></ol>"; 
+	 demo.innerHTML = output; 
+ }
+</script>
+</body>
+</html>
