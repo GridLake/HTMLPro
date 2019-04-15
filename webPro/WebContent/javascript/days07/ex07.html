@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 11:50:13</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<button onclick="btn_typeWriter();">TypeWriter</button>
+<p id="box"></p>
+<script>
+ var box = document.getElementById("box");
+ var timer;
+ var content_length;
+ var i = 0;
+ var content;
+ function btn_typeWriter() {
+	 // [DOM]
+	 // document.documentElement == html root element
+	 content = document.documentElement.innerHTML;
+	 
+	 // alert(content);
+	 content_length = content.length;
+	 
+	 typeWriter();
+ }
+ 
+ var ms = 10;
+ function typeWriter() {
+	 if (content_length > i) {
+		 var oneChar = content.charAt(i++);
+		 box.innerHTML += oneChar == "\n" ? "<br>" : oneChar;
+		 timer = setTimeout(typeWriter, ms);
+	 }
+	 else {
+		 clearTimeout(timer);
+		 alert("출력 완료");
+	 }
+ }
+</script>
+<hr>
+<h1 id="demo"></h1>
+<button onclick="timer_start();">setTimeout()</button>
+<button onclick="timer_stop();">clearTimeout()</button>
+<br>
+<button onclick="timer_start2();">setInterval()</button>
+<button onclick="timer_stop2();">clearInterval()</button>
+<script>
+ var demo;
+ window.onload = function() {
+	 // alert("test");
+	 demo = document.getElementById("demo");
+ }
+ var timer;
+ function dispTime() {
+	 var now = new Date();
+	 demo.innerHTML = now.toLocaleString();
+	 // 단위시간 후에 호출 : setTimeout()
+	 // 1초 후에 다시 dispTime() 호출(재귀함수)
+	 timer = setTimeout(dispTime, 1000);
+ }
+ 
+ function timer_start() {
+	 dispTime();
+ }
+ 
+ function timer_stop() {
+	 clearTimeout(timer);
+ }
+ 
+ function dispTime2() {
+	 var now = new Date();
+	 demo.innerHTML = now.toLocaleString();
+ }
+ 
+ // 단위시간 마다 호출 : setInterval()
+ var timer2;
+ function timer_start2() {
+	 dispTime2();
+	 // 1초마다
+	 timer2 = setInterval(dispTime2, 1000);
+ }
+ 
+ function timer_stop2() {
+	 clearInterval(timer2);
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오후 3:04:30  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+
+<script>
+   var person = {		
+		   info : function (){
+			   //      인자로 넘어오는 person_info 객체 == this
+			   return this.name +"/ " + this.age;
+		   }
+   }   
+   var person_info = {
+	   name : "admin",
+	   age : 20
+   }
+   document.write( person.info() ); // undefined/undefined
+   // call()                                   apply()
+   //document.write( person.info.call(person_info) );
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 11. 오후 4:06:09</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .container {
+ 	width: 500px;
+ }
+ .collapsible {
+ 	background-color: #777;
+ 	color: white;
+ 	cursor: pointer;
+ 	padding: 18px;
+ 	width: 100%;
+ 	border: none;
+ 	text-align: left;
+ 	outline: none;
+ 	font-size: 15px;
+ }
+ /* 가상 요소 */
+ .collapsible::after {
+ 	content: '\002B';
+ 	color: white;
+ 	font-weight: bold;
+ 	float: right;
+ 	margin-left: 5px;
+ }
+ .collapsible:hover, .active {
+ 	background-color: #555;
+ }
+ .content {
+ 	padding: 0 18px;
+ 	max-height: 0;
+ 	overflow: hidden;
+ 	transition: max-height 0.2s ease-out;
+ 	background-color: #f1f1f1;
+ }
+ .active::after {
+ 	content: '\2212';
+ }
+</style>
+</head>
+<body>
+	<div class="container">
+		<button class="collapsible">Section 1</button>
+		<div class="content">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Ratione cumque sequi placeat explicabo nobis
+			molestiae temporibus reiciendis dicta maxime hic itaque omnis
+			doloribus asperiores deserunt deleniti suscipit adipisci saepe
+			aspernatur.</div>
+		<button class="collapsible">Section 2</button>
+		<div class="content">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Ratione cumque sequi placeat explicabo nobis
+			molestiae temporibus reiciendis dicta maxime hic itaque omnis
+			doloribus asperiores deserunt deleniti suscipit adipisci saepe
+			aspernatur.</div>
+		<button class="collapsible">Section 3</button>
+		<div class="content">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Ratione cumque sequi placeat explicabo nobis
+			molestiae temporibus reiciendis dicta maxime hic itaque omnis
+			doloribus asperiores deserunt deleniti suscipit adipisci saepe
+			aspernatur.</div>
+	</div>
+<script>
+ var coll = document.getElementsByClassName("collapsible");
+ var height = document.getElementById("content").height;
+ console.log(height);
+ for (var i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function(){
+		// alert("test~");
+		// this.className += "active";
+		// this.className = this.className.replace("active", "");
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		
+		// 1. content 내용만큼 maxHeight
+		// 2. 한번만 실행되는 문제 해결
+		if(content.style.maxHeight = 0) {
+			content.style.maxHeight =  document.getElementById('content').clientHeight;  // 단위 주의
+			content.style.overflow = "scroll";
+		}
+		else {
+			content.style.maxHeight = "0";
+		}
+	});
+ }
+</script>
+</body>
+</html>

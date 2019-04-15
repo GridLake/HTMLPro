@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오후 3:15:15  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<script>
+  /* 
+  [ ECMScript2015 + let(변수), const(상수) ]
+  - js 변수 선언 : var(변수) / let(변수) 차이점. 
+  - ES2015 이전 전역범위, 지역범위 2가지 + 블럭범위( Block Scope)
+  
+  {  //  블럭( block )
+	  var a;
+      let  b;
+  }  
+  */
+  /* 
+   [ java ]
+   main(){
+	     //var int a  = 100;
+	     { // block scope
+	    	 let/var int a = 200;
+	    	 sop(a);  // 100
+	     }
+	     sop(a);  // 100
+   }
+   */
+</script>
+<script>
+  {
+       var x = 100;   // block scope        global scope X
+  }
+  //document.write( x );
+  document.write("<br>");
+  {
+	  let y = 200;
+//	  document.write( y );
+      //var x = 400;
+      let x = 400;  // block scope
+      //document.write( x );
+      document.write("<br>");
+  }
+  // Uncaught ReferenceError: y is not defined
+  //document.write( y );
+  
+  //document.write( x );
+  document.write("<br>");
+</script>
+
+<script>
+  var i = 5;
+  /* for (var i = 0; i < 10; i++) { } */
+  for (let i = 0; i < 10; i++) { }
+  // document.write(  i  );  // 10
+  
+  /*
+  var x ;
+  {
+	 var x; 
+  }
+  
+  var x ;
+  {
+	 let x; 
+  }
+   */
+  
+</script>
+
+<script>
+   // gs var a;
+   // gs a;
+ 
+   // 함수 안에서  var, let 개념
+   function test(){
+	   // gc    n = "admin";
+	   // var n = "admin";  // function (local) scope	   
+	   let n = "admin";   // function (block) scope
+	   // 위의 의미는 동일하다.....
+   }
+
+   /* 
+   var n ;  // global scope
+   let  n;   // global(block) scope
+    */
+</script>
+
+<script>
+   /* 
+   var msg = "hello~"; // window 객체의 멤버 소속
+   let msg = "hello~";  //                          X
+   document.write( window.msg );
+    */
+</script>
+
+<script>
+  /*  재선언   에러 X
+  var x = 2;
+  var x = 3;
+   */
+   // Uncaught SyntaxError: Identifier 'x' has already been declared
+   /* 
+   {
+     var x = 2;
+     let  x = 3;
+   }
+    */
+    
+    //    ex09.html:117 Uncaught SyntaxError: Identifier 'x' has already been declared
+    /* 
+    let x = 2;
+    let x = 3;
+     */
+     
+     var x = 2;
+     {
+         var x = 3;
+     }
+     
+     let x = 2;
+     {
+         let x = 3;
+     }
+     
+     // let    [js hosting] X
+     x = 10;
+     
+     
+     var x ;
+</script>
+
+
+<script>
+ 
+    var x = 10;
+    // dw 10
+    {
+    	const x = 2;   // let x = 2;  
+    	// dw 2
+    	
+    	// x = 100; // error
+    	
+    	// const 상수 선언할때 반드시 초기화 해야 된다.
+    	/* 
+    	const y ;
+    	y = 3.154;
+    	const y = 3.15;
+    	 */
+    }
+
+    // dw 10
+</script>
+
+<script>
+
+for (var i = 0; i < array.length; i++) {
+	
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

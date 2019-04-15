@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 10:44:04</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ function test() {
+	 // arguments 컬렉션
+	 // alert(arguments.length);
+	 for (var i = 0; i < arguments.length; i++) {
+		console.log(arguments[i]);
+	 }
+ }
+ 
+ alert(typeof test); // function -> object
+ 
+ // test("홍길동", 10, 20, 30, "A");
+ 
+ // js 함수는 object
+ var test_def = test.toString();
+ alert(test_def);
+</script>
+<script>
+ // ES5
+ var x = function(a, b) {return a + b;};
+ // ES6 람다식
+ var x = (a, b) => a + b;
+</script>
+</body>
+</html>

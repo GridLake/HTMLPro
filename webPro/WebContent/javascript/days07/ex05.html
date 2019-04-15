@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 10:50:51</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ // var person1 = {}; JS 객체
+ var person1 = {
+		 name : "admin",
+		 age : 20
+ }
+ var person2 = {
+		 name : "hong",
+		 age : 15
+ }
+ 
+ // name + "/" + age 출력
+ var person = {
+     // 출력 메소드
+     print : function(){
+    	 return this.name + " / " + this.age;
+     }
+ };
+ 
+ console.log(person.print.call(person1));
+ console.log(person.print.call(person2));
+</script>
+
+<script>
+ function test(x, y) {
+	 if(y === undefined) {
+		 y = 0;
+	 }
+	 return x + y; // 10 + undefined = NaN
+ }
+ 
+ // console.log(test(10));
+ // console.log(test(x = 10, y = 20)); // ECMAScript2016~
+</script>
+</body>
+</html>

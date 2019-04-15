@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오전 11:18:27  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<input type="text" id="num" name="num" 
+autofocus="autofocus" />
+<br>
+<button id="if">if 문</button>
+<button id="switch">switch 문</button>
+<button id="for">for 문</button>
+<button id="while">while 문</button>
+<button id="foreach">foreach 문</button>
+<p id="demo"></p>
+<script>
+   $("#if").click(function (){
+	   // alert( typeof  $("#num").val()  );  // string
+	   var n = Number( $("#num").val()  );
+	   if( isNaN(n)){
+		   alert(" 정수 입력하세요!!! ");
+		   $("#num")
+		     .focus()
+		     .select();
+		   return;
+	   }
+	   var result = "odd";
+	   if( n % 2 == 0 ) result = "even";
+	   else                     result = "odd";
+	   
+	   $("#demo").html( result  );
+   });
+   $("#switch").click(function (){
+	   // 국어 점수를 입력받아서 수~가 출력 + 유효성 검사( 정규표현식 )
+	   var n =  $("#num").val()  ;
+	   var pattern = /^(100|[1-9]?\d)$/;
+	   if( !pattern.test(n) ){
+		   alert(" 점수(0~100) 정수 입력하세요!!! ");
+		   $("#num")
+		     .focus()
+		     .select();
+		   return;
+	   }
+	   var grade = "가";
+	   // js    /           parseInt()   Math.floor()
+	   switch ( parseInt(Number(n) / 10)) {
+		case 10: case 9:			grade  = "수";			break;
+		case 8:			grade  = "우";			break;
+		case 7:			grade  = "미";			break;
+		case 6:			grade  = "양";			break;
+		default:		grade  = "가";			break;
+		}
+	   $("#demo").html( grade  );
+   });
+   $("#for").click(function (){
+	   var n = Number( $("#num").val()  );
+	   // 1+2+3+...+10=55
+	   var sum = 0;
+	   var m = [];
+	   for (var i = 1; i <= n; i++) {
+		   m.push(i);
+		   //sum += i;
+	   }
+	   m.forEach( function (value , index, array){ sum += value; } );
+	   
+	   $("#demo").html(  m.join("+")+"=" + sum   );
+   }); 
+   
+   // https://blog.naver.com/lawogh3/221439635954
+   $("#while").click(function (){
+	   // 가로, 세로 2~9단 출력 ( table , tr, td )
+	   // insertRow() deleteRow()  insertCell()
+	   var table =  document.createElement("table");
+	   table.setAttribute("border", "1");
+	   table.setAttribute("style", "width:100%");
+	   
+	   var tr =  table.insertRow( table.rows.length );
+	   for (var i = 2; i <=9; i++) {
+	 	   var th =   tr.insertCell(j-2);
+		   th.innerHTML = i+" dan"; 
+	   } 	   
+	   for (var i = 1; i <=9; i++) {
+		   var tr =  table.insertRow( table.rows.length );  // 하단
+		   for (var j = 2; j <=9; j++) {
+			   var td =  tr.insertCell(j-2);
+			   td.innerHTML =  j +"*"+i+"="+(i*j) ;
+		   }
+	   }
+	   
+	   var demo = document.getElementById("demo");
+	   demo.appendChild(table);
+	   // 두번째 
+	   /*
+	   var table =  document.createElement("table");
+	   table.setAttribute("border", "1");
+	   table.setAttribute("style", "width:100%");
+	   
+	   var tr =  document.createElement("tr");
+	   for (var i = 2; i <=9; i++) {
+		   var th =  document.createElement("th");
+		   th.innerHTML = i+"단";
+		   tr.appendChild(th);
+	   }
+	   table.appendChild(tr);
+	   
+	   for (var i = 1; i <=9; i++) {
+		   var tr =  document.createElement("tr");
+		   for (var j = 2; j <=9; j++) {
+			   var td =  document.createElement("td");
+			   td.innerHTML =  j +"*"+i+"="+(i*j) ;
+			   tr.appendChild(td);
+		   }
+		   table.appendChild(tr);
+	   }
+	   
+	   var demo = document.getElementById("demo");
+	   demo.appendChild(table);
+	   */
+	   
+	   // 첫 번째 
+	   /*
+	   var output = [];
+	   output.push("<table border='1' style='width:100%'>");
+	   output.push("<tr>");
+	   for (var i = 2; i <=9; i++) {
+		   output.push("<th>" + i +"</th>");
+	   }
+	   output.push("</tr>");
+	   
+	   for (var i = 1; i <=9; i++) {
+		   output.push("<tr>");
+		   for (var j = 2; j <=9; j++) {
+			   output.push("<td align='center'>" +  j +"*"+i+"="+(i*j) +"</td>");
+		   }
+		   output.push("</tr>");
+	   }
+	   
+	   output.push("</table>");
+	   
+	   var demo = document.getElementById("demo");
+	   demo.innerHTML = output.join("");
+	   */
+   });
+   $("#foreach").click(function (){});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

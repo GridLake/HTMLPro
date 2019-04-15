@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오후 2:09:50</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+ }
+
+ h1 {
+	font-size: 1.5em;
+ }
+
+ h2 {
+	font-size: 1.2em;
+ }
+</style>
+</head>
+<body>
+<script>
+ var makeCounter = function() {
+	 var privateCounter = 0; // 지역변수
+	 function changeBy(val) {
+		 privateCounter += val;
+	 }
+	 return {
+		 increment: function() {
+			 changeBy(1);
+	     },
+	     decrement: function() {
+	      	 changeBy(-1);
+	     },
+	     value: function() {
+	         return privateCounter;
+	     }
+	 }  
+ };
+ 
+ var counter1 = makeCounter(); // privateCounter = 0
+ var counter2 = makeCounter(); // privateCounter = 0
+ 
+ counter1.increment();
+ counter1.increment();
+ 
+ console.log("counter1 " + counter1.value());
+ console.log("counter2 " + counter2.value());
+</script>
+
+<script>
+ var counter = (function() {
+	 var privateCounter = 0;
+	 function changeBy(val) {
+		 privateCounter += val;
+	 }
+	 return {
+		 increment: function() {
+			 changeBy(1);
+	     },
+	     decrement: function() {
+	      	 changeBy(-1);
+	     },
+	     value: function() {
+	      	 return privateCounter;
+	     }
+	 };   
+ })();
+ /* 
+ console.log(counter.value()); // logs 0
+ counter.increment();
+ counter.increment();
+ console.log(counter.value()); // logs 2
+ counter.decrement();
+ console.log(counter.value()); // logs 1
+  */
+</script>
+
+<a href="#" id="size-12">12</a><br>
+<a href="#" id="size-14">14</a><br>
+<a href="#" id="size-16">16</a><br>
+<script>
+ function makeSizer(size) {
+	 return function() {
+		 document.body.style.fontSize = size + 'px';
+	 };
+ }
+
+ var size12 = makeSizer(12);
+ var size14 = makeSizer(14);
+ var size16 = makeSizer(16);
+	
+ document.getElementById('size-12').onclick = size12;
+ document.getElementById('size-14').onclick = size14;
+ document.getElementById('size-16').onclick = size16;
+</script>
+
+<script>
+ function makeAdder(x) {
+	 return function(y) {
+		 return x + y;
+	 };
+ }
+ 
+ var add5 = makeAdder(5);
+ var add7 = makeAdder(7);
+ 
+ console.log(add5(2)); // 5 + 2 == 7
+ console.log(add7(2)); // 7 + 2 == 9 
+</script>
+
+<script>
+ function init() {
+	 var name = "Mozilla"; // name은 init 에 의해 생성된 지역변수다
+	 
+	 function displayName() { // displayName() 은 내부 함수이며,클로저다
+		 alert(name); // 부모 함수에서 선언된 변수를 사용한다
+	 }
+	 // displayName();
+	 return displayName;
+ }
+ var myFunc = init(); // 함수 호출 부분
+ // myFunc();
+</script>
+
+</body>
+</html>

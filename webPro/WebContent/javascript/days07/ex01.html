@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 8:58:33</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<!-- js forms 유효성 검사 -->
+
+<script>
+ function validateForm() {
+	// var fname = document.getElementById("fname").value;
+	// $("#fname").val();
+	
+	// HTMLCollection document.getElementsByName("fname");
+	// var fname = document.getElementsByName("fname")[0].value;
+	
+	// document.forms 컬렉션
+	// var fname = document.forms[0]["fname"].value;
+	var fname = document.forms["form1"]["fname"].value;
+	// alert(fname);
+	
+	if(fname.trim() == "") {
+		alert("name은 필수 입력 항목입니다");
+		return false;
+	}
+ }
+</script>
+<form name="form1" action="ex01_ok.jsp" onsubmit="return validateForm()" method="post">
+Name : <input type="text" id="fname" name="fname" autofocus="autofocus"/>
+<br>
+<input type="submit" />
+</form>
+</body>
+</html>

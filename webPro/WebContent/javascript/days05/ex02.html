@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 11. 오전 10:02:04</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<ul class="days">
+</ul>
+<script>
+ function getLastDay(year, month) {
+	 var d = new Date(year, month);
+	 d.setDate(0);
+	 return d.getDate();
+ }
+</script>
+
+<script>
+ var curr_year = 2019;
+ var curr_month = 4;
+ var lastDay = getLastDay(curr_year, curr_month);
+ // 동적으로 li 태그 만들어서 ul 태그에 추가
+ 
+ var ul_days = document.getElementsByClassName("days")[0];
+ 
+ for (var i = 1; i <= lastDay; i++) {
+	 var li_day = document.createElement("li");
+	 // li_day.innerText = "admin";
+	 var li_text = document.createTextNode(i);
+	 li_day.appendChild(li_text);
+	 ul_days.appendChild(li_day);
+ }
+ 
+</script>
+</body>
+</html>

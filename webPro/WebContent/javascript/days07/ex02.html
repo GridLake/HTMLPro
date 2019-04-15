@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 9:45:43</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ /*
+   js data type : string, number, boolean, object, function, null, undefined 
+   
+ [js 객체 만들기]
+   
+ 1)
+ var person = {
+		   		 firstName: "John",
+		   		 lastName : "Doe",
+		   		 age : 25
+               };
+ 2)
+ var person = new Object();
+ person.firstName = "John";
+ person.lastName = "Doe";
+ person.age = 25;
+ */
+   
+ var person = {
+ 		firstName : "John",
+ 		lastName : "Doe",
+ 		age : 25,
+ 		// js method
+ 		/* 
+ 		fullName : function() {
+ 			// this 개념 : 종류 5가지
+ 			return this.firstName + " " + this.lastName;
+ 		}
+ 		 */
+ 		// ECMAScript5 getter, setter
+ 		language : "en",
+ 		get lang() {
+ 			return this.language.toUpperCase(); 
+ 		}
+ 		set lang(lang) {
+ 			this.language = lang;
+ 		}
+ };
+ 
+ // 객체 새 메소드 추가
+ person.fullName = function(){
+	 return this.firstName + " " + this.lastName;
+ };
+ 
+ console.log(person.fullName());
+ 
+ // js method 호출
+ // console.log(person.fullName());
+ // var name = person.fullName();
+ var name = person.fullName; // 괄호 없애면 function 정의 반환 저장된 name 변수(기억)
+ console.log(name);
+ 
+ // 새 속성 추가
+ person.grade = 'a';
+ // 속성 삭제
+ delete person.age;
+ 
+ /*
+ console.log(person.firstName);
+ console.log(person["lastName"]);
+ */
+ /*  
+ for ( var x in person) {
+	console.log(person[x]);
+ }
+  */
+ /*  
+ var m = [3, 5, 2, 4, 1];
+ for ( var n in m) {
+	// 그냥 n으로 쓰면 주소 반환, m[n]으로 써야 값 반환
+	console.log(m[n])
+ }
+  */
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 8:58:33</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ span {
+ 	color: red;
+ }
+</style>
+</head>
+<body>
+<!-- js forms 유효성 검사 -->
+
+<form id="form1" name="form1" action="ex01_ok.jsp" method="post">
+Name : <input type="text" id="fname" name="fname" autofocus="autofocus"/>
+<span></span>
+<br>
+<input type="submit" />
+</form>
+
+<script>
+ $("#form1").submit(function(event) {
+	 if($("#fname").val() == "") {
+		 // alert("name은 필수 입력 항목입니다");
+		 // $( "span" ).text( "* 필수 입력 항목" ).show().fadeOut( 1000 );
+		 $("#fname").next().text( "* 필수 입력 항목" ).show().fadeOut( 1000 );
+		 event.preventDefault();
+	 }
+ });
+</script>
+</body>
+</html>

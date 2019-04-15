@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오전 9:23:18  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<button>create lotto</button>
+<p id="demo"></p>
+<script>
+  function getRndRange(min, max){
+	  return Math.floor( Math.random() * ( max-min +1) ) + min;
+  }
+  
+  // 중복 O  false
+  // 중복 X   true
+  function isDuplicationLotto( lottos, n ){
+	return   lottos.every(function (value, index, array){
+					  return value  !=  n;
+				  });
+  }
+</script>
+<script>
+   var lottos = [];
+   var n = -1;
+   $("button").click(function  (){
+	   // lottos 배열 모든 요소 제거...
+	   lotto = [];
+	   while( lotto.length < 6 ){
+		   n = getRndRange(1,45);
+		   console.log( n );
+		   if( isDuplicationLotto( lotto, n ) )   lotto.push(n);
+	   }
+	   lottos.push( lotto );
+	   console.log( lottos[0] );
+   });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 	   
+   for (var i = 0; i < 10000; i++) {
+	   n = getRndRange(1,45);
+	   if( n < 1 || n > 45){
+		   console.log("failed");
+	   }
+   }
+ -->	    

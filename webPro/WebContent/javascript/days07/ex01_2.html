@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 8:58:33</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<!-- js forms 유효성 검사 -->
+
+
+<form name="form1" action="ex01_ok.jsp" method="post">
+<!-- required="required" 로 자동 유효성 검사 가능... 보통은 직접 유효성 검사 구현 -->
+Name : <input type="text" required="required" id="fname" name="fname" autofocus="autofocus"/>
+<br>
+Age : <input type="number" required="required" min="0" max="130" value="0"/>
+<br>
+Email : <input type="email" />
+<br>
+<input type="submit" />
+</form>
+</body>
+</html>

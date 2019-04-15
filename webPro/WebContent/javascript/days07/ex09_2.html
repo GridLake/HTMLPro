@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오후 2:46:57</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .myProgress {
+ 	width: 100%;
+ 	background-color: #ddd;
+ 	border: solid 1px gray;
+ }
+ .myBar {
+ 	width: 1%;
+ 	height: 30px;
+ 	background-color: #4caf50;
+ 	text-align: right;
+ 	color: red;
+ }
+</style>
+</head>
+<body>
+<h3>Progress Bar</h3>
+<div id="myProgress1" class="myProgress">
+	<div id="myBar1" class="myBar"></div>
+ <button id="btn1">진행</button>
+</div>
+
+<div id="myProgress2" class="myProgress">
+	<div id="myBar2" class="myBar"></div>
+ <button id="btn2">진행</button>
+</div>
+
+<div id="myProgress3" class="myProgress">
+	<div id="myBar3" class="myBar"></div>
+ <button id="btn3">진행</button>
+</div>
+
+<script>
+   $("button").click(function(){
+	   var bar = $(this).prev(); // 클릭한 버튼
+	   var width = 1;
+	   var timer = setInterval( frame, 30);
+	   // 클로저    독립적으로 변수
+	   function frame(event){
+		   if( width>=100) clearInterval(timer);
+		   else{
+			   width++;
+			   bar.css("width", width + "%" );
+			   bar.html(width + "%");
+		   }
+	   }
+   });
+   
+   var myBars = document.getElementsByClassName("myBar");
+   
+</script>
+
+<!-- 
+<script>
+ var bar = document.getElementById("myBar1");
+ document.getElementById("btn1").onclick = progressbar;
+ 
+ var width = 1;
+ 
+ function progressbar() {
+	if (width >= 100) clearTimeout(timer); 
+	else {
+		width++;
+		bar.style.width = width + "%";
+		bar.innerHTML = width + "%";
+	}
+	var timer = setTimeout(progressbar, 30);
+ }
+</script>
+ -->
+</body>
+</html>

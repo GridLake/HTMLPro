@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오후 5:29:32</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+    function test(){
+    	var privateCounter = 0;
+    	
+    	return function (){  // 클로저
+    		privateCounter++;
+    		return privateCounter;
+    	}
+    	// console.log( privateCounter );
+    }
+    
+    var fn1 = test();
+    var fn2 = test();
+    
+    console.log( fn1() );  // 1
+    console.log( fn1() );  // 2
+    console.log( fn2() );  // 1
+   </script>
+</body>
+</html>

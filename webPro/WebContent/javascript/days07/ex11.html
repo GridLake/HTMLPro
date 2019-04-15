@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오후 3:48:50</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .myDiv {
+ 	background-color: #f1f1f1;
+ 	text-align: center;
+ 	border: solid 1px #d3d3d3;
+ 	
+ 	position: absolute;
+ 	z-index: 9;
+ }
+ .myDivHeader {
+ 	padding: 10px;
+ 	cursor: move;
+ 	z-index: 10;
+ 	background-color: #2396f3;
+ 	color: #fff;
+ }
+</style>
+</head>
+<body>
+<h3>드래그 드롭(DragDrop)</h3>
+<div id="myDiv1" class="myDiv">
+	<div id="myDiv1Header" class="myDivHeader">Click Here</div>
+		<p>DragDrop</p>
+		<p>DragDrop</p>
+		<p>Div</p>
+</div>
+<div id="myDiv2" class="myDiv" style="left:300px">
+	<div id="myDiv2Header" class="myDivHeader">Click Here</div>
+		<p>DragDrop</p>
+		<p>DragDrop</p>
+		<p>Div</p>	
+</div>
+<div id="myDiv3" class="myDiv" style="left:500px; top:200px">
+	<div id="myDiv3Header" class="myDivHeader">Click Here</div>
+		<p>DragDrop</p>
+		<p>DragDrop</p>
+		<p>Div</p>
+</div>
+<script>
+ function draggable(elem) {
+	 var pos1 = 0, pos2 = 0; // x, y
+	 var pos3 = 0, pos4 = 0; // x, y
+	 if (document.getElementById(elem.id + "Header")) {
+		 document.getElementById(elem.id + "Header").onmousedown = dragMouseDown;
+	 }
+	 else {
+		 elem.onmousedown = dragMouseDown;
+	 }
+	 
+	 // 클로저(내장함수)
+	 function dragMouseDown(e) {
+		 e = e || window.event;
+		 
+		 pos3 = e.clientX;
+		 pos4 = e.clientY;
+		 
+		 document.onmousemove = elementDrag;
+		 document.onmouseup = closeDragElement;
+		 
+	  }
+	 
+	 function elementDrag(e) {
+		 e = e || window.event;
+		 pos1 = pos3 - e.clientX;
+		 pos2 = pos4 - e.clientY;
+		 elem.style.left = (elem.offsetLeft - pos1) + "px";
+		 elem.style.top = (elem.offsetTop - pos2) + "px";
+		 pos3 = e.clientX;
+		 pos4 = e.clientY;
+	 }
+	 function closeDragElement(e) {
+		 document.onmousemove = null;
+		 document.onmouseup = null;
+	 }
+	 
+ }
+
+</script>
+<script>
+ /* js 클로저 */
+ // $( ".draggable" ).draggable();
+ draggable(document.getElementById("myDiv1"));
+ draggable(document.getElementById("myDiv2"));
+ draggable(document.getElementById("myDiv3"));
+</script>
+</body>
+</html>

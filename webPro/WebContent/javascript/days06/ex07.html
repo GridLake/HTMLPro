@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오후 2:36:56  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<script>
+  "use strict";   // 엄격한 모드
+   /* 
+     [ js this 설명 ]
+     1. 메소드 안에서 this 는   소유한 객체
+     2. 전역 객체  this           window 객체
+     3. 함수    안에서 this 는   window 객체
+     4. 엄격한 모드 + 함수    안에서 this 는   undefined
+     5. 이벤트 안에서의 this 는 이벤트를 수신한 요소(element)
+     6. this
+    		  
+   */
+   var person = {
+		   name:"admin",
+		   age: 20,
+		   info: function (){
+			   return this.name + " / " + this.age;
+		   }
+   }; // object
+   
+   // alert(   person.name   );
+   // alert(   person["age"]);
+   
+   var msg = person.info();
+   // alert( msg );
+   
+   var x = 10;
+   // alert( window.x );
+   // alert( this.x );
+   // alert( x );
+   
+   
+  function this_test(){
+	  return this;
+  }
+  
+  //alert( this_test() );  // [object Window]
+  
+</script>
+
+<button onclick="this.style.color='red'">Click Me</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

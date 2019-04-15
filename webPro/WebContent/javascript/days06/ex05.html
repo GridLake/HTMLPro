@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 12. - 오후 1:52:28  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<script>
+/* 
+  [js data type]
+    string
+    number
+    boolean
+    function
+    object
+  [js Object]
+    Object
+    Date
+    Array
+    String
+    Number
+    Boolean
+   [js 형변환]
+    1) number - > string 형변환
+         1+""
+         new String(false)
+         true.toString()
+         new String(new Date() )
+         Date().toString()
+    2) string -> number 형변환
+        parseInt()/ parseFloat()
+        Number()
+        eval()
+    3)     
+           Number( false )   ->  0
+           NUmber( true  )   ->  1
+ */  
+ /*
+      [js bit operator]
+         &   |    ^   ~
+         <<   >>   >>>
+ */
+    // 10진수  -- 2진수,8진수,16진수
+    
+    /*
+      [js Regex 정규표현식]
+      형식 :  /pattern/modifiers;
+    */
+    
+    var msg = "hello World~";
+    //var pattern = "world";
+    var pattern = /world/i;
+    
+    // msg.indexOf(char)
+    // msg.lastIndexOf(char)
+    // var result = msg.search(pattern);
+    
+    var result = msg.replace(pattern, "xxx"); 
+    
+    //alert( result );  // 위치값  6 
+</script>
+<script>
+   var msg ="abc\nis ???\nIS xxx";
+   var pattern = /^is/m ;   // [m]ulti line
+   // boolean pattern.test(msg);
+   var result = msg.match(pattern);
+   //alert( result );
+</script>
+
+<input type="text" id="num" />
+<button type="button" onclick="exec();">exec</button>
+<p id="demo"></p>
+<script>
+    /* js 예외 처리 */
+    /* 
+    입력하지 않으면 예외를 발생     throw new IOException();
+    0 보다 작으면   예외    발생
+    100 크면        예외    발생
+    숫자 아니면       예외    발생
+     */
+    function exec(){
+    	var num = document.getElementById("num").value;
+    	try {
+			if( num  == "" ) throw "empty";
+			if(  isNaN(num) ) throw "not a number";
+			if( !( 0<= num && num <=100 )) throw "num outofrange"
+			
+			$("#demo").html(num);
+		} catch (err) {
+			$("#demo").html (err)
+		}finally{
+			// 
+		}
+    	
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

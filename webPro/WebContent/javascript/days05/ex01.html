@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 11. 오전 8:58:17</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+ var demo = document.getElementById("demo");
+ // var now_year = new Date().getFullYear();
+ // var now_year = new Date().getYear(); // 119 + 1900
+ 
+ var lastDays = [];
+ // 1월 ~ 12월 마지막날짜 몇 일?
+ var d = new Date();
+ var year = d.getFullYear();
+ 
+ for (var i = 1; i <= 12; i++) {
+    var lastDay = new Date(year, i, 0).getDate().toString();
+	lastDays.push(lastDay);	 		
+ }
+ 	demo.innerHTML = "<ol><li>" + lastDays.join("</li><li>") + "</li></ol>";
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 15. 오전 9:45:43</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ // js function(함수) + 생성자 함수(객체 생성)
+ function Person(name, age, color) {
+	this.name = name;
+	this.age = age;
+	this.color = color;
+	/* 
+	this.print = function() {
+		 this.name + "/" + this.age + "/" + this.color;
+	} 
+	*/
+ }
+ 
+ var father = new Person("kenik", 30, "blue");
+ var son = new Person("eric", 10, "red");
+ 
+ // 객체 속성 추가
+ // Person.grade = "a";  불가
+ father.grade = "a";
+ // 객체 메소드 추가
+ father.print = function() {
+	 this.name + "/" + this.age + "/" + this.color;
+ };
+</script>
+</body>
+</html>
