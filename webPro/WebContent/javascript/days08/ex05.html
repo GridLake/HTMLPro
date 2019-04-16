@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오후 2:45:54</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <form id="form1" name="form1" action="">
+  Name : <input type="text" name="name" value="admin"/>
+  <br>
+  Age : <input type="text" name="age" value="20"/>
+  <br>
+  Email : <input type="email" name="email" value="admin@naver.com"/>
+  
+  <button type="button">확인</button>
+ </form>
+<p id="demo"></p>
+<script>
+ $("button").click(function(){
+	 // 입력값을 출력 -> [elements 컬렉션]
+	 var form = document.forms["form1"];
+	 // alert(form.elements.length);
+	 var output = "";
+	 for (var i = 0; i < form.elements.length; i++) {
+		 output += form.elements[i].value + "<br>";
+	 }
+	 $("#demo").html(output);
+ });
+</script>
+</body>
+</html>

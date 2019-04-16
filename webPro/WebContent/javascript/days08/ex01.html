@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오전 8:57:31</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .box {
+ 	position: absolute;
+ }
+</style>
+</head>
+<body>
+<img src="../images/item01.gif" alt="" />
+<script>
+ // min <= 정수 <= max
+ function getRandomInt(min, max) {
+	 return Math.floor(Math.random() * (max - min + 1) + min);
+ }
+ 
+ // contextmenu : 오른쪽 마우스 클릭했을 때 뜨는 모든 메뉴
+ document.oncontextmenu = function() {
+
+ }
+ 
+ document.onmousedown = function() {
+	// console.log(event.button);
+	// 왼쪽버튼 0  가운데버튼 1  오른쪽버튼 2
+	if (event.button == 0) {
+		// <title></title>
+		document.title = event.clientX + ", " + event.clientY;
+		
+		var img = document.createElement("img");
+		var url =  "../images/item0" + getRandomInt(1, 9) + ".gif";
+		img.setAttribute("src", url);
+		// img.src = "../images/item01.gif";   // 위와 같은 코딩
+		img.classList.add("box");
+		// img.style.left = event.clientX + "px";
+		// img.style.top = event.clientY + "px";
+		
+		var left = event.clientX - $("img").width()/2;
+		var top = event.clientY - $("img").height()/2;
+	    img.setAttribute("style", "left:" + left + "px;top:" + top + "px;");
+		
+		document.body.appendChild(img);
+	}
+	else if(event.button == 2) {
+		if(event.srcElement.className == "box") {
+			// alert();
+			var result = confirm("정말 삭제할까요?"); // 확인, 취소 (true/false)
+			if(result) document.body.removeChild(event.srcElement);
+		}
+	}
+	else if(event.button == 1) { // 휠 마우스 버튼
+		// 모든 이미지 제거
+		// document.images 컬렉션 
+	    //alert( document.images.length );
+		while (document.images.length != 0) {
+			document.images[0].remove();
+		}
+	}
+ }
+ 
+ document.onmousemove = function() {
+	 // document.title = event.clientX + ", " + event.clientY;
+ }
+</script>
+</body>
+</html>

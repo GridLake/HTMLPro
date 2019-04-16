@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오전 10:02:25</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ table {
+ 	width: 50%;
+ 	margin: 0 auto;
+ }
+ table, td, th {
+ 	border : solid 1px gray;
+ }
+ table>thead>tr:first-child {
+ 	background-color: gray;
+ 	color: white;
+ }
+ tr > td:first-child {
+ 	text-align: center;
+ }
+</style>
+</head>
+<body>
+ <table>
+   <thead>
+ 	<tr>
+ 		<th><input type="checkbox" id="chkAll" onclick="mainchkbox(this);"/>Lorem.</th>
+ 		<th>Deserunt.</th>
+ 		<th>Consectetur.</th>
+ 	</tr>
+   </thead>
+ 	<tbody>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="7369" class="sub"/>Lorem.</td>
+ 	 	<td>Eveniet.</td>
+ 	 	<td>Amet!</td>
+ 	 </tr>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="7789" class="sub"/>Lorem.</td>
+ 	 	<td>Officiis.</td>
+ 	 	<td>Blanditiis.</td>
+ 	 </tr>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="9833" class="sub"/>Lorem.</td>
+ 	 	<td>Ratione!</td>
+ 	 	<td>Cum.</td>
+ 	 </tr>
+ 	</tbody>
+ 	<tfoot>
+ 	 <tr>
+ 	  <td colspan="3">
+ 	    <input type="button" id="empAdd" value="사원추가" />
+ 	    <input type="button" id="empDel" value="사원삭제" />
+ 	    <input type="button" id="empEdit" value="사원수정" />
+ 	  </td>
+ 	 </tr>
+ 	</tfoot>
+ </table>
+<p id="demo"></p>
+<script>
+ /* 
+ document.getElementById("ckbAll").onclick = function() {
+	 // alert("전체 선택: " + this.checked);
+	 var ckblist = document.getElementsByClassName("sub");
+	 alert(ckblist.length);
+	 for (var i = 0; i < ckblist.length; i++) {
+		ckblist[i].checked = this.checked;
+	}
+ }
+  */
+ 
+ /* 
+ Return type
+ 
+ document.getElementById(id)            : element
+ document.getElementsByClassName(name)  : NodeList
+ document.getElementsByName(name)       : HTMLCollection
+ document.getElementsByTagName(tagName) : NodeList 
+ 
+ [node]    html -> DOM의 구성 요소
+ */
+ 
+ // 굳이 특정 id, class 등을 가져올 필요 없이 선택자를 가져와도 가능
+ document.querySelector("thead input[type='checkbox']").onclick = function() {
+	 var ckblist = document.querySelectorAll("tbody [type='checkbox']");
+	 for (var i = 0; i < ckblist.length; i++) {
+		 ckblist[i].checked = this.checked;
+     }
+ }
+ document.querySelector("tbody [type='checkbox']").onclick = function() {
+	 var ckblistAll = document.querySelector("thead input[type='checkbox']");
+	 ckblistAll = this.checked;
+ }
+ 
+ document.getElementById("empDel").onclick = function() {
+	 var text = document.getElementById("demo");
+	 document.querySelector("tfoot input[type='button']").onclick = function() {
+		 var idlist = document.getElementsByTagName("id");
+		 for (var i = 0; i < idlist.length; i++) {
+		 	text.innerHTML += idlist[i].value;
+		}
+	 }
+ }
+ 
+ /* 
+ var pdemo = document.getElementById("demo");
+ 
+ document.getElementById("empDelete").onclick = function (){
+	   var id = [];
+	   var ckblist = document.querySelectorAll("tbody [type='checkbox']");
+	   for (var i = 0; i < ckblist.length; i++) {
+		   if( ckblist[i].checked )
+	         		//id.push( ckblist[i].id );
+		            id.push( ckblist[i].getAttribute("id") );
+	  }
+	   pdemo.innerHTML = "<ul><li>"+ id.join("</li><li>") + "</li></ul>";
+ }
+  */
+ 
+ 
+ /*  내가 푼 것
+ var inputs = document.getElementsByTagName("input");
+ function mainchkbox(box) {
+	 for (var i = 0; i < inputs.length; i++) {
+		 btns[i].checked = this.checked;
+	 }
+ }
+ */
+ 
+</script>
+</body>
+</html>

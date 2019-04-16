@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오후 3:02:54</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body{
+   margin:0;
+   font-size:28px;
+ }
+ .header{
+   position:fixed;
+   top:0;
+   z-index:1;
+   width:100%;
+   background:#f1f1f1;
+ }
+ .header h2{ text-align: center }
+ .progress-container{
+   width:100%; height:8px;
+   background:#ccc;
+ }
+ .progress-bar{
+   height:8px;   background:red;   width:0px;
+ }
+ .content{
+   padding:100px 0;   margin:50px auto 0 auto;
+   width:80%;
+ }
+</style>
+<style>
+  #btnTop{
+    display:none; 
+    position:fixed;
+    bottom:20px;
+    right:30px;
+    z-index:99;
+    border:none;
+    outline:none;
+    background:red;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+  }
+  #btnTop:hover{
+    background:#555;
+  }
+</style>
+<style>
+  .header{
+    padding:10px 16px;
+    background:#555;
+    color:#f1f1f1;
+  }
+</style>
+</head>
+<body>
+ <div class="header">
+ <h2>스크롤 표시하기</h2>
+ <div class="process-container">
+  <div class="progress-bar" id="myBar"></div>
+ </div>
+</div>
+<div class="content">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+	<p>Consectetur earum expedita ducimus debitis illo corrupti.</p>
+	<p>At necessitatibus assumenda sapiente omnis rem vel!</p>
+	<p>Voluptatum sint blanditiis dignissimos illo inventore quas.</p>
+	<p>Iste illo numquam ducimus vitae quidem repudiandae.</p>
+	<p>Recusandae culpa deleniti doloremque fugit aut quia!</p>
+	<p>Labore velit atque hic iure odit ab.</p>
+	<p>Sint iusto officia eius dolore asperiores vel.</p>
+	<p>Provident vitae quas ea nulla amet praesentium.</p>
+	<p>Veniam tempora velit odio aut laboriosam ea!</p>
+	<p>Possimus dolorum cumque rem nihil veniam error.</p>
+	<p>Provident nemo nesciunt sed architecto vel velit?</p>
+	<p>Veniam distinctio facilis impedit perspiciatis consequatur esse?</p>
+	<p>Assumenda quidem praesentium explicabo dignissimos. Architecto vel!</p>
+	<p>Repellendus nostrum error impedit quo nemo fugiat?</p>
+	<p>Pariatur non porro fuga ab doloremque reiciendis.</p>
+	<p>Doloribus quis aliquam voluptatibus explicabo deserunt nostrum?</p>
+	<p>Corporis debitis consectetur sequi exercitationem id hic?</p>
+	<p>Harum odit facere voluptates impedit ea commodi.</p>
+	<p>Animi natus nostrum officiis sequi eveniet porro?</p>
+	<p>Atque repudiandae dignissimos a voluptate animi ab.</p>
+	<p>Vel quisquam excepturi dicta molestias magni magnam.</p>
+	<p>Sunt porro optio est esse earum suscipit.</p>
+	<p>Ipsa nihil illum tempora aut dolorem natus.</p>
+	<p>Placeat autem ducimus voluptate ut dolores ratione!</p>
+	<p>Tempore velit aliquid harum placeat eveniet ducimus.</p>
+	<p>Iusto reiciendis placeat quis cumque hic impedit!</p>
+	<p>Aliquam unde reiciendis explicabo voluptate architecto ab.</p>
+	<p>Ab culpa veniam ipsa error sit est.</p>
+	<p>Esse aut expedita similique sapiente tenetur non.</p>
+	<p>Molestiae nisi amet quas sapiente enim at?</p>
+	<p>Magni necessitatibus nostrum omnis accusamus quisquam nulla.</p>
+	<p>Suscipit labore voluptas tempore quibusdam voluptatem laborum!</p>
+	<p>Sed ex libero velit deserunt optio magnam!</p>
+	<p>Consequatur eligendi accusamus harum neque ullam repellendus.</p>
+	<p>Fugit incidunt accusamus facilis ut quasi similique.</p>
+	<p>Aperiam repellendus aliquid soluta quis recusandae saepe!</p>
+	<p>Labore assumenda sapiente atque placeat temporibus voluptatum.</p>
+	<p>Cupiditate iusto veritatis quas minima maxime a.</p>
+	<p>Neque nesciunt enim fugit sequi consequatur. Odio.</p>
+	<p>Nemo suscipit esse aspernatur eius ea aperiam.</p>
+	<p>Non quas commodi similique pariatur doloremque sed.</p>
+	<p>Repellat ipsam deleniti numquam mollitia illum nobis.</p>
+	<p>Quis fugit maiores illo unde omnis laudantium.</p>
+	<p>Libero amet aliquam delectus quidem maiores repudiandae.</p>
+	<p>Eligendi quo atque quasi vel quisquam perspiciatis!</p>
+	<p>Nisi perferendis facilis corporis rerum saepe dolore.</p>
+	<p>Fugiat atque numquam odit corrupti deleniti iure.</p>
+	<p>Odit natus ducimus voluptatum necessitatibus corporis illum.</p>
+	<p>Voluptatum nostrum id corporis illo natus beatae.</p>
+</div>
+<button id="btnTop" title="Go To Top">Top</button>
+<script>
+ window.onscroll = function() {
+	// console.log("onscroll");
+	// scrollTop : 스크롤 움직임으로 인하여 밀려올라간 높이
+	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+	// console.log(scrollTop);
+	
+	var scrollHeight = document.documentElement.scrollHeight;
+	var clientHeight = document.documentElement.clientHeight;
+	
+	var hiddenHeight = scrollHeight - clientHeight;
+	
+	// 스크롤 내리면 추가 상품 보여지는 쇼핑몰 같은 사례 참고
+	// scrollHeight, clientHeight는 브라우저마다 다를 수 있음... 통일 방법?
+	var widthPercent = (scrollTop / hiddenHeight) * 100;
+	
+	document.getElementById("myBar").style.width = widthPercent + "%";
+	// 3824/923
+	// scrollHeight : 실제 내용 높이
+	// clientHeight : 실제 화면에 뿌려지는 높이
+	// console.log(scrollHeight + "/" clientHeight);
+	
+	if (scrollTop >= clientHeight)
+		document.getElementById("btnTop").style.display ="block";
+	else
+		document.getElementById("btnTop").style.display ="none";
+ }
+ document.getElementById("btnTop").onclick = function() {
+	 document.documentElement.scrollTop = 0;
+	 document.body.scrollTop = 0;
+ }
+</script>
+</body>
+</html>

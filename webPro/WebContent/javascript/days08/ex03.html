@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오전 11:49:17</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .myDiv {
+ 	background-color: #f1f1f1;
+ 	text-align: center;
+ 	border: solid 1px #d3d3d3;
+ 	
+ 	position: absolute;
+ 	z-index: 9;
+ 	left: 100px;
+ 	top: 50px;
+ }
+ .myDivHeader {
+ 	padding: 10px;
+ 	cursor: move;
+ 	z-index: 10;
+ 	background-color: #2396f3;
+ 	color: #fff;
+ }
+</style>
+</head>
+<body>
+<a href="ex04.html">ex04.html</a>
+
+<div id="myDiv1" class="myDiv">
+	<div id="myDiv1Header" class="myDivHeader">Click Here</div>
+		<p>DragDrop</p>
+		<p>DragDrop</p>
+		<p>Div</p>
+</div>
+<script>
+	function draggable(elem) {
+		var pos1 = 0, pos2 = 0; // 
+		var pos3 = 0, pos4 = 0; // 
+
+		document.getElementById(elem.id + "Header").onmousedown = dragMouseDown;
+
+		// 클로저
+		function dragMouseDown() {
+			if (event.button == 0) {
+				pos3 = event.clientX;
+				pos4 = event.clientY;
+				// body 0,0 기준 좌표
+				// console.log("pos3=" + pos3 +", post4=" + pos4);
+
+				document.onmousemove = elementDrag;
+				document.onmouseup = closeDragElement;
+			}
+		}
+
+		function elementDrag() {
+			if (event.button == 0) {
+				pos1 = pos3 - event.clientX; // 실제 움직인 x 거리
+				pos2 = pos4 - event.clientY; // 실제 움직인 y 거리
+				
+				// console.log("event.clientX=" + event.clientX + ", event.clientY=" + event.clientY);
+				elem.style.left = (elem.offsetLeft - pos1) + "px";
+				elem.style.top = (elem.offsetTop - pos2) + "px";
+
+				pos3 = event.clientX;
+				pos4 = event.clientY;
+			}
+		}
+
+		// 이벤트 제거
+		function closeDragElement() {
+			if (event.button == 0) {
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		}
+	}
+	draggable(document.getElementById("myDiv1"));
+</script>
+</body>
+</html>

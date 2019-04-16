@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 16. 오전 10:02:25</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ table {
+ 	width: 50%;
+ 	margin: 0 auto;
+ }
+ table, td, th {
+ 	border : solid 1px gray;
+ }
+ table>thead>tr:first-child {
+ 	background-color: gray;
+ 	color: white;
+ }
+ tr > td:first-child {
+ 	text-align: center;
+ }
+</style>
+</head>
+<body>
+ <table>
+   <thead>
+ 	<tr>
+ 		<th><input type="checkbox" id="chkAll" />Lorem.</th>
+ 		<th>Deserunt.</th>
+ 		<th>Consectetur.</th>
+ 	</tr>
+   </thead>
+ 	<tbody>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="7369" />Lorem.</td>
+ 	 	<td>Eveniet.</td>
+ 	 	<td>Amet!</td>
+ 	 </tr>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="7789" />Lorem.</td>
+ 	 	<td>Officiis.</td>
+ 	 	<td>Blanditiis.</td>
+ 	 </tr>
+ 	 <tr>
+ 	 	<td><input type="checkbox" id="9833" />Lorem.</td>
+ 	 	<td>Ratione!</td>
+ 	 	<td>Cum.</td>
+ 	 </tr>
+ 	</tbody>
+ 	<tfoot>
+ 	 <tr>
+ 	  <td colspan="3">
+ 	    <input type="button" id="empAdd" value="사원추가" />
+ 	    <input type="button" id="empDel" value="사원삭제" />
+ 	    <input type="button" id="empEdit" value="사원수정" />
+ 	  </td>
+ 	 </tr>
+ 	</tfoot>
+ </table>
+<p id="demo"></p>
+<script>
+ // css 선택자X, jquery 선택자 :checkbox
+ // :checkbox == input[type='checkbox']
+ // 띄어쓰기 조심
+ $("thead :checkbox").click(function() {
+	 // alert($(this).prop("checked")); // true/false
+	 // alert($(this).is(":checked"));  // true/false
+	 // alert(this.getAttribute("checked"));
+	 
+	 $("tbody :checkbox").prop("checked", $(this).prop("checked"));
+ });
+ $("#empDel").click(function(){
+	// alert("test");
+	// [jquery] 체크된 체크박스의 id 속성값을 p 태그 출력
+	var id = [];
+	// :checked 선택자도 jquery에서만 사용
+	$("tbody :checked").each(function(){
+		id.push($(this).attr("id"));
+	});
+	$("#demo").html("<ul><li>"+ id.join("</li><li>") + "</li></ul>");
+ });
+ 
+ 
+ $("#empAdd").click(function (){
+	  
+	   var table =  document.createElement("table");
+	   table.setAttribute("border", "1");
+	   table.setAttribute("style", "width:50%");
+	   //                              위치값
+	   var tr =  table.insertRow(table.rows.length);
+	  	   	      
+	   var demo = document.getElementById("demo");
+	   demo.appendChild(table);
+ });
+ 
+ /* 
+ document.getElementById("empAdd").onclick = function (){
+	   
+	   var tr = table.insertRow( table.rows.length-1 );
+	   
+	   var td =  tr.insertCell(0);
+		   var ckb = document.createElement("input");
+		   ckb.type="checkbox";
+	   td.appendChild( ckb);
+	       var txt = document.createElement("input");
+	       txt.type="text";
+	       txt.style.width="100px";
+	   td.appendChild( txt );  
+	   //tr.appendChild( td );
+	   
+	   var td =  tr.insertCell(1);
+		   var txt = document.createElement("input");
+		   txt.type="text";
+		   txt.style.width="100px";
+	    td.appendChild( txt);
+     //tr.appendChild( td );
+     
+     var td =  tr.insertCell(2);
+		   var txt = document.createElement("input");
+		   txt.type="text";
+		   txt.style.width="100px";
+	   td.appendChild( txt);
+	   //tr.appendChild( td );
+ 
+	   
+ }
+  */
+ // 실습 : 수정 버튼 클릭하면 수정 가능하도록 textbox로 바뀌고, 원래 값도 표시되도록
+</script>
+</body>
+</html>
