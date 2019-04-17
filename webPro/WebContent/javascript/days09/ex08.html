@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 3:39:16</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- BOM - screen -->
+ <!-- 사용자 화면에 대한 정보를 포함하고 있는 객체 -->
+ <p id="demo"></p>
+<script>
+ var demo = document.getElementById("demo");
+ var output = "";
+ output += screen.width + " / " + screen.height + "<br>";
+ 
+ // 작업 표시줄 제외한 크기
+ output += screen.availWidth + " / " + screen.availHeight + "<br>";
+ 
+ // 화면의 색상 수를 비트 단위로 표시한 값
+ output += screen.colorDepth + "<br>";
+ 
+ // 화면의 픽셀 깊이를 비트 단위로 표시한 값
+ output += screen.pixelDepth + "<br>";
+ demo.innerHTML = output;
+ 
+ // screen
+ // 새 창을 화면 가운데 / 우측하단 띄우기?
+</script>
+</body>
+</html>

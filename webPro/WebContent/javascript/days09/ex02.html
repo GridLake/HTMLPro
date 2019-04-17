@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오전 9:40:22</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <h1 id="id01">body firstChild</h1>
+ <p id="id02">body secondChild</p>
+ 
+ <script>
+  // document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+  // document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+  // document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeType;
+  document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeName;
+  // [node name] - 읽기전용
+  // 텍스트 노드 : 항상 #text
+  // 속성 노드   : 속성명
+  // 요소 노드   : 태그명
+  // 문서 노드   : #document
+  
+  
+  //     [node Type]
+  // 1   ELEMENT_NODE   요소노드
+  // 2   ATTRIBUTE_NODE 속성노드
+  // 3   TEXT_NODE      텍스트노드
+  // 8   COMMENT_NODE   주석노드
+  // 9   DOCUMENT_NODE  문서노드   html 루트노드의 상위
+  // 10  DOCUMENT_TYPE_NODE  <!DOCTYPE html>
+  
+  // document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+  // [node value]
+  // 요소 노드   : null
+  // 텍스트 노드 : 텍스트 자체
+  // 속성 노드   : 속성값
+  
+ </script>
+
+ <!-- 
+ DOM 노드(Node)
+ 1. html 문서의 모든 것이 노드 (DOCTYPE, 주석 등도 모두 노드)
+ 2. html 요소(element)는 element node(요소 노드)
+ 3. 요소의 내용 (ex. <p>print</p>) -> 텍스트 노드
+ 4. 요소의 속성 (ex. <p id="demo"> -> 속성 노드
+ 5. 주석처리 -> 주석 노드
+ 6. html DOM을 사용하면 DOM 트리의 모든 노드를 javascript를 통해 접근 가능
+ 7. 새 노드 추가, 수정, 삭제 가능
+ 8. 노드 관계(계층 관계 : 상위, 하위)
+     ㄱ. 노드 트리에서 최상위 노드 : HTML 노드(root node)   
+         ※ document 노드는 모든 노드를 다 가졌을 뿐 최상위 노드 아님
+     ㄴ. 모든 노드는 부모 노드를 하나 가진다
+         (예외 : root node는 부모 노드 없음)
+     ㄷ. 여러 개의 자식 노드를 가질 수 있음
+     ㄹ. 같은 부모 노드를 둔 자식 노드 => 형제 노드
+ 9. 노드 간에 이동(탐색)
+     ㄱ. parentNode(부모 노드)
+     ㄴ. childNodes[0] 자식 노드들
+     ㄷ. firstChild
+     ㄹ. lastChild
+     ㅁ. nextSibling
+     ㅂ. previous
+     
+ -->
+</body>
+</html>

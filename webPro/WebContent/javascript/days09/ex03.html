@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오전 11:40:05</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- html DOM 요소 추가, 수정, 삭제 -->
+<div id="demo">
+ <p id="p3">First</p>
+ <p id="p1">Lorem.</p>
+ <p id="p2">Ipsum.</p>
+</div>
+<script>
+ var cp = document.createElement("p");
+ var content = "cp_text";
+ var cp_text = document.createTextNode(content);
+ cp.appendChild(cp_text);
+ 
+ var demo = document.getElementById("demo");
+ // demo.appendChild(cp);
+ var p1 = document.getElementById("p1");
+ // demo.removeChild(p1);
+ 
+ // p1 -> cp 교체
+ demo.replaceChild(cp, p1);
+ demo.removeChild(p1);
+ 
+ // insertBefore()
+ 
+ // nodeList         list
+ // HTMLCollection   coll
+ // 모두 배열처럼    list[0]  coll[0]  사용가능
+ // (차이점)
+ // list : push(), pop(), join() 배열처럼 사용 가능
+ // coll : 불가능
+</script>
+</body>
+</html>

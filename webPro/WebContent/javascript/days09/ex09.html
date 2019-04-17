@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 3:48:51</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- BOM - location -->
+ <button onclick="btn_move();">페이지 이동</button>
+ <!-- 현재 페이지의 URL(주소)에 대한 정보를 갖고 있는 객체 -->
+ <script>
+  
+  function btn_move() {
+	// alert(location.href);
+	location.href = "ex10.html";  // 페이지 이동, 속성
+	// location.assign("http://www.naver.com"); // 페이지 이동, 메소드
+  }
+ 
+  // http:
+  console.log(location.protocol);
+  // 도메인 이름 localhost
+  console.log(location.hostname);
+  // 포트 기본포트(80)일 경우 안나옴
+  console.log(location.port);
+  // /webPro/javascript/days09/ex09.html
+  console.log(location.pathname);
+ </script>
+</body>
+</html>

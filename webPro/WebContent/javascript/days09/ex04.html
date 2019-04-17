@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 12:03:35</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .alert {
+ 	padding: 20px;
+ 	background-color: #f44336;
+ 	color: white;
+ 	opacity: 1;
+ 	transition: opacity 0.6s, height 0.6s;
+ 	margin-bottom: 15px;
+ }
+ .alert.success {background-color: #4caf50;}
+ .alert.info {background-color: #2196f3;}
+ .alert.warning {background-color: #ff9800;}
+ .closebtn {
+ 	margin-left: 15px;
+ 	color: white;
+ 	font-weight: bold;
+ 	float: right;
+ 	font-size: 22px;
+ 	line-height: 20px;
+ 	cursor: pointer;
+ 	transition: 0.3s;
+ }
+ .closebtn:hover {
+ 	color: black;
+ }
+</style>
+</head>
+<body>
+ <h2>알림(공지사항)</h2>
+ 공지사항 타입 : <select name="type" id="type">
+  <option>Type 없음</option>
+  <option>Success</option>
+  <option>Warning</option>
+  <option>Info</option>
+ </select>
+ <br>
+ 내용 : <input type="text" />
+ <button onclick="addNotice();">공지사항 추가</button>
+ <hr>
+ <!-- 
+ <div class="alert">
+ <span class="closebtn">&times;</span>
+ <strong>Danger!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+ </div>
+ 
+ <div class="alert success">
+ <span class="closebtn">&times;</span>
+ <strong>Success!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+ </div>
+ <div class="alert success">
+ <span class="closebtn">&times;</span>
+ <strong>Success!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+ </div>
+ <div class="alert warning">
+ <span class="closebtn">&times;</span>
+ <strong>Warning!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+ </div>
+ <div class="alert info">
+ <span class="closebtn">&times;</span>
+ <strong>Info!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+ </div>
+ <div class="alert success">
+ <span class="closebtn">&times;</span>
+ <strong>Success!</strong>
+ Lorem ipsum dolor sit amet, consectetur adipisicing.
+</div>
+
+ -->
+<!-- 동적으로 div, span, strong 태그 및 content 생성 -->
+<script>
+ var type = ["success", "warning", "info"];
+ var messages = [
+	   "Lorem ipsum dolor sit amet, consectetur adipisicing."
+	 , "Lorem ipsum dolor sit amet, consectetur adipisicing."
+	 , "Lorem ipsum dolor sit amet, consectetur adipisicing."
+ ];
+
+ for (var i = 0; i < 3; i++) {
+	 /* 공지사항(알림) 페이지를 요청하면 DB 연동 select */
+	 var alertdiv = document.createElement("div");
+	 // alertdiv.className = "alert success"; // classList.add
+	 alertdiv.classList.add("alert");
+	 alertdiv.classList.add(type[i]);
+	 
+	 // span
+	 var spanbtn = document.createElement("span");
+	 spanbtn.classList.add("closebtn");
+	 spanbtn.innerHTML = "&times;";
+	 alertdiv.appendChild(spanbtn);
+	 
+	 //
+	 var strongbtn = document.createElement("strong");
+	 strongbtn.innerHTML = "Success!";
+	 alertdiv.appendChild(strongbtn);
+	 
+	 //
+	 var content = messages[i];
+	 var message = document.createTextNode(content);
+	 alertdiv.appendChild(message);
+	 
+	 document.body.appendChild(alertdiv);
+ }
+
+ function addNotice() {
+	 var alertdiv = document.createElement("div");
+	 alertdiv.classList.add("alert");
+	 alertdiv.classList.add();
+	 
+	 // span
+	 var spanbtn = document.createElement("span");
+	 spanbtn.classList.add("closebtn");
+	 spanbtn.innerHTML = "&times;";
+	 alertdiv.appendChild(spanbtn);
+	 
+	 //
+	 var strongbtn = document.createElement("strong");
+	 strongbtn.innerHTML = "Success!";
+	 alertdiv.appendChild(strongbtn);
+	 
+	 //
+	 var content = document.firstChild.nextSibling.value;
+	 var message = document.createTextNode(content);
+	 alertdiv.appendChild(message);
+	 
+	 document.body.appendChild(alertdiv);
+ }
+ 
+</script>
+
+<script>
+ // nodelist
+ var close = document.getElementsByClassName("closebtn");
+ for (var i = 0; i < close.length; i++) {
+	close[i].onclick = function () {
+		var alertdiv = this.parentElement;
+		alertdiv.style.opacity = "0";
+		setTimeout(function() {
+			alertdiv.style.display = "none"
+		}, 600);
+	}
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 3:08:34</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body onload="init();" onunload="win_unload();">
+<table border="1" style="width:100%">
+ <tr>
+ 	<td>검색할 동 입력 : 
+ 		<input type="text" id="dong" name="dong"/>
+ 		<input type="button" value="검색" onclick="search_dong();"/>
+ 	</td>
+ </tr>
+ <tr>
+ 	<td>
+ 		<div id="searchResult" class="box" style="visibility:hidden;">
+ 		  <a href="javascript:sendAddr('123','451','서울 영등포구 당산1동')">123-451</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','452','서울 영등포구 당산2동')">123-452</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','453','서울 영등포구 당산3동')">123-453</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','454','서울 영등포구 당산4동')">123-454</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','455','서울 영등포구 당산5동')">123-455</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','456','서울 영등포구 당산6동')">123-456</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','457','서울 영등포구 당산7동')">123-457</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','458','서울 영등포구 당산8동')">123-458</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','459','서울 영등포구 당산9동')">123-459</a>서울 영등포구 당산1동<br>
+ 		  <a href="javascript:sendAddr('123','461','서울 영등포구 당산10동')">123-461</a>서울 영등포구 당산1동<br>
+ 		</div>
+ 	</td>
+ </tr>
+ <tr>
+ 	<td>
+ 		<div id="box" style="visibility:hidden;">
+ 		  '당산' 검색 결과 10개 검색되었습니다.
+ 		</div>  
+ 	</td>
+ </tr>
+</table>
+<script>
+ function init() {
+	document.getElementById("dong").value = default_dong;
+ }
+
+ function search_dong() {
+	var boxes = document.getElementsByClassName("box");
+	for (var i = 0; i < boxes.length; i++) {
+		boxes[i].style.visibility = "visible";
+	}
+ }
+ 
+ function sendAddr(zip1, zip2, addr) {
+	// self
+	opener.document.getElementById("zip1").value = zip1;
+	opener.document.getElementById("zip2").value = zip2;
+	opener.document.getElementById("addr1").value = addr;
+	
+	self.close();
+	opener.document.getElementById("addr2").focus();
+ }
+ function win_unload() {
+	 opener.zip = null;
+ }
+</script>
+</body>
+</html>

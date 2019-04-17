@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 2:18:01</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body onload="win_load();">
+<button onclick="nw_open();">새 창 열기</button>
+<button onclick="nw_close();">새 창 닫기</button>
+<button></button>
+<button></button>
+<script>
+ function win_load() {
+	  nw_open();
+	  setTimeout(nw_close, 3000);
+ }
+
+ function nw_close() {
+	 newWindow.close;
+ }
+ 
+ var newWindow;
+ function nw_open() {
+	 // [winObj=][window].open(['URL'][,'winTarget'][,'winFeature'])
+	 var url = "ex06_2.html";
+	 var width = 600;
+	 var height = 500;
+	 var top = 100;
+	 var left = 200;
+	 newWindow = window.open(url, "", "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left);
+	 
+ }
+</script>
+<script>
+ /* 다른 윈도우(창) 메소드 : open(), close(), moveTo(), moveBy(), resizeTo(), resizeBy() */
+</script>
+<script>
+ var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+ var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+ 
+ // alert(w + "/" + h);
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오후 2:02:44</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- BOM(Browser Object Model) + js -->
+ <!-- 
+ window / screen / history / location / navigator
+  -->
+ <!-- window : 모든 브라우저에서 제공되고, 브라우저 창 자체 -->
+ <!-- 모든 전역변수, 전역함수, 전역객체 자동으로 윈도우 멤버가 된다 -->
+ <!-- DOM 문서 객체 : document 노드 == window 멤버 -->
+
+<script>
+ /* window = 브라우저 창 */
+ /* 창(window 윈도우) 크기 */
+ //                             615 / 1024
+ console.log(window.innerHeight + " / " + window.innerWidth);
+ //                            1047 / 1552
+ console.log(window.outerHeight + " / " + window.outerWidth);
+ // document.documentElement == <html> 요소
+ // 스크롤바, 도구 모음 포함 X
+ //                                                615 / 1024
+ console.log(document.documentElement.clientHeight + " / " + document.documentElement.clientWidth);
+ 
+ // <body> 요소                           0 / 1008
+ console.log(document.body.clientHeight + " / " + document.body.clientWidth);
+</script>
+
+<script>
+  var name = "admin";
+  // window.alert(window.name);
+  function test () {
+	  // window.test();
+  }
+  var obj = {};
+  // window.obj
+  
+  // DOM도 window 객체의 멤버
+  // window.document.getElementById(id)
+  // document.getElementById(id)
+</script>
+</body>
+</html>

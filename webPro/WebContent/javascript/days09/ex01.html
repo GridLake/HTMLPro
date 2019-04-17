@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. 오전 9:00:43</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<!-- html DOM 이벤트 정리 -->
+<h1 onclick="this.innerHTML='클릭 미'">Click Me</h1> <!-- 그냥 속성 -->
+<h1 id="htag" onclick="changeText(this)">Click Me</h1>
+<script>
+ function changeText(elem) {
+	elem.innerHTML = "클릭 미";
+ }
+ // 웹페이지 요청 -> 응답  브라우저가 로딩 => DOM(문서에 대한 객체, 필드 + 메소드)
+ // document 문서 노드(node)
+ // html 노드
+ // title body 노드
+ // getElementById : DOM 메소드
+ document.getElementById("htag").onmouseover = function() {
+	 this.style.color = "red";
+ };
+ 
+ document.getElementById("htag").onmousedown = function() {
+	 this.style.color = "green";
+ };
+ 
+ document.getElementById("htag").onmouseout = function() {
+	 this.style.color = "black";
+ };
+</script>
+
+<input type="text" id="message" />
+<script>
+ // input text의 onchange 이벤트 : 입력값의 유효성 검사(text 속성에 변화가 있을 때)
+ document.querySelector("input[type=text]").onchange = function() {
+	 console.log("> onchange 이벤트");
+	 this.value = this.value.toUpperCase();
+ };
+ // document.querySelector(selectors);
+ // document.querySelectorAll();
+</script>
+<br>
+<button type="button" id="btn">버튼</button>
+<script>
+ // NodeList와 HTMLCollection 차이?
+ // document.getElementsByTagName("button")   // NodeList 반환
+ var nodeList = document.getElementsByTagName("button");
+ // alert(nodeList.length);
+ //                          onclick 아님
+ nodeList[0].addEventListener("click", function(e) {
+ 	// alert(this.innerHTML);
+ }, false);
+ nodeList[0].addEventListener("click", function(e) {
+ 	alert(this.id);
+ }, false);
+ // removeEventListener("click", 이벤트핸들러명)   ※ 익명으로 선언되어 있으면 취소 불가 -> 함수를 따로 빼는 식으로
+ // document.querySelector("input[type=text]").onchange = null   // 이벤트 취소
+</script>
+<br>
+<!-- p 태그는 name 속성 사용 불가 -->
+<!-- <p name="demo">demo</p> -->
+<input name="demo" type="text" id="demo" alt="데모"/>
+<script>
+ // document.getElementsByName(name);   // HTMLCollection 반환
+ var hcoll = document.getElementsByName("demo");
+ // alert(hcoll.length);
+ // alert(hcoll[0]); // [object HTMLInputElement]
+ // alert(hcoll[0].alt); // 데모
+ 
+ /* 
+ // Uncaught TypeError: hcoll[0].attachEvent is not a function
+ hcoll[0].attachEvent("change", function() {
+	console.log(this.value); 
+ });
+ */
+ /* 
+ document.getElementById("demo").attachEvent("change", function() {
+	console.log(this.value); 
+ });
+ */
+ 
+ var p = document.getElementById("demo");
+
+ //attachEvent()  IE 8.0 이전
+ //alert( p.addEventListener );
+ alert( p.attachEvent ); // undefined   false
+ if( p.addEventListener){
+	 //p.addEventListener();
+ }else if( p.attachEvent ){
+	 // 이벤트 등록 분기...
+ }
+ // detachEvent()
+ 
+</script>
+</body>
+</html>

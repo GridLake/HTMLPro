@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 17. - 오전 10:38:54  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+</head>
+<body>
+<table border="1"> 
+  <tr>
+     <td><input type="checkbox" />1</td>
+     <td>hong</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox" />2</td>
+     <td>admin</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox" />4</td>
+     <td>kenik</td>
+     <td>pohang</td>
+  </tr>
+</table>
+<button id="btn">버튼</button>
+<p id="demo"></p>
+<script>
+  $("#btn").click(function (){
+	  var ckblist = document.querySelectorAll("[type='checkbox']");
+	   // alert( ckblist.length)
+		var demo = document.getElementById("demo");
+		for (var i = 0; i < ckblist.length; i++) {
+			if (ckblist[i].checked   == true ) {
+				var ckb = ckblist[i];
+				var value = ckb.parentElement.nextElementSibling;
+				demo.innerHTML = value.firstChild.nodeValue;
+			}
+	}
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

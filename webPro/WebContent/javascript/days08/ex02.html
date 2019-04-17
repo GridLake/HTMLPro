@@ -34,17 +34,17 @@
    </thead>
  	<tbody>
  	 <tr>
- 	 	<td><input type="checkbox" id="7369" class="sub"/>Lorem.</td>
+ 	 	<td><input type="checkbox" id="id1" class="sub"/>Lorem.</td> <!-- id="7369" -->
  	 	<td>Eveniet.</td>
  	 	<td>Amet!</td>
  	 </tr>
  	 <tr>
- 	 	<td><input type="checkbox" id="7789" class="sub"/>Lorem.</td>
+ 	 	<td><input type="checkbox" id="id2" class="sub"/>Lorem.</td> <!-- id="7789" -->
  	 	<td>Officiis.</td>
  	 	<td>Blanditiis.</td>
  	 </tr>
  	 <tr>
- 	 	<td><input type="checkbox" id="9833" class="sub"/>Lorem.</td>
+ 	 	<td><input type="checkbox" id="id3" class="sub"/>Lorem.</td> <!-- id="9833" -->
  	 	<td>Ratione!</td>
  	 	<td>Cum.</td>
  	 </tr>
@@ -90,6 +90,8 @@
 		 ckblist[i].checked = this.checked;
      }
  }
+ 
+ /* 
  document.querySelector("tbody [type='checkbox']").onclick = function() {
 	 var ckblistAll = document.querySelector("thead input[type='checkbox']");
 	 ckblistAll = this.checked;
@@ -104,7 +106,7 @@
 		}
 	 }
  }
- 
+  */
  /* 
  var pdemo = document.getElementById("demo");
  
@@ -119,6 +121,28 @@
 	   pdemo.innerHTML = "<ul><li>"+ id.join("</li><li>") + "</li></ul>";
  }
   */
+ /*  
+ document.getElementById("empEdit").onclick = function() {
+	  // var id = [];
+	  var ckblist = document.querySelectorAll("tbody [type='checkbox']");
+	  for (var i = 0; i < ckblist.length; i++) {
+		  if( ckblist[i].checked )
+			 alert(demo.innerHTML = document.getElementById("id" + (i+1)).firstChild.nextSibling.nodeValue);
+	  }
+ }
+  */
+   
+ document.getElementById("empEdit").onclick =  function() {
+	  var ckblist = document.querySelectorAll("tbody [type='checkbox']");
+	  	var demo = document.getElementById("demo");
+	  	for (var i = 0; i < ckblist.length; i++) {
+	  		if (ckblist[i].checked   == true ) {
+	  			var ckb = ckblist[i];
+	  			var value = ckb.parentElement.nextElementSibling;
+	  			demo.innerHTML = value.firstChild.nodeValue;
+ 			}
+	  	}
+  }
  
  
  /*  내가 푼 것
