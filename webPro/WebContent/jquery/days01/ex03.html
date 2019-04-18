@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오후 4:22:21</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#hider").click(function() {
+			$("span:last-child").hide("fast", function() {
+				// Use arguments.callee so we don't need a named function
+				$(this).prev().hide("fast", arguments.callee);
+			});
+		});
+		$("#shower").click(function() {
+			$("span").show(2000);
+		});
+	});
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ span {
+    background: #def3ca;
+    padding: 3px;
+    float: left;
+ }
+</style>
+</head>
+<body>
+
+<button id="hider">Hide</button>
+<button id="shower">Show</button>
+<div>
+  <span>Once</span> <span>upon</span> <span>a</span>
+  <span>time</span> <span>there</span> <span>were</span>
+  <span>three</span> <span>programmers...</span>
+</div>
+
+</body>
+</html>

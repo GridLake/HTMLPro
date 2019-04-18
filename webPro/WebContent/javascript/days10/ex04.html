@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오전 11:40:14</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="cookie.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <table border="1" style="background-color:white;width:400px;margin:0 auto;">
+   <tr>
+     <td><img src="../images/item01.gif" alt="" /></td>
+     <td><img src="../images/item02.gif" alt="" /></td>
+     <td><img src="../images/item03.gif" alt="" /></td>
+   </tr>
+   <tr>
+     <td><input type="radio" checked="checked" name="bgImages" id="item01" value="item01" />Item01</td>
+     <td><input type="radio" name="bgImages" id="item02" value="item02" />Item02</td>
+     <td><input type="radio" name="bgImages" id="item03" value="item03" />Item03</td>
+   </tr>
+ </table>
+
+<script>
+ var cname = "bgimg";
+ var cvalue;
+ var exdays = 10;
+ 
+ window.onload = function() {
+	 // alert("test");
+	 // 쿠키 배경이미지 저장되어 있다면
+	 // 쿠키값을 읽어와서
+	 // 그 쿠기값에 해당되는 배경이미지로 변경(적용) + radio 체크
+	 // 쿠키가 없을 경우는 item01 라디오버튼 체크된 상태 -> 배경이미지 설정
+	 
+	 // 쿠키이름 : bgimg
+	 // 쿠키값 : item01, item02, item03
+	 // 쿠키만료시점 : 10일
+	 
+	 cvalue = getCookie(cname);
+	 if(cvalue) { // "item01"   null
+		 document.body.style.backgroundImage = "url(../images/" + cvalue + ".gif)";
+	 	 // radio 버튼 checked 속성 checked로
+	 	 document.getElementById(cvalue).checked = "checked";
+	 }
+	 else {
+		 document.body.style.backgroundImage = "url(../images/item01.gif)";
+	 }
+	 
+	 // HTMLCollections
+	 var radioButtons = document.getElementsByName("bgImages");
+	 for (var i = 0; i < radioButtons.length; i++) {
+		 radioButtons[i].onclick = function() {
+			 cvalue = this.value;
+			 // alert(cvalue);
+			 setCookie(cname, cvalue, exdays);
+			 document.body.style.backgroundImage = "url(../images/" + cvalue + ".gif)";
+		 }
+	 }
+ }
+</script>
+</body>
+</html>

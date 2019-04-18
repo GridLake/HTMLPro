@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오전 11:40:14</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="cookie.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <table border="1" style="background-color:white;width:400px;margin:0 auto;">
+   <tr>
+     <td><img src="../images/item01.gif" alt="" /></td>
+     <td><img src="../images/item02.gif" alt="" /></td>
+     <td><img src="../images/item03.gif" alt="" /></td>
+   </tr>
+   <tr>
+     <td><input type="radio" checked="checked" name="bgImages" id="item01" value="item01" />Item01</td>
+     <td><input type="radio" name="bgImages" id="item02" value="item02" />Item02</td>
+     <td><input type="radio" name="bgImages" id="item03" value="item03" />Item03</td>
+   </tr>
+ </table>
+
+<script>
+ var cname = "bgimg";
+ var cvalue;
+ var exdays = 10;
+ 
+ $(document).ready(function (){
+	   cvalue = getCookie(cname);
+	   if( cvalue ){  // "item01"   null
+		   $("body").css("backgroundImage","url(/<webpro></webpro>/javascript/images/"+ cvalue+".gif)")
+	       $("#"+cvalue).prop("checked","true");
+	   }else{
+		   $("body").css("backgroundImage","url(/webPro/javascript/images/item01.gif)");
+	   }
+	   
+	   $("[name=bgImages]").click(function (){
+		   cvalue = $(this).val(); 
+		   setCookie(cname, cvalue, exdays);
+		   $("body").css("backgroundImage"
+				   ,"url(/webPro/javascript/images/"+ cvalue+".gif)")
+	   });
+ });
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오후 3:48:46</title>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="../jquery/jquery-3.4.0.min.js"></script>
+<script>
+ $(document).ready(function() {
+	 $("a").click(function (event) {
+	 	event.preventDefault();
+		$(this).hide(); 
+	 });
+	 // jquery selector 태그명
+	 $("p").click(function(event) {
+	 	// alert(this.innerHTML);
+	 	// alert($(this).html());
+	 	
+	 	//         duration  complete
+	 	$(this).hide(4000, function() { // 작업이 끝나고 나면 호출되는 callback 함수
+	 		alert("숨김 성공!!!");
+	 	});
+	 	
+	 });
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<a href="http://www.naver.com">Click to hide me too</a>
+<p>Lorem ipsum.</p>
+<p>Voluptatum quasi.</p>
+<p>Quasi ad.</p>
+<p>Dolorum commodi.</p>
+<p>Nesciunt qui.</p>
+<!-- <script type="text/javascript"></script>
+type="text/javascript" 속성은 html5 부터 필요없음
+-->
+ <!-- 
+ 1. jquery 다운로드
+    ㄱ. 개발 버전 (압축 X)
+    ㄴ. 제작 버전 (압축 O)
+ 2. CDN(Content Delivery Network) 호스팅
+    ㄱ. 구글 CDN
+    ㄴ. MSCDN
+ 3. jquery 사용하는 문법(형식)
+    html 요소 선택 + 작업
+    
+    기본 구조)
+    html 요소 선택 : $(selector).action(); 처리
+ 4. 항상 script 태그를 body 종료태그 위에 코딩한 이유?
+    html 요소 로딩 전부 이뤄진 후 처리
+    ㄱ. window.onload = function() {}
+    ㄴ. $(document).ready(function(){
+    
+        });
+        ==
+        $(function(){
+        
+        });
+ -->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오전 10:17:37</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+ var now = new Date();
+ document.write(now.toGMTString() + "<br>");
+ document.write(now.toUTCString() + "<br>");
+</script>
+<input type="text" id="data" value="홍길동 admin 123 & %"/>
+<br>
+<button onclick="fn_escape()">escape()</button>
+<button onclick="fn_unescape()">unescape()</button>
+<p id="demo"></p>
+<script>
+ function fn_escape() {
+	 var data = $("#data").val();
+	 var e_data = escape(data);
+	 $("#demo").html(e_data);
+	 
+	 $("#data").val("");
+ }
+ 
+ function fn_unescape() {
+	 var demo = $("#demo").text();
+	 var ue_demo = unescape(demo);
+	 $("#data").val(ue_demo);
+	 $("#demo").html("");
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오후 3:16:40</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 200px;
+ 	height: 100px;
+ 	background-color: yellow;
+ 	display: none;
+ }
+</style>
+</head>
+<body>
+ <button>보이기</button>
+ <div></div>
+ <script>
+  // on() : 이벤트 등록 메소드
+  $("button").on("click", function() {
+	  $("div").show();
+  });
+  /* 
+  $("button").click(function() {
+	  // $("div").css("display", "block");
+	  $("div").show();
+  });
+  */
+ </script>
+ <!-- 
+ jquery
+ 1. Javascript 라이브러리
+ 2. 다양한 브라우저에서 작동하는 API 제공, 쉽고 간단하게
+    ㄱ. HTML 문서 탐색 및 조작
+    ㄴ. 이벤트 처리
+    ㄷ. 애니메이션 및 Ajax
+ 3. jquery 프레임워크(framework)
+    예) 쿠키 함수 : get, set, delCookie()   cookie.js
+ -->
+</body>
+</html>

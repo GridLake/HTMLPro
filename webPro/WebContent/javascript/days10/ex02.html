@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오전 10:05:12</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+쿠키이름 : <input type="text" id="cname" autofocus="autofocus"/><br>
+쿠키값   : <input type="text" id="cvalue" /><br>
+
+<button onclick="selectCookies()">모든 쿠키 확인</button>
+<button onclick="createCookies()">쿠키 생성</button>
+<button onclick="getCookie()">쿠키 확인</button>
+<button onclick="deleteCookie()">쿠키 삭제</button>
+<p id="demo"></p>
+
+<script>
+ function selectCookies() {
+	 console.log("selectCookies~");
+	 var cookies = document.cookie;
+	 $("#demo").html(cookies);
+ }
+ 
+ function createCookies() {
+	 var cname = $("#cname").val();
+	 var cvalue = $("#cvalue").val();
+	 
+	 // 만료시점 : 고정 10일 동안
+	 var now = new Date();
+	 now.setDate(now.getDate() + 10);
+	 document.cookie = cname + "=" + escape(cvalue) + "; expires=" + now.toGMTString(); // toUTCString()도 상관 없음
+	 
+	 $("#cname").val("");
+	 $("#cvalue").val("");
+ }
+ 
+ function getCookie() {
+	 var cname = $("#cname").val();
+	 var cookies = document.cookie;
+	 var clist = cookies.split("; ");
+	 for (var i = 0; i < clist.length; i++) {
+		 entry = clist[i];
+		 var nv = entry.split("=");
+		 if(nv[0] == cname) {
+			 $("#demo").html(unescape(nv[1]));
+			 return;
+		 }
+	 }
+	 $("#demo").html("쿠키 없음");
+ }
+ 
+ function deleteCookie() {
+	 // 쿠키를 삭제할 때는 만료시점을 과거로 설정해서 쿠키 생성(저장)
+	 var cname = $("#cname").val();
+	 var now = new Date();
+	 now.setDate(now.getDate() - 1);
+	 document.cookie = cname + "=; expires=" + now.toGMTString();
+ }
+</script>
+</body>
+</html>

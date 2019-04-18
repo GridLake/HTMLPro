@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. 오후 2:03:05</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="cookie.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .tblLogin, .tblLogout {
+ 	width: 400px;
+ 	height: 100px;
+ }
+</style>
+</head>
+<body>
+ <table id="tblLogin" class="tblLogin" border="1">
+   <tr>
+   	<td>아이디</td>
+   	<td><input type="text" id="txtid" /></td>
+   	<td rowspan="2">
+   	  <input type="checkbox" id="ckbLogin" />
+   	  <label for="ckbLogin">ID 저장</label>
+   	  <br>
+   	  <input type="button" id="btnLogin" value="로그인" />
+   	</td>
+   </tr>
+   <tr>
+   	<td>비밀번호</td>
+   	<td><input type="password" id="txtpwd" /></td>
+   </tr>
+ </table>
+ <table id="tblLogout" class="tblLogout" border="1">
+   <tr>
+    <td>
+	  <span id="s_id">admin</span> 님 환영합니다.
+   	  <br><input type="button" id="btnLogout" value="로그아웃" />
+   	</td>
+   </tr>
+ </table>
+ 
+<script>
+ var tblLogin = document.getElementById("tblLogin");
+ var tblLogout = document.getElementById("tblLogout");
+ 
+ var txtid = document.getElementById("txtid");
+ var txtpwd = document.getElementById("txtpwd");
+ var ckbLogin = document.getElementById("ckbLogin");
+ var btnLogin = document.getElementById("btnLogin");
+ var btnLogout = document.getElementById("btnLogout");
+ 
+ // 쿠키이름 : idsave
+ var cname = "idsave";
+ // 쿠키값   : admin
+ var cvalue;
+ // 만기시점 : 10
+ var exdays = 10;
+ 
+ window.onload = function() {
+	// alert("test");
+	tblLogout.style.display = "none";
+	// idsave 쿠키
+	cvalue = getCookie(cname);
+	if (cvalue) {
+		ckbLogin.checked = "checked";
+		txtid.value = cvalue;
+		txtpwd.focus()
+	} else {
+		txtid.focus();
+	}
+	
+	var idArr = ["admin", "hong", "kenik"];
+	var pwdArr = ["1234", "1111", "4321"];
+	
+	btnLogout.onclick = function() {
+		// 초기화
+		tblLogin.style.display = "block";
+		tblLogout.style.display = "none";
+	}
+	
+	// 
+	btnLogin.onclick = function() {
+		//alert("test");
+		var id = txtid.value;
+		var pwd = txtpwd.value;
+		
+		// js 배열 메소드
+		var idx = idArr.indexOf(id);
+		if (idx == -1) {
+			alert(id + " 는 존재하지 않습니다");
+			return;
+		}
+		if(pwdArr[idx] != pwd){
+			alert("비밀번호가 잘못되었습니다")
+			return;
+		}
+		
+		// 로그인 성공
+		alert("로그인 성공");
+		
+		if (ckbLogin.checked) {
+			setCookie(cname, id, exdays);
+		}
+		else {
+			delCookie(cname);
+		}
+		
+		tblLogin.style.display = "none";
+		tblLogout.style.display = "block";
+	}
+}
+</script>
+</body>
+</html>
