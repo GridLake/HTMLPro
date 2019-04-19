@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. - 오전 7:27:20  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+/* #id */
+span {
+    background: #def3ca;
+    padding: 3px;
+    float: left;
+  }
+</style>
+<script>
+
+   // $(document).ready(function (){});
+   // $(function (){});
+   // jQuery(function (){});
+
+   $(document).ready(function (){
+	   // $(selector)
+	   $( "#hider" ).click(function() {
+		   //                                         duration : string slow,fast
+		   //                                                          400(0.4초)
+		   //                                         callback 함수
+		   $( "span:last-child" ).hide( "fast", function() {
+		     // Use arguments.callee so we don't need a named function
+		     $( this ).prev().hide( "fast", arguments.callee );
+		   });
+		 });
+		 $( "#shower" ).click(function() {
+		   //$( "span" ).show( 2000 );
+			 $( "span:first-child" ).show( "fast", function() {
+			     // Use arguments.callee so we don't need a named function
+			     $( this ).next().show( "fast", arguments.callee );
+			   });
+		 });
+   });
+</script>
+</head>
+<body>
+<button id="hider">Hide</button>
+<button id="shower">Show</button>
+<div>
+  <span>Once</span> <span>upon</span> <span>a</span>
+  <span>time</span> <span>there</span> <span>were</span>
+  <span>three</span> <span>programmers...</span>
+</div>
+
+
+ <!--
+   1. jQuery
+   2. ㄱ. ??.min.js 다운로드
+       ㄴ. CDN   구글, MS 서버 호스팅 
+   3. $(selector).action();    jquery 객체
+   4. $(document).ready(function (){});     
+       $(function (){});
+       window.onload = function(){}
+       <body onload="">
+    5. body 닫기 태그 위에 
+        <script></script>   
+    6. hide()     
+  -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- 
+치영 :  병원 + 지각
+성현 : 20분 + 지각
+ -->
+  
+ 

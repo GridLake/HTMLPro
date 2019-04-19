@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 12:20:35</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ 비밀번호 : <input type="password" />
+ <p id="demo">경고! Caps lock is ON</p>
+ 
+ <script>
+  // JQuery.Event 객체와 내장 브라우저의 event 객체는 다른 존재
+ 
+  // $("[type=password]")
+  $(":password").keyup(function() { // :password -> jquery에만 존재
+	 if (event.getModifierState("CapsLock")) {
+		$("#demo").show();
+	} else {
+		$("#demo").hide();
+	} 
+  });
+  $("p#demo").css("color", "red").hide();
+ </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. - 오전 9:42:03  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+div {
+    background: #ece023;
+    width: 30px;
+    height: 40px;
+    margin: 2px;
+    float: left;
+}
+
+p{
+  background-color: red;
+}
+</style>
+<script>
+   $(document).ready(function (){
+	   for (var i = 0; i < 5; i++) {
+		   $("<div>").prependTo( document.body ); // html element
+		  // $("<div>").appendTo( document.body ); // html element		  
+		  // $("<div>").appendTo( $("body") );              // jquery object
+		  //$("body").append($("<div>")) ;
+	  }
+	  
+	   $("div").click(function (){
+		   $(this).hide(2000, function (){
+			   $(this).remove(); // 제거
+		   });
+	   });
+   });
+</script>
+</head>
+<body>
+<div></div>
+<hr style="clear: both">
+<p>1</p>
+<p class="hello">2</p>
+<p>3</p>
+<button>p remove</button>
+<script>
+   $("button").click(function (){
+	   // $("p").remove();  // 모든 p set 제거
+	   // jquery 함수 : filter()
+	   // $("p").filter(":contains('Hello')").remove().
+	   // $( "p" ).remove( ":contains('Hello')" );
+	   $("p.hello").remove();  // 모든 p set 제거
+   });   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

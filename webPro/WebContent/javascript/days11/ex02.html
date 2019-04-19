@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. - 오전 9:19:19  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+</style>
+<script>
+   $(document).ready(function (){
+	   
+	   var fn = function calleeTest(){
+					   document.write("A");
+					   return arguments.callee;
+				   };
+	   // function calleeTest(){ document.write("A"); }
+	   // document.write( fn );
+	   document.write( fn()() );
+	   //fn();
+	   
+	   // calleeTest();
+	   
+	   /* 
+	   function dispInfo(name, age, email){
+		   console.log(name);
+		   console.log(age);
+		   console.log(email);
+	   }
+	    */
+       /* 
+	   function dispInfo(){
+		   //alert( arguments.length );
+	       console.log(arguments[0]);
+		   console.log(arguments[1]);
+		   console.log(arguments[2]);
+	   }
+	   
+	   dispInfo( "admin", 20, "admin@sist.co.kr" );
+	    */
+	   
+   });
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 12:33:44</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ /* 
+ div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+ }
+  */
+ div {
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+  }
+  #box1 {
+    width: 50px;
+    color: yellow;
+    background-color: blue;
+  }
+  #box2 {
+    width: 80px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 99, 30);
+  }
+  #box3 {
+    width: 40px;
+    color: #fcc;
+    background-color: #123456;
+  }
+  #box4 {
+    width: 70px;
+    background-color: #f11;
+  } 
+</style>
+</head>
+<body>
+<span id="result">&nbsp;</span>
+<!-- 
+<div style="background-color:blue;"></div>
+<div style="background-color:rgb(15,99,30);"></div>
+<div style="background-color:#123456;"></div>
+<div style="background-color:#f11;"></div>
+ -->
+ <div id="box1"></div>
+ <div id="box2"></div>
+ <div id="box3"></div>
+ <div id="box4"></div>
+<script>
+ $("div").click(function() {
+	 // $(this).css("속성", "속성값");
+	 // $(this).css({"속성":"속성값",...});
+	 
+	 // 속성값 = $(this).css("속성명");
+	 // $("#result").html($(this).css("background-color"));
+	 
+	 var html = ["결과:"];
+	 /* 
+	 html.push($(this).css("color"));
+	 html.push($(this).css("width"));
+	 html.push($(this).css("height"));
+	 html.push($(this).css("backgroud-color"));
+	  */
+	 // 여러 개의 css 속성값을 얻어올 때 
+	 var styleProps = $(this).css(["color", "width", "height", "background-color"]);
+	 // alert(typeof styleProps);
+	 $.each(styleProps, function(prop, value) {
+		 html.push(prop + ": " + value);
+	 });
+	 $("#result").html(html.join("<br>"));
+ });
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 2:28:51</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+    color: blue;
+ }
+ div#five {
+    color: red;
+ }
+</style>
+</head>
+<body>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<div id="four"></div>
+<div id="five"></div>
+
+<script>
+ var arr = [ "one", "two", "three", "four", "five" ];
+ var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+ 
+ $.each( arr, function( i, val ) {
+	 $( "#" + val ).text( "Mine is " + val + "." );
+	 
+	 // Will stop running after "three"
+	 return ( val !== "three" );    // 일종의 break,  ===  !==  타입 비교
+ });
+ 
+ $.each( obj, function( i, val ) {
+	 $( "#" + i ).append( document.createTextNode( " - " + val ) );
+ });
+</script>
+</body>
+</html>

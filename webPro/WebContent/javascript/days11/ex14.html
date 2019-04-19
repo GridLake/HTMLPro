@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 2:43:20</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+<ul>
+	<li>item1</li>
+	<li>item2</li>
+	<li>item3</li>
+	<li>item4</li>
+	<li>item5</li>
+</ul>
+
+<script>
+ // each()
+ $("ul>li").each(function(index, elem) {
+	 console.log(index, elem.innerHTML, $(this).html());
+	 
+	 return index != 2; // return이 false면 each() -> break
+ });
+</script>
+</body>
+</html>

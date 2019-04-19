@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 3:05:06</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	// 지금 ~ 수료일 일/시/분/초/밀리
+	var countDownDate = new Date("2019.07.22 18:00:00").getTime();
+	console.log("> countDownDate= " + countDownDate);
+	var countDownFunction = setInterval(function() {
+		var now = new Date().getTime();
+		var distance = countDownDate - now; // ms
+		
+		if (distance < 0) {
+			clearInterval(countDownFunction);
+			return;
+		}
+		/*  
+		// 일
+		var days = Math.floor(distance / (24 * 60 * 60 * 1000));
+		// 시
+		var hours = Math.floor(days % (60 * 60 * 1000));
+		// 분
+		var minutes = Math.floor(hours % (60 * 1000));
+		// 초
+		var seconds = Math.floor(distance / 1000);
+		 */
+		
+		// 일
+     	var days = Math.floor( distance / ( 24 * 60 * 60 * 1000 ) );
+     	// 시
+     	var hours = Math.floor( distance % ( 24 * 60 * 60 *  1000 ) / (1000 *60*60));
+     	// 분
+     	var minutes = Math.floor( distance % ( 60 * 60 * 1000 ) / (1000 *60));
+     	// 초
+     	var seconds = Math.floor( distance % ( 60 * 1000 ) / 1000 );     
+		
+		
+		// 밀초
+		var milliseconds = Math.floor(distance % 1000);
+		
+		$("#demo").html(days + "일" + hours + "시" + minutes + "분" + seconds + "초" + milliseconds);
+	}, 10);
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ body, html {
+ 	height: 100%;
+ 	margin: 0;
+ }
+ .bgimg {
+ 	background-image: url("../images/forestbridge.jpg");
+ 	height: 100%;
+ 	background-position: center;
+ 	background-size: cover;
+ 	position: relative;
+ 	color: white;
+ 	font-family: "Courier New", verdana;
+ 	font-size: 25px;
+ }
+ .topleft {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 16px;
+ }
+ .bottomleft {
+ 	position: absolute;
+ 	bottom: 0;
+ 	left: 16px;
+ }
+ .middle {
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	text-align: center;
+ }
+ hr {margin: auto; width: 40%;}
+</style>
+</head>
+<body>
+ <div class="bgimg">
+ 	<div class="topleft">
+ 		<p>Logo</p>
+ 	</div>
+ 	<div class="middle">
+ 		<h1>COMING SOON</h1>
+ 		<hr>
+ 		<p id="demo" style="font-size: 30px"></p>
+ 	</div>
+ </div>
+ <div class="bottomleft">
+ 	<p>Some text</p>
+ </div>
+</body>
+</html>

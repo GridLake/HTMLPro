@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 19. 오후 12:00:00</title>
+<link rel="stylesheet" type="text/css" href="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script>
+ $(document).ready(function(){
+    //hide()
+    //show()
+    //toggle()
+ });
+</script>
+<style>
+
+</style>
+</head>
+<body>
+<button>hide</button>
+<p></p>
+<script>
+   //$("p").css("width:???;height:???;border:???");
+   $("p").css({
+      width:"200px",
+      height:"100px",
+      border: "solid 1px gray",
+      backgroundColor: "yellow"
+   });
+   
+   // on() * x 10  jquery ajax 이벤트 등록
+   // $("button").click(function(){});
+   
+   var n = 0;
+   $("button").on("click", function() {
+	   var txt = $(this).text();
+	   $("p").toggle(function() {
+		   //
+	   });
+	   if($(this).html() == "hide") {
+		   $("p").hide().prev().html("show");
+	   }
+	   else {
+		   $("p").show().prev().html("hide");
+	   }
+   });
+</script>
+</body>
+</html>
