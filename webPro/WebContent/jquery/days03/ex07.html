@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 11:25:48</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+    background: #b977d1;
+    margin: 3px;
+    width: 60px;
+    height: 60px;
+    float: left;
+ }
+ div.still {
+    background: #345;
+    width: 5px;
+ }
+ div.hider {
+    display: none;
+ }
+ span {
+    color: red;
+ }
+ p {
+    clear: left;
+ }
+</style>
+</head>
+<body>
+<div></div>
+<div class="still"></div>
+<div style="display:none;"></div>
+<div class="still"></div>
+<div></div>
+<div class="still"></div>
+<div class="hider"></div>
+<div class="still"></div>
+<div class="hider"></div>
+<div class="still"></div>
+<div></div>
+<p><button id="aa">Toggle</button> There have been <span>0</span> toggled divs.</p>
+ 
+<script>
+$( "#aa" ).click(function() {
+  // JQuery 선택자 -> :not(selector)
+  $( "div:not(.still)" ).slideToggle( "slow", function() {
+    var n = parseInt( $( "span" ).text(), 10 );
+    $( "span" ).text( n + 1 );
+  });
+});
+</script>
+</body>
+</html>

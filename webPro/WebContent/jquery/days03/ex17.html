@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 3:16:14</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	$("#start").click(function() {
+		// 큐(Left, Font size)
+		$("div").animate({left:"100px"}, 5000);
+		$("div").animate({fontSize:"3em"}, 5000);
+	});
+	$("#stopff").click(function() {
+		$("div").stop(false, false);
+	});
+	$("#stopft").click(function() {
+		$("div").stop(false, true);
+	});
+	$("#stoptf").click(function() {
+		$("div").stop(true, false);
+	});
+	$("#stoptt").click(function() {
+		$("div").stop(true, true);
+	});
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ 
+</style>
+</head>
+<body>
+ <button id="start">Start</button>
+ <button id="stopff">Stop(f,f)</button>
+ <button id="stopft">Stop(f,t)</button>
+ <button id="stoptf">Stop(t,f)</button>
+ <button id="stoptt">Stop(t,t)</button>
+ <div style="background-color:aqua;width:200px;height:100px;position:absolute;">Hello</div>
+</body>
+</html>

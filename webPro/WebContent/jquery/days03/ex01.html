@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 9:03:11</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p {
+    margin: 8px;
+    font-size: 16px;
+ }
+ .selected {
+    color: blue;
+ }
+ .highlight {
+    background: yellow;
+ }
+</style>
+</head>
+<body>
+<p>Hello</p>
+<p>and</p>
+<p>Goodbye</p>
+ 
+ 
+<script>
+ // p 태그에 원하는 속성을 주는 방법
+ // last 메소드를 이용
+ $( "p" ).addClass("selected");
+ // .last()
+ // .addClass("highlight");
+ 
+ // last를 선택자로 주기
+ $("p:last").addClass("selected highlight");
+ // .addClass("selected")
+ // .addClass("highlight");
+</script>
+
+
+
+<!-- / 붙어있는 경로의 의미 
+ <a href="test.html">test.html</a> 
+ <a href="/test.html">test.html</a>
+ -->  
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 18. - 오후 5:02:08  k≡n¡k</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+.bar{
+   background-color: red;
+}
+</style>
+<script>
+   $(document).ready(function (){
+	   
+	   // console.log( $.fn.jquery );   // 3.3.1
+	   /* 
+	    jQuery의 글로벌별칭 $ 
+	   jQuery("button").click(function (){
+		   alert("test")
+	   });
+	    */	    
+	   $("button").click(function (){
+		   alert("test")
+		   $( "input[type='checkbox']" ).check();
+	   });
+	   
+	    $("div.foo").click(function (){
+	    	$("span", this).addClass("bar");
+	    });
+   });
+</script>
+</head>
+<body>
+<button>click me</button>
+<br>
+<span>out</span>
+<div class="foo">
+   aaa <span>in</span> aaa
+</div>
+
+
+
+<label><input type="checkbox" name="foo"> Foo</label>
+<label><input type="checkbox" name="bar"> Bar</label>
+ 
+<script>
+/* 
+jQuery.fn.extend({
+  check: function() {
+    return this.each(function() {
+      this.checked = true;
+    });
+  },
+  uncheck: function() {
+    return this.each(function() {
+      this.checked = false;
+    });
+  }
+});
+ */ 
+// Use the newly created .check() method
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

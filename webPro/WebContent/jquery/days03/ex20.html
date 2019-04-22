@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 4:03:54</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	/*  
+	console.log($("div").html());
+	console.log($("div").text());
+	$("div").html("테스트");      // set
+    console.log($("div").html()); // get
+	$("div").text("변경");        // set
+    console.log($("div").text()); // get
+    
+    var value = $("input").val(); // get
+    $("input").val("tet");        // set
+    */
+ });
+ 
+ // append() 맨 마지막 자식 추가
+ // prepend() 첫 자식 추가
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p {
+ 	border: solid 1px red;
+ }
+</style>
+</head>
+<body>
+ <div id="demo">
+ 	<p id="p1">p1</p>
+ 	<p id="p2">p2</p>
+ 	<p id="p3">p3</p>
+ </div>
+
+ <script>
+  $("#p1").click(function() {
+	  // $("#demo").empty();  // 자식 제거
+	  $("#demo").remove(); // div#demo 제거
+  });
+  $("#demo")
+   .prepend("<p id='p0'>p0</p>")
+   .append("<p id='p4'>p4</p>");
+  // p2 앞에 p5
+  // p2 뒤에 p6
+  $("#p2")
+  .before("<p id='p5'>p5</p>")
+  .after("<p id='p6'>p6</p>");
+  
+  // $("<p id='p5'>p5</p>").insertBefore($("#p2"));
+ </script>
+ <!-- 
+ <input type="text" value="admin"/>
+ <div>Box</div>
+  -->
+</body>
+</html>

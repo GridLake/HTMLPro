@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 3:06:15</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	$("#flip").click(function() {
+		$("#panel").slideDown(5000); // 시간을 주면 내부적으로 animate() 발동
+	});
+	$("#stop").click(function() {
+		// $("#panel").stop();
+		//                     [, jumpToEnd ] == true -> 원래 늘어나야 할 길이까지 바로 직행    
+		$("#panel").stop(false, true);
+	});
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ #panel, #flip {
+ 	padding: 5px;
+ 	font-size: 18px;
+ 	text-align: center;
+ 	background-color: #555;
+ 	color: white;
+ 	border: solid 1px #666;
+ 	border-radius: 3px;
+ }
+ #panel {
+ 	padding: 150px;
+ 	display: none;
+ }
+</style>
+</head>
+<body>
+ <!-- stop() : 애니메이션 효과 끝나기 전에 중지시킬 때 사용 -->
+ <!-- ([clearQueue ] [, jumpToEnd ]) -->
+ <!-- stop() == stop(false, false) -->
+ <button id="stop">Stop</button>
+ <div id="flip">Start</div>
+ <div id="panel">Hello World</div>
+</body>
+</html>

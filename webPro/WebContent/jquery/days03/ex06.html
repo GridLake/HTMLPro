@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 11:05:07</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	$(".flip").click(function() {
+		/* 내 코딩
+		$(".panel").slideUp();
+		$(this).next().slideToggle();
+		*/
+		// $(this).next().slideDown();
+		// slideUp();
+		
+		$('div.open').slideUp().removeClass("open");		   
+	    $(this).next().slideToggle(  ).addClass("open");
+	});
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ .panel, .flip {
+ 	padding: 5px;
+ 	text-align: center;
+ 	background: #e5eecc;
+ 	border: solid 1px #c3c3c3;
+ }
+ .panel {
+ 	padding: 50px;
+ 	display: none;
+ }
+</style>
+</head>
+<body>
+ <!-- JQuery slide -->
+ <div class="flip">Slide 01</div>
+ <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut quidem est vero nihil nobis perspiciatis perferendis fugiat suscipit beatae!</div>
+ <div class="flip">Slide 01</div>
+ <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut quidem est vero nihil nobis perspiciatis perferendis fugiat suscipit beatae!</div>
+ <div class="flip">Slide 01</div>
+ <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut quidem est vero nihil nobis perspiciatis perferendis fugiat suscipit beatae!</div>
+ <div class="flip">Slide 01</div>
+ <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut quidem est vero nihil nobis perspiciatis perferendis fugiat suscipit beatae!</div>
+ <div class="flip">Slide 01</div>
+ <div class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut quidem est vero nihil nobis perspiciatis perferendis fugiat suscipit beatae!</div>
+</body>
+</html>

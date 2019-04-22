@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 9:35:17</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+    background: white;
+ }
+ .red {
+    background: red;
+ }
+ .red.green {
+    background: green;
+ }
+</style>
+</head>
+<body>
+ <div>This div should be white</div>
+ <div class="red">This div will be green because it now has the "green" and "red" classes.
+   It would be red if the addClass function failed.</div>
+ <div>This div should be white</div>
+ <p>There are zero green divs</p>
+ 
+ <script>
+  // .addClass( function )
+  // Type : Function( Integer index, String currentClassName ) => String)
+  $("div").addClass(function(index, currentClassName) {
+	  // console.log(index + " : " + currentClassName); // (보유한 클래스의 이름 반환
+	  var className;
+	  if (currentClassName == "red") {
+		  className = "green";
+	  }
+	  return className;
+  });
+ </script>
+</body>
+</html>

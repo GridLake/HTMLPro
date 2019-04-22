@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 12:27:50</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- specialEasing -->
+<script>
+ $(document).ready(function() {
+	 $( "#clickme" ).click(function() {
+		  $( "#book" ).animate({
+		    width: "toggle",
+		    height: "toggle"
+		  }, {
+		    duration: 5000,
+		     
+		    specialEasing: {
+		      width: "linear",
+		      height: "easeOutBounce"
+		    },
+		    
+		    complete: function() {
+		      $( this ).after( "<div>Animation complete.</div>" );
+		    }
+		  });
+	 });
+	 /* 
+	 $( "li" ).animate({
+		  opacity: .5,
+		  height: "50%"
+		}, {
+		  step: function( now, fx ) {
+		    var data = fx.elem.id + " " + fx.prop + ": " + now;
+		    $( "body" ).append( "<div>" + data + "</div>" );
+		  }
+	 });
+	 */
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ 
+</style>
+</head>
+<body>
+<div id="clickme">Click here</div>
+<img id="book" src="https://via.placeholder.com/350x150" alt="" width="100" height="123"
+  style="position: relative; left: 10px;">
+ <!-- 
+ <ul>
+ 	<li id="li_01">item1</li>
+ 	<li id="li_02">item2</li>
+ 	<li id="li_03">item3</li>
+ </ul>
+  -->
+</body>
+</html>

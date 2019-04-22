@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 3:28:36</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	 $("#go").click(function() {
+			$(".block")
+			.stop(true, false)        // jumpToEnd 필요없음
+			.animate({left:"+=100px"}, 2000);
+	 });
+	 
+	 $("#back").click(function() {
+			$(".block")
+			.stop(true, false)
+			.animate({left:"-=100px"}, 2000);
+	 });
+	 
+	 $("#stop").click(function() {
+			$(".block").stop(false, false);
+			// 1. false : 큐 clear
+			// 2. false : jumpToEnd
+	 });
+	 
+	 $("#slideToggle").click(function() {
+			$(".block")
+			.stop(true, false)
+			.slideToggle(5000, function() {});
+	 });
+	 
+	 /* 
+	 $( "#hoverme-stop-2" ).hover( // mouseover
+			 function() {
+				 $( this ).find( "img" ).stop( true, true ).fadeOut();
+			 }
+			 , function() { // mouseout
+				 $( this ).find( "img" ).stop( true, true ).fadeIn();
+	 });
+	 */
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+    position: absolute;
+    background-color: #abc;
+    left: 0px;
+    top: 30px;
+    width: 60px;
+    height: 160px;
+    margin: 5px;
+ }
+</style>
+</head>
+<body>
+ <button id="go">Go</button>
+ <button id="stop">Stop</button>
+ <button id="back">Back</button>
+ <button id="slideToggle">SlideToggle</button>
+ <div class="block"></div>
+ <hr>
+
+<!-- 
+ <div id="hoverme-stop-2">
+  Hover me
+  <img id="hoverme" src="http://via.placeholder.com/100x123" alt="" width="100" height="123">
+</div>
+ -->
+</body>
+</html>

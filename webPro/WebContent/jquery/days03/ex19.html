@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 3:46:39</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	// JQuery callback 함수
+	/* 
+	   P.append(C)
+	   C.appendTo(P)
+	*/
+	
+	// $("body").append($("<div style='background:aqua;width:100px;height:100px;'></div>"));
+	var box = $("<div></div>");
+	box
+	.on("click", function() {
+		$(this).hide(1000, function() {
+			alert("완전히 숨겨진 후 호출되는 콜백함수");
+		})
+	})
+	.css({
+		"background-color":"blue",
+		width:"100px",
+		height:"100px"
+	});
+	$("body").append(box);
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ 
+</style>
+</head>
+<body>
+<!-- 
+ <div style="background:aqua;width:100px;height:100px;"></div>
+ -->
+</body>
+</html>

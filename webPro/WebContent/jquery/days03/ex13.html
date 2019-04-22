@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 2:13:47</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	// :gt()  :eq()  :lt()    JQuery selector
+	$("div:gt(3)").css("background-color", "red");
+	$("div:eq(2)").css("background-color", "green");
+	$("div:lt(1)").css("background-color", "blue");
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	float: left;
+ 	width: 50px;
+ 	height: 50px;
+ 	border: solid 1px gray;
+ 	margin: 2px;
+ }
+</style>
+</head>
+<body>
+ <div>box1</div>
+ <div>box2</div>
+ <div>box3</div>
+ <div>box4</div>
+ <div>box5</div>
+ <div>box6</div>
+ <div>box7</div>
+ <div>box8</div>
+ <div>box9</div>
+ <div>box10</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 10:44:06</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	$("button").on("click", function() {
+		/* 
+		$("#div1").fadeIn();
+		$("#div2").fadeIn("slow");
+		$("#div3").fadeIn(3000);
+		*/
+		/* 
+		$("#div1").fadeOut();
+		$("#div2").fadeOut("slow");
+		$("#div3").fadeOut(3000);
+		*/
+		$("#div1").fadeToggle();
+		$("#div2").fadeToggle("slow");
+		$("#div3").fadeToggle(3000);
+	});
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 80px;
+ 	height: 80px;
+ 	/* display: none; */
+ }
+ #div1 {background-color: red;}
+ #div2 {background-color: green;}
+ #div3 {background-color: blue;}
+</style>
+</head>
+<body>
+ <!-- JQuery fade 기능 -->
+ <button>JQuery fadeIn()</button>
+ <div id="div1"></div>
+ <div id="div2"></div>
+ <div id="div3"></div>
+</body>
+</html>

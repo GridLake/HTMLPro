@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 2:23:16</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ p, div {
+    margin: 1px;
+    padding: 1px;
+    font-weight: bold;
+    font-size: 16px;
+ }
+ div {
+    color: blue;
+ }
+ b {
+    color: red;
+ }
+</style>
+</head>
+<body>
+ <p>
+  Hi there <span>how</span> are you <span>doing</span>?
+ </p>
+ 
+ <p>
+  This <span>span</span> is one of
+  several <span>spans</span> in this
+  <span>sentence</span>.
+ </p>
+ 
+<div>
+  Tags in jQuery object initially: <b></b>
+</div>
+ 
+<div>
+  Tags in jQuery object after find: <b></b>
+</div>
+ 
+<div>
+  Tags in jQuery object after end: <b></b>
+</div>
+ 
+<script>
+ // JQuery에 showTags 메소드는 없음
+ // 태그 보여주는 함수 -> JQuery의 메소드로 추가
+ jQuery.fn.showTags = function( n ) {
+	 // this -> 호출한 객체
+	 var tags = this.map(function() {
+		 return this.tagName;
+     })
+  .get()
+  .join( ", " );
+  $( "b:eq( " + n + " )" ).text( tags );
+  return this;
+ };
+ 
+ $( "p" )
+  .showTags( 0 )
+  .find( "span" )
+    .showTags( 1 )
+    .css( "background", "yellow" )
+  .end()
+  .showTags( 2 )
+  .css( "font-style", "italic" );
+</script>
+</body>
+</html>

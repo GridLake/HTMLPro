@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오전 11:36:36</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+
+</style>
+</head>
+<body>
+ <!-- JQuery animation -->
+ <input type="radio" name="direction" value="+" checked="checked"/>+
+ <input type="radio" name="direction" value="-"/>-
+ <button>Run</button>
+ <div style="background-color:green;height:100px;width:100px;position:absolute;"></div>
+ 
+ <script>
+  $("button").click(function(){
+	 // jquery selector     :checked   input 태그 중에 체크된 놈
+	 var dir = $(":radio:checked").val();
+	 $("").animate();
+	 $("div").animate({
+		 // left, right 등 일단 css 속성 선언 후에 if~else문, 삼항연산자 등을 사용 가능할 수 있지만, 
+		 // 밖에서 선언하여 체크 후 속성 변화 주는 것이 가독성 더 좋음
+		 left: dir + "=50px"
+		/* animate 메소드는 파라미터를 css밖에 못 받으므로 바로 if~else문 사용 불가능 
+		if ( $("input:radio[id='asc']").is(":checked") )  {
+			 left:"+=50px";
+		} 
+        else {
+			 right:"-=50px";
+		}
+         */
+		 /*   
+		 , opacity: "0.5"
+		 , height: "150px"
+		 , width:"150px"
+		 */
+	 }); 
+  });
+ </script>
+</body>
+</html>

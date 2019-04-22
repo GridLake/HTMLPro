@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2019. 4. 22. 오후 12:10:03</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function() {
+	 /* 
+	 $("button").click(function() {
+		$("div").animate({
+			height: "toggle" // show, hide 지정 가능
+		});
+	 });
+	 */
+	 $("button").click(function() {
+		// [4321] -> 1
+		var box = $("div");
+		// chain으로 연결
+		box
+		.animate({height:"300px", opacity:"0.4"}, "slow") // 1
+		.animate({width:"300px", opacity:"0.8"}, "slow")
+		.animate({height:"100px", opacity:"0.4"}, "slow")
+		.animate({width:"100px", opacity:"0.8"}, "slow") // 4
+		.animate({"font-size":"3em"});
+	 });
+ });
+</script>
+<link rel="stylesheet" type="text/css" href="">
+<style>
+ div {
+ 	width: 100px;
+ 	height: 100px;
+ 	position: absolute;
+ 	background-color: aqua;
+ }
+</style>
+</head>
+<body>
+ <button>Run</button>
+ <!-- JQuery animate() 속성값에 사전 정의 값 사용 가능 -->
+ <!-- JQuery animate() 큐(대기열) : 대기 순서대로 FIFO -->
+ <div>Sample</div>
+</body>
+</html>
